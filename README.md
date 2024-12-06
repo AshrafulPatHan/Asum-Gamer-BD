@@ -1,6 +1,6 @@
 # 🌟 Your Project Name
 
-![Project Logo](https://via.placeholder.com/150 "Project Logo")
+![Project Logo](./src/assets/Game%20%20Logo.png "Project Logo")
 
 **Your Project Tagline**  
 _A brief one-liner about what your project does or solves._
@@ -26,4 +26,4 @@ Here's how it looks:
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone hhttps://github.com/programming-hero-web-course2/b10-a10-client-side-AshrafulPatHan.git
