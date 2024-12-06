@@ -1,4 +1,4 @@
-# 🌟 Your Project Name
+# 🌟 Chill Gamer
 
 ![Project Logo](./src/assets/Game%20logo.png "Project Logo")
 
@@ -27,3 +27,5 @@ Here's how it looks:
 1. Clone the repo:
    ```bash
    git clone hhttps://github.com/programming-hero-web-course2/b10-a10-client-side-AshrafulPatHan.git
+## ➤ View the Website
+[Visit Live Link](https://www.google.com)

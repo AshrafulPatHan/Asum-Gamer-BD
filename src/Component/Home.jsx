@@ -1,13 +1,15 @@
 import React from 'react';
 import { toast } from 'react-toastify';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const Home = () => {
     return (
         <div>
-            <h2>fsjhldfjak</h2>
-            <button onClick={()=>{
-                toast("cllick");
-            }} className='btn'>click</button>
+            <div>
+                <Navbar />
+                <Footer/>
+            </div>
         </div>
     );
 };

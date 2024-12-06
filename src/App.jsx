@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './Component/Home';
+import Error from './Component/Error';
 
 
 
@@ -15,13 +16,13 @@ function App() {
 
   const router = createBrowserRouter([
     { path: "/", element: <Home  /> },
+    { path: "*", element: <Error /> },
 ]);
 
 
 
   return (
     <>
-      <h2>HEllo dsfjgl;kj</h2>
       <RouterProvider router={router} />
       <ToastContainer
       position="top-center"
