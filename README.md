@@ -1,6 +1,6 @@
 # 🌟 Your Project Name
 
-![Project Logo](./src/assets/Game%20%20Logo.png "Project Logo")
+![Project Logo](./src/assets/Game%20logo.png "Project Logo")
 
 **Your Project Tagline**  
 _A brief one-liner about what your project does or solves._
