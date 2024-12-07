@@ -33,9 +33,10 @@ Make sure you have the following installed:
 - MongoDB (if running locally)
 
 
-1.🔭  Visit our wabcite:
+
 
 ## ➤ View the Website
+1.🔭  Visit our wabcite:
 [Visit Live Link](https://chillgamer-10bf2.web.app)
 
 ### Installation
