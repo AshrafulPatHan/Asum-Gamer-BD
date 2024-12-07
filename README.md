@@ -32,15 +32,15 @@ Make sure you have the following installed:
 - Node.js (v16 or above)
 - MongoDB (if running locally)
 
-### Installation
 
-1.🔧  Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/game-rating-website.git
+1.🔭  Visit our wabcite:
 
-### Vigited
-
-2.🔭  Clone the repository:
-```bash
 ## ➤ View the Website
 [Visit Live Link](https://chillgamer-10bf2.web.app)
+
+### Installation
+
+2.🔧  Clone the repository/Visit our wabcite:
+   ```bash
+   git clone https://github.com/your-username/game-rating-website.git
+   Live Link https://chillgamer-10bf2.web.app
