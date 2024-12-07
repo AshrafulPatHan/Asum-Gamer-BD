@@ -39,7 +39,7 @@ Make sure you have the following installed:
 1.🔭  Visit our wabcite:
 [Visit Live Link](https://chillgamer-10bf2.web.app)
 
-### Installation
+### Installation or View
 
 2.🔧  Clone the repository/Visit our wabcite:
    ```bash
