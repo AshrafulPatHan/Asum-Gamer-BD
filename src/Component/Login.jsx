@@ -14,7 +14,7 @@ import auth from '../Firebase/Firebase.init';
 
 const Login = () => {
     const [showpas, setShowPas] = useState(false);
-
+    const [loading,setLoading] =useState(true) ;
     const provider = new GoogleAuthProvider();
     const navigate = useNavigate();
     const emailRef = useRef();
@@ -29,6 +29,7 @@ const Login = () => {
                 console.log("Logged in user:", result.user);
                 toast.success('Login successful');
                 navigate('/');
+                setLoading(false)//-----------------
             })
             .catch((error) => {
                 console.error("Error during login:", error.message);
@@ -42,6 +43,7 @@ const Login = () => {
                 console.log("Google login successful:", result.user);
                 toast.success('Google login successful');
                 navigate('/')
+                setLoading(false)//-----------------
             })
             .catch((error) => {
                 console.error("Error during Google login:", error.message);

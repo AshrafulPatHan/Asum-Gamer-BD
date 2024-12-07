@@ -15,6 +15,7 @@ import Error from './Component/Error';
 import Login from './Component/Login';
 import Registration from './Component/Registration';
 import AuthProvider from './Component/AuthProvider/AuthProvider'
+import Privaterout from './Component/Rout/Privaterout';
 
 
 
@@ -24,9 +25,9 @@ function App() {
   const router = createBrowserRouter([
     { path: "/", element: <Home  /> },
     { path: "/AllReviews", element: <AllReviews  /> },
-    { path: "/AddReview", element: <AddReview  /> },
-    { path: "/MyReviews", element: <MyReviews  /> },
-    { path: "/GameWatchList", element: <GameWatchList /> },
+    { path: "/AddReview", element:<Privaterout ><AddReview  /></Privaterout> },
+    { path: "/MyReviews", element: <Privaterout ><MyReviews  /></Privaterout> },
+    { path: "/GameWatchList", element:<Privaterout > <GameWatchList /></Privaterout> },
     { path: "/Login", element: <Login  /> },
     { path: "/Registration", element: <Registration  /> },
     { path: "*", element: <Error /> },

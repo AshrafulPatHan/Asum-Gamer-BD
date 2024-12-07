@@ -17,6 +17,26 @@ const Registration = () => {
     const navigate = useNavigate();
 
 
+    const validatePassword = (password) => {
+        const upperCaseCheck = /[A-Z]/.test(password); // Uppercase Letter Check
+        const lowerCaseCheck = /[a-z]/.test(password); // Lowercase Letter Check
+        const lengthCheck = password.length >= 6; // Minimum Length Check
+    
+        if (!upperCaseCheck) {
+            toast.error("Must have an Uppercase leer in the password");
+            return false;
+        }
+        if (!lowerCaseCheck) {
+            toast.error("Must have a Lowercase leer in the password");
+            return false;
+        }
+        if (!lengthCheck) {
+            toast.error("Length must be at least 6 character");
+            return false;
+        }
+        return true;
+        };
+
     
     const handelRegistra = (event) => {
         
@@ -27,6 +47,10 @@ const Registration = () => {
         const email = event.target.email.value;
         const photoURL = event.target.PhotoURL.value;
         const password = event.target.password.value;
+
+        if (!validatePassword(password)) {
+            return;
+        }
 
         console.log(name, email, photoURL, password);
 
@@ -73,7 +97,7 @@ const Registration = () => {
                                     className='w-[300px]  md:w-[600px] lg:[900px] '
                                 />
                                 <p className="py-6 text-center">
-                                    registation for login our wabcite
+                                    registration for login our website
                                 </p>
                             </div>
                             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
@@ -154,3 +178,6 @@ const Registration = () => {
 };
 
 export default Registration;
+
+
+
