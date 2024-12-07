@@ -5,11 +5,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
 import Home from './Component/Home';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import AllReviews from './Component/AllReviews';
 import Error from './Component/Error';
 import Login from './Component/Login';
 import Registration from './Component/Registration';
-
+import AuthProvider from './Component/AuthProvider/AuthProvider'
 
 
 
@@ -30,6 +32,7 @@ function App() {
 
   return (
     <>
+        <AuthProvider>
       <RouterProvider router={router} />
       <ToastContainer
       position="top-center"
@@ -44,6 +47,7 @@ function App() {
       theme="light"
       transition: Bounce
       />
+      </AuthProvider>
     </>
   )
 }
