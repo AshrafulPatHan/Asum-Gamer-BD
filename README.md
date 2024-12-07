@@ -37,7 +37,10 @@ Make sure you have the following installed:
 1.🔧  Clone the repository:
    ```bash
    git clone https://github.com/your-username/game-rating-website.git
-   cd game-rating-website
 
+### Vigited
+
+2.🔭  Clone the repository:
+```bash
 ## ➤ View the Website
 [Visit Live Link](https://chillgamer-10bf2.web.app)
