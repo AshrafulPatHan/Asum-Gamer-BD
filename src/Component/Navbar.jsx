@@ -95,16 +95,16 @@ const Navbar = () => {
                                             <Link to='/' className='text-2xl font-bold'>Home</Link>
                                         </li>
                                         <li>
-                                            <Link to='/AllReviews' className='text-2xl font-bold'>All Reviews</Link>
+                                            <Link to='/reviews' className='text-2xl font-bold'>All Reviews</Link>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className='flex flex-row items-center gap-3'>
-                                    <Link to='/AddReview' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
+                                    <Link to='/addReview' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
                                     Add Review </Link>
-                                    <Link to='/MyReviews' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
+                                    <Link to='/myReviews' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
                                     My Reviews </Link>
-                                    <Link to='/GameWatchList' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
+                                    <Link to='/myWatchlist' className='text-2xl p-3 rounded-xl hover:bg-sky-300 font-bold'>
                                     Game WatchList </Link>
                                 </div>
                             </div>
@@ -114,19 +114,13 @@ const Navbar = () => {
                                 <Link to='/' className='text-2xl font-bold'>Home</Link>
                             </li>
                             <li>
-                                <Link to='/AllReviews' className='text-2xl font-bold'>All Reviews</Link>
+                                <Link to='/addReview' className='text-2xl font-bold'>All Reviews</Link>
                             </li>
                         </ul>
                         )}
                     </div>
                     <div className='navbar-end '>
                         <div className='flex flex-col items-center sm:flex  sm:flex-row sm:items-center '>
-                            {/* <button
-                            onClick={toggleTheme}
-                            className="btn btn-primary mr-1 mb-2 sm:mb-0"
-                            >
-                            {theme === 'light' ? 'Dark Mode' : 'Light Mode'}
-                            </button> */}
                             <label className="flex cursor-pointer gap-2 mr-4 mb-2 sm:mb-0">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

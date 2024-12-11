@@ -8,7 +8,7 @@ import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-apiKey: "AIzaSyCnJiWxtgAYbdC8IjyU2gUcahwwmzC6Pv0",
+apiKey:  "AIzaSyCnJiWxtgAYbdC8IjyU2gUcahwwmzC6Pv0",
 authDomain: "chillgamer-10bf2.firebaseapp.com",
 projectId: "chillgamer-10bf2",
 storageBucket: "chillgamer-10bf2.firebasestorage.app",
@@ -25,6 +25,11 @@ const auth = getAuth(app);
 export default auth;
 
 
-
+// apiKey: "AIzaSyCnJiWxtgAYbdC8IjyU2gUcahwwmzC6Pv0",
+// authDomain: "chillgamer-10bf2.firebaseapp.com",
+// projectId: "chillgamer-10bf2",
+// storageBucket: "chillgamer-10bf2.firebasestorage.app",
+// messagingSenderId: "940536753681",
+// appId: "1:940536753681:web:d1d34ffdce0905bdbe8bb0"
 
 

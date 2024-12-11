@@ -14,8 +14,11 @@ import GameWatchList from './Component/GameWatchList';
 import Error from './Component/Error';
 import Login from './Component/Login';
 import Registration from './Component/Registration';
+import UpdateReview from './Component/UpdateReview'
 import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';
+import Play from './Component/Play';
+import Details from './Component/Details';
 
 
 
@@ -23,13 +26,18 @@ function App() {
 
 
   const router = createBrowserRouter([
-    { path: "/", element: <Home  /> },
-    { path: "/AllReviews", element: <AllReviews  /> },
-    { path: "/AddReview", element:<Privaterout ><AddReview  /></Privaterout> },
-    { path: "/MyReviews", element: <Privaterout ><MyReviews  /></Privaterout> },
-    { path: "/GameWatchList", element:<Privaterout > <GameWatchList /></Privaterout> },
+    { path: "/", element: <Home  />,},
+    { path: "/reviews", element: <AllReviews  /> },
+    { path: "/addReview", element: <Privaterout><AddReview /></Privaterout> },
+    { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>
+      // loader: () => fetch("https://server-bhts5tq14-ashraful-pathan-4d398455.vercel.app/datas")
+    },
+    { path: "/myWatchlist", element:<Privaterout > <GameWatchList /></Privaterout> },
     { path: "/Login", element: <Login  /> },
     { path: "/Registration", element: <Registration  /> },
+    { path: "/updateReview", element: <UpdateReview /> },
+    {path:"/review/:id", element:<Details /> },
+    { path: "/Play", element: <Play /> },
     { path: "*", element: <Error /> },
 ]);
 
