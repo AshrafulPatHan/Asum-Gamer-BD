@@ -13,7 +13,7 @@ const Footer = () => {
 
     return (
         <div>
-            <div>
+            <div className='mt-4'>
                 <footer className="footer bg-base-200 text-base-content p-10">
                     <nav>
                         <h6 className="footer-title">Services</h6>
@@ -66,18 +66,18 @@ const Footer = () => {
                         </p>
                     </aside>
                     <nav className="md:place-self-center md:justify-self-end">
-                    <div className='text-5xl flex flex-col md:flex-row items-center gap-2 '>
+                    <div className='text-5xl flex flex-col md:flex-row items-center gap-1 '>
                         <div>
-                            <i className="fa-brands fa-facebook" style={{ color: '#4267B2', marginRight: '10px' }}></i>
-                            <i className="fa-brands fa-twitter" style={{ color: '#1DA1F2', marginRight: '10px' }}></i>
+                            <i className="fa-brands text-3xl  fa-facebook" style={{ color: '#4267B2', marginRight: '10px' }}></i>
+                            <i className="fa-brands text-3xl  fa-twitter" style={{ color: '#1DA1F2', marginRight: '10px' }}></i>
                         </div>
                         <div>
-                            <i className="fa-brands fa-instagram" style={{ color: '#E1306C', marginRight: '10px' }}></i>
-                            <i className="fa-brands fa-linkedin" style={{ color: '#4267B2', marginRight: '10px' }}></i>
+                            <i className="fa-brands  text-3xl fa-instagram" style={{ color: '#E1306C', marginRight: '10px' }}></i>
+                            <i className="fa-brands  text-3xl fa-linkedin" style={{ color: '#4267B2', marginRight: '10px' }}></i>
                         </div>
                         <div>
-                            <i className="fa-brands fa-x-twitter"></i>
-                            <i className="fa-brands fa-youtube" style={{ color: '#E1306C', marginRight: '10px' }}></i>
+                            <i className="fa-brands  text-3xl fa-x-twitter"></i>
+                            <i className="fa-brands  text-3xl fa-youtube" style={{ color: '#E1306C', marginRight: '10px' }}></i>
                         </div>
                     </div>
                     </nav>

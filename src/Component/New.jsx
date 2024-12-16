@@ -25,7 +25,7 @@ const New = () => {
                 <h3 className='text-4xl font-bold text-center'>10 Bast game in the world</h3>
                 <p className='text-xl font-bold text-center'>Sponcer By Ali Baba</p>
                 <div className="flex justify-center items-center my-5">
-                    <div className="w-[350px] md:w-[660px] lg:w-[800px] aspect-video bg-gray-200 rounded-lg overflow-hidden">
+                    <div className="w-[320px] md:w-[660px] lg:w-[800px] aspect-video bg-gray-200 rounded-lg overflow-hidden">
                         <iframe
                             className="w-full h-full"
                             src="https://www.youtube.com/embed/F8BactAXOH4"
