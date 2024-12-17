@@ -1,53 +1,41 @@
-import React, { useContext, useEffect, useState } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "./AuthProvider/AuthProvider";
-import ClintReview from './ClintReview';
 
-const AllReviews = () => {
-    const [all, setAll] = useState([]);
+const ClintReview = () => {
     const [loading, setLoading] = useState(true);
-    const { user } = useContext(AuthContext);
-
+    const [data, setData] = useState([]);
 
 // go detils page
-    const navigate = useNavigate();
-        const handleExploreDetails = (All) => {
-            navigate(`/review/${All.id}`, { state: All }); 
-        };
-    
-// fetch data
+const navigate = useNavigate();
+const handleExploreDetails = (All) => {
+    navigate(`/review/${All.id}`, { state: All }); 
+};
+
+
     useEffect(() => {
-        fetch("https://server-ap.vercel.app/alldata")
-        .then((res) => res.json())
-        .then((data) => {
-            setAll(data);
+        fetch("https://server-ap.vercel.app/datas")
+          .then((res) => res.json())
+          .then((data) => {
+            setData(data);
             setLoading(false);
-        })
-        .catch((error) => {
+          })
+          .catch((error) => {
             console.error("Error fetching data:", error);
             setLoading(false);
-        });
-    }, []);
+          });
+      }, []);
 
-
-    if (loading) {
+      if (loading) {
         return <div className="flex flex-col items-center my-36">
         <span className="loading loading-ring loading-lg"></span>
         </div>;
     }
 
-
-
     return (
         <div>
-            <Navbar/>
-            <div className='flex flex-col items-center'>
-            <h2 className='text-4xl font-bold'>See All Reviews</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
                     {
-                        all.map(All => (
+                        data.map(All => (
                             <div key={All.id}>
                                 <div className="card bg-base-100 my-4 w-[300px] md:w-96 shadow-xl">
                                     <figure>
@@ -71,11 +59,8 @@ const AllReviews = () => {
                         ))
                     }
                 </div>
-                <ClintReview/>
-            </div>
-            <Footer/>
         </div>
     );
 };
 
-export default AllReviews;
+export default ClintReview;

@@ -28,7 +28,9 @@ const HRated = () => {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="flex flex-col items-center my-36">
+        <span className="loading loading-ring loading-lg"></span>
+        </div>;;
     }
 
     return (
