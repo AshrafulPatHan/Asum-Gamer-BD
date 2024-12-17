@@ -25,6 +25,8 @@ import Details from './Component/Details';
 function App() {
 
 
+
+
   const router = createBrowserRouter([
     { path: "/", element: <Home  />,},
     { path: "/reviews", element: <AllReviews  /> },
@@ -32,11 +34,11 @@ function App() {
     { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>
       // loader: () => fetch("https://server-bhts5tq14-ashraful-pathan-4d398455.vercel.app/datas")
     },
-    { path: "/myWatchlist", element:<Privaterout > <GameWatchList /></Privaterout> },
+    { path: "/myWatchlist", element: <Privaterout><GameWatchList  /></Privaterout> },
     { path: "/Login", element: <Login  /> },
     { path: "/Registration", element: <Registration  /> },
     { path: "/updateReview", element: <UpdateReview /> },
-    {path:"/review/:id", element:<Details /> },
+    { path: "/review/:id", element: <Details  /> },
     { path: "/Play", element: <Play /> },
     { path: "*", element: <Error /> },
 ]);

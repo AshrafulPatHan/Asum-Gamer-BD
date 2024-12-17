@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import img from '../assets/Game logo.png'
+import { FaPaperPlane } from 'react-icons/fa';
+import { toast } from 'react-toastify';
 
 
 
@@ -43,7 +45,9 @@ const Footer = () => {
                         </svg>
                         <input type="text" className="grow" placeholder="Email" />
                         </label>
-                        <button className="btn btn-active btn-secondary">Secondary</button>
+                        <button className="btn btn-active btn-secondary"
+                        onClick={()=>{toast("⚠️Your email in un send")}}
+                        >Send<FaPaperPlane /></button>
                     </nav>
                     </footer>
                     <footer className="footer bg-base-200 text-base-content border-base-300 border-t px-10 py-4">

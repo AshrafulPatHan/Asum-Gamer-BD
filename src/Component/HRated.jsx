@@ -1,20 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import CardApi from '../card.json';
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+
 
 const HRated = () => {
     const [hRate, setHRate] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+// go detils page
+    const navigate = useNavigate();
+        const handleExploreDetails = (HRate) => {
+          navigate(`/review/${HRate.id}`, { state: HRate }); 
+    };
+    
+// fetch data
     useEffect(() => {
-        const filteredData = CardApi.filter(item => parseInt(item.Rating) >= 7);
-        setHRate(filteredData);
+        fetch("http://localhost:5022/limited-data")
+        .then((res) => res.json())
+        .then((data) => {
+            setHRate(data);
+            setLoading(false);
+        })
+        .catch((error) => {
+            console.error("Error fetching data:", error);
+            setLoading(false);
+        });
     }, []);
 
-
-    const navigate = useNavigate();
-    const handleExploreDetails = (HRate) => {
-      navigate(`/review/${HRate.id}`, { state: HRate }); // Sending state
-    };
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
     return (
         <div className='flex flex-col items-center'>
@@ -22,7 +36,7 @@ const HRated = () => {
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
                 {
                     hRate.map(HRate => (
-                        <div key={HRate.id}>
+                        <div key={HRate._id}>
                             <div className="card bg-base-100 my-4 w-[300px] md:w-96 shadow-xl">
                                 <figure>
                                     <img
