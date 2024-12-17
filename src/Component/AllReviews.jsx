@@ -20,7 +20,7 @@ const AllReviews = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/alldata")
+        fetch("https://server-ap.vercel.app/alldata")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);
@@ -36,7 +36,7 @@ const AllReviews = () => {
 // fetch user add 
 
   useEffect(() => {
-    fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/datas")
+    fetch("https://server-ap.vercel.app/datas")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

@@ -15,7 +15,7 @@ const HRated = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/limited-data")
+        fetch("https://server-ap.vercel.app/limited-data")
         .then((res) => res.json())
         .then((data) => {
             setHRate(data);

@@ -17,7 +17,7 @@ const Details = () => {
     }, [locationData]);
     // Add WatchList
     const handleWatchList = () => {
-        fetch('https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/watchLists', {
+        fetch('https://server-ap.vercel.app/watchLists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

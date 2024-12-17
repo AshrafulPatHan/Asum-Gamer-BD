@@ -16,7 +16,7 @@ const handleUpdate = (HRate) => {
 };
   
   useEffect(() => {
-    fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/datas")
+    fetch("https://server-ap.vercel.app/datas")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -38,7 +38,7 @@ const handleUpdate = (HRate) => {
     })
     .then((willDelete) => {
       if (willDelete) {
-        fetch(`https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/user/${id}`, {
+        fetch(`https://server-ap.vercel.app/user/${id}`, {
           method: 'DELETE',
         })
         .then(res => res.json())

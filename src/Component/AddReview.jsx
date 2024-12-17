@@ -32,7 +32,7 @@ const AddReview = () => {
         console.log(allData);
 
         // send data to the server
-        fetch('https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/add', {
+        fetch('https://server-ap.vercel.app/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

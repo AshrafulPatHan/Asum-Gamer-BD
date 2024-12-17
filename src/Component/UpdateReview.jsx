@@ -45,7 +45,7 @@ const UpdateReview = () => {
         const { _id: id } = cardData; // Get ID from cardData
 
         // send data to the server
-        fetch(`https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/up/${id}`, {
+        fetch(`https://server-ap.vercel.app/up/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
