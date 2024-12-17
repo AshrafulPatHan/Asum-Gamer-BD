@@ -84,7 +84,7 @@ const BanerSlider = () => {
                 </Slider>
             </div>
             <Link
-                to="/AllReviews"
+                to="/reviews"
                 className="mt-6 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-4 rounded-lg font-medium shadow-md"
             >
                 All Reviews

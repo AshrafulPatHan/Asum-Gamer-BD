@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { toast } from "react-toastify";
+import { AuthContext } from "./AuthProvider/AuthProvider";
 
-const Details = ({ watchLists }) => {
+const Details = () => {
     const { state: locationData } = useLocation(); 
     const [cardData, setCardData] = useState(locationData || {});
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         if (locationData) {
             setCardData(locationData);
         }
     }, [locationData]);
-
+    // Add WatchList
     const handleWatchList = () => {
-        fetch('http://localhost:5022/watchLists', {
+        fetch('https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/watchLists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -25,11 +27,11 @@ const Details = ({ watchLists }) => {
         .then((res) => res.json())
         .then((data) => {
             console.log(data);
-            toast.success("watchLists added successfully!");
+            toast.success("Watchlist added successfully!");
         })
         .catch((error) => {
             console.error('Error:', error);
-            toast.error("Error adding watchLists");
+            toast.error("Error adding to watchlist");
         });
     };
 
@@ -71,12 +73,21 @@ const Details = ({ watchLists }) => {
                                 <p className="text-base">Publishing year : {cardData.Year}</p>
                             </div>
                             <div className="card-actions justify-end">
-                                <button
+                                {user ? (
+                                <div>
+                                    <button
                                     className="btn btn-primary"
                                     onClick={handleWatchList}
-                                >
+                                    >
                                     Add to WatchList
-                                </button>
+                                    </button>
+                                </div>
+                                ) : (
+                                <div>
+                                    <p>Please log in to add to WatchList</p>
+                                    <Link to="/Login" className="btn btn-secondary">Log In</Link>
+                                </div>
+                                )}
                             </div>
                         </div>
                     </div>

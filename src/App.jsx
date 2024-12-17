@@ -19,31 +19,24 @@ import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';
 import Play from './Component/Play';
 import Details from './Component/Details';
-
+import { Typewriter } from 'react-simple-typewriter';
 
 
 function App() {
-
-
-
 
   const router = createBrowserRouter([
     { path: "/", element: <Home  />,},
     { path: "/reviews", element: <AllReviews  /> },
     { path: "/addReview", element: <Privaterout><AddReview /></Privaterout> },
-    { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>
-      // loader: () => fetch("https://server-bhts5tq14-ashraful-pathan-4d398455.vercel.app/datas")
-    },
+    { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>},
     { path: "/myWatchlist", element: <Privaterout><GameWatchList  /></Privaterout> },
     { path: "/Login", element: <Login  /> },
     { path: "/Registration", element: <Registration  /> },
-    { path: "/updateReview", element: <UpdateReview /> },
+    { path: "/updateReview/:id", element: <UpdateReview /> },
     { path: "/review/:id", element: <Details  /> },
     { path: "/Play", element: <Play /> },
     { path: "*", element: <Error /> },
 ]);
-
-
 
   return (
     <>

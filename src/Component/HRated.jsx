@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter'
 
 
 const HRated = () => {
@@ -14,7 +15,7 @@ const HRated = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("http://localhost:5022/limited-data")
+        fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/limited-data")
         .then((res) => res.json())
         .then((data) => {
             setHRate(data);
@@ -33,6 +34,7 @@ const HRated = () => {
     return (
         <div className='flex flex-col items-center'>
             <h2 className='text-4xl font-bold'>Highest Rated Game</h2>
+            <Typewriter words={['Discover', 'Rate', 'Enjoy!']} loop={5} cursor cursorStyle='_' typeSpeed={70} deleteSpeed={50} delaySpeed={1000} />
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
                 {
                     hRate.map(HRate => (

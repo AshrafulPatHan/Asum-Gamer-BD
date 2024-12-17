@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import swal from 'sweetalert';
 
 const GameWatchList = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5022/watchListsdata")
+    fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/watchListsdata")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -22,7 +23,11 @@ const GameWatchList = () => {
 
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex flex-col items-center justify-center mt-20">
+        <span className="loading loading-bars loading-lg"></span>
+      </div>
+    );
   }
 
   return (
@@ -36,11 +41,10 @@ const GameWatchList = () => {
                 <th>Name</th>
                 <th>Rating</th>
                 <th>Genre</th>
-                <th>Update/Delete</th>
               </tr>
             </thead>
             {data.map((HRate) => (
-              <tbody key={HRate._id || HRate.id}>
+              <tbody key={HRate._id}>
                 <tr>
                   <td>
                     <div className="flex items-center gap-1 sm:gap-3">
@@ -68,15 +72,6 @@ const GameWatchList = () => {
                     </span>
                   </td>
                   <td>{HRate.genre || HRate.Genres}</td>
-                  <th>
-                    <button className="btn btn-xs sm:btn-md">Update</button>
-                  </th>
-                  <th>
-                    <button className="btn btn-xs sm:btn-md">
-                      {/* Replace with icon import */}
-                      Delete
-                    </button>
-                  </th>
                 </tr>
               </tbody>
             ))}

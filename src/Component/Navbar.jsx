@@ -5,7 +5,8 @@ import { AuthContext } from './AuthProvider/AuthProvider';
 import { signOut } from 'firebase/auth';
 import auth from '../Firebase/Firebase.init';
 import { toast } from 'react-toastify';
-
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 
 
 
@@ -114,7 +115,7 @@ const Navbar = () => {
                                 <Link to='/' className='text-2xl font-bold'>Home</Link>
                             </li>
                             <li>
-                                <Link to='/addReview' className='text-2xl font-bold'>All Reviews</Link>
+                            <Link to='/reviews' className='text-2xl font-bold'>All Reviews</Link>
                             </li>
                         </ul>
                         )}
@@ -158,7 +159,9 @@ const Navbar = () => {
                                                 </div>
                                             )}
                                         </div>
-                                        <button onClick={handleLogout} className="btn">Log out</button>
+                                        <button onClick={handleLogout} className="btn">
+                                            Log out
+                                        </button>
                                     </div>
                                 </div>
                                 ) : (

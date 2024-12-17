@@ -3,10 +3,13 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { AuthContext } from './AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext);
     const [genre, setGenre] = useState(''); // Genre state
+    const navigate = useNavigate();
+
 
     const handleAddReview = event => {
         event.preventDefault();
@@ -29,7 +32,7 @@ const AddReview = () => {
         console.log(allData);
 
         // send data to the server
-        fetch('http://localhost:5022/add', {
+        fetch('https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -40,6 +43,7 @@ const AddReview = () => {
         .then((data) => {
             console.log(data);
             toast.success("Review added successfully!");
+            navigate('/myReviews');
         })
         .catch((error) => {
             console.error('Error:', error);

@@ -2,13 +2,21 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { FaTrashAlt } from "react-icons/fa";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 
 const MyReviews = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+// Update Reviews page
+const navigate = useNavigate();
+const handleUpdate = (HRate) => {
+    navigate(`/updateReview/${HRate.id}`, { state: HRate }); 
+};
+  
   useEffect(() => {
-    fetch("http://localhost:5022/datas")
+    fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/datas")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -20,10 +28,40 @@ const MyReviews = () => {
       });
   }, []);
 
-
+  const handleDelete = id => {
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this data!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        fetch(`https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/user/${id}`, {
+          method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(result => {
+          if (result.deletedCount > 0) {
+            swal("Deleted!", "Your data has been deleted.", "success");
+            const remainingData = data.filter(HRate => HRate._id !== id);
+            setData(remainingData);
+          }
+        })
+        .catch(error => {
+          console.error('Error deleting data:', error);
+        });
+      }
+    });
+  };
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex flex-col items-center">
+        <span className="loading loading-ring loading-lg"></span>
+      </div>
+    );
   }
 
   return (
@@ -41,7 +79,7 @@ const MyReviews = () => {
               </tr>
             </thead>
             {data.map((HRate) => (
-              <tbody key={HRate._id || HRate.id}>
+              <tbody key={HRate._id}>
                 <tr>
                   <td>
                     <div className="flex items-center gap-1 sm:gap-3">
@@ -70,11 +108,14 @@ const MyReviews = () => {
                   </td>
                   <td>{HRate.genre || HRate.Genres}</td>
                   <th>
-                    <button className="btn btn-xs sm:btn-md">Update</button>
+                    <button className="btn btn-xs sm:btn-md"
+                    onClick={() => handleUpdate(HRate)}>Update</button>
                   </th>
                   <th>
-                    <button className="btn btn-xs sm:btn-md">
-                      {/* Replace with icon import */}
+                    <button 
+                      className="btn btn-xs sm:btn-md"
+                      onClick={() => handleDelete(HRate._id)}
+                    >
                       Delete
                     </button>
                   </th>
@@ -90,3 +131,4 @@ const MyReviews = () => {
 };
 
 export default MyReviews;
+

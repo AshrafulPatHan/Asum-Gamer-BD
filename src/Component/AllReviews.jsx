@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import CardApi from '../card.json';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from "./AuthProvider/AuthProvider";
 
 
 const AllReviews = () => {
     const [all, setAll] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
+    const { user } = useContext(AuthContext);
+
 
 // go detils page
     const navigate = useNavigate();
         const handleExploreDetails = (All) => {
-          navigate(`/review/${All.id}`, { state: All }); 
-    };
+            navigate(`/review/${All.id}`, { state: All }); 
+        };
     
 // fetch data
     useEffect(() => {
-        fetch("http://localhost:5022/alldata")
+        fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/alldata")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);
@@ -29,8 +32,27 @@ const AllReviews = () => {
         });
     }, []);
 
+
+// fetch user add 
+
+  useEffect(() => {
+    fetch("https://server-jaeaca43e-ashraful-pathan-4d398455.vercel.app/datas")
+      .then((res) => res.json())
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      });
+  }, []);
+
+
     if (loading) {
-        return <div>Loading...</div>;
+        return <div className="flex flex-col items-center my-36">
+        <span className="loading loading-ring loading-lg"></span>
+        </div>;
     }
 
 
@@ -66,6 +88,33 @@ const AllReviews = () => {
                         ))
                     }
                 </div>
+                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
+                    {
+                        data.map(All => (
+                            <div key={All.id}>
+                                <div className="card bg-base-100 my-4 w-[300px] md:w-96 shadow-xl">
+                                    <figure>
+                                        <img
+                                            className='h-[260px]'
+                                            src={All.Image}
+                                            alt="Shoes" />
+                                    </figure>
+                                    <div className="card-body">
+                                        <h2 className="card-title">{All.name}</h2>
+                                        <p className='font-bold'>{All.Hading}</p>
+                                        <p>{All.Description}</p>
+                                        <p>Rating {All.Rating}⭐</p>
+                                        <div className="card-actions justify-end">
+                                            <button className="btn btn-primary"
+                                            onClick={() => handleExploreDetails(All)}>Explore Details</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+                
             </div>
             <Footer/>
         </div>
