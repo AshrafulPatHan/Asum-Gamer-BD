@@ -32,7 +32,7 @@ function App() {
     { path: "/myWatchlist", element: <Privaterout><GameWatchList  /></Privaterout> },
     { path: "/Login", element: <Login  /> },
     { path: "/Registration", element: <Registration  /> },
-    { path: "/updateReview/:id", element: <UpdateReview /> },
+    { path: "/updateReview/:id", element: <Privaterout><UpdateReview /></Privaterout> },
     { path: "/review/:id", element: <Details  /> },
     { path: "/Play", element: <Play /> },
     { path: "*", element: <Error /> },

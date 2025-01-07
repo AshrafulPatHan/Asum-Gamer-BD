@@ -88,7 +88,7 @@ const Navbar = () => {
                         {/* company name */}
                         <div className='flex flex-col sm:flex-row items-center'>
                             <img src={Logo} alt="image" className='w-[50px] sm:w-[70px] '/>
-                            <p className="text-sm font-bold sm:text-xl hidden md:font-bold">technobloger</p>
+                            <p className="text-sm font-bold sm:text-xl hidden md:flex md:font-bold">Chill Gamer</p>
                         </div>
                     </div>
                     {/* navigation */}

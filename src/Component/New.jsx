@@ -37,7 +37,7 @@ const New = () => {
                         ></iframe>
                     </div>
                 </div>
-                <form className='flex flex-col md:flex-row items-center mt-4 gap-1 md:gap-4' onSubmit={handelcoment}>
+                {/* <form className='flex flex-col md:flex-row items-center mt-4 gap-1 md:gap-4' onSubmit={handelcoment}>
                     <button 
                         onClick={() => setLike(!Like)}
                         type="button"
@@ -56,7 +56,7 @@ const New = () => {
                         <h4 className='text-xl text-sky-400  '>Comants : </h4>
                         <p className=' text-xl '>
                         {comantxt}</p>
-                    </div>
+                    </div> */}
             </div>
         </div>
     );
