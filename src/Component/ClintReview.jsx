@@ -13,7 +13,7 @@ const handleExploreDetails = (All) => {
 
 
     useEffect(() => {
-        fetch("https://server-ap.vercel.app/datas")
+        fetch("https://server-op-production.up.railway.app/datas")
           .then((res) => res.json())
           .then((data) => {
             setData(data);

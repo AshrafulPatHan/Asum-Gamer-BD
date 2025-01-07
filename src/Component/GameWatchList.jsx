@@ -8,7 +8,7 @@ const GameWatchList = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://server-ap.vercel.app/watchListsdata")
+    fetch("https://server-op-production.up.railway.app/watchListsdata")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

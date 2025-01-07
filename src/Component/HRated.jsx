@@ -15,7 +15,7 @@ const HRated = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://server-ap.vercel.app/limited-data")
+        fetch("https://server-op-production.up.railway.app/limited-data")
         .then((res) => res.json())
         .then((data) => {
             setHRate(data);

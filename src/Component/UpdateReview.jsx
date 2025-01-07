@@ -45,7 +45,7 @@ const UpdateReview = () => {
         const { _id: id } = cardData; // Get ID from cardData
 
         // send data to the server
-        fetch(`https://server-ap.vercel.app/up/${id}`, {
+        fetch(`https://server-op-production.up.railway.app/up/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -66,6 +66,7 @@ const UpdateReview = () => {
         });
     };
 
+//Loading
     if (loading) {
         return (
           <div className="flex flex-col items-center">

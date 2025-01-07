@@ -19,7 +19,7 @@ const AllReviews = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://server-ap.vercel.app/alldata")
+        fetch("https://server-op-production.up.railway.app/alldata")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);
