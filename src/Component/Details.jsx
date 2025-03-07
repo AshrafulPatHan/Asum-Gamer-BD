@@ -17,7 +17,7 @@ const Details = () => {
     }, [locationData]);
     // Add WatchList
     const handleWatchList = () => {
-        fetch('https://server-op-production.up.railway.app/watchLists', {
+        fetch('https://chill-gamer-server-jade.vercel.app/watchLists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

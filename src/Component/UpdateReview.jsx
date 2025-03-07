@@ -45,7 +45,7 @@ const UpdateReview = () => {
         const { _id: id } = cardData; // Get ID from cardData
 
         // send data to the server
-        fetch(`https://server-op-production.up.railway.app/up/${id}`, {
+        fetch(`https://chill-gamer-server-jade.vercel.app/up/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

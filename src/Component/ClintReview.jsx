@@ -13,7 +13,7 @@ const handleExploreDetails = (All) => {
 
 
     useEffect(() => {
-        fetch("https://server-op-production.up.railway.app/datas")
+        fetch("https://chill-gamer-server-jade.vercel.app/datas")
           .then((res) => res.json())
           .then((data) => {
             setData(data);

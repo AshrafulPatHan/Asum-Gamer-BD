@@ -32,7 +32,7 @@ const AddReview = () => {
         console.log(allData);
 
         // send data to the server
-        fetch('https://server-op-production.up.railway.app/add', {
+        fetch('https://chill-gamer-server-jade.vercel.app/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
