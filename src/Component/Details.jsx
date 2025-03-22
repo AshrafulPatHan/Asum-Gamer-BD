@@ -17,7 +17,7 @@ const Details = () => {
     }, [locationData]);
     // Add WatchList
     const handleWatchList = () => {
-        fetch('https://chill-gamer-serverjzl0.onrender.com/watchLists', {
+        fetch('https://chill-gamer-server-jzl0.onrender.com/watchLists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
