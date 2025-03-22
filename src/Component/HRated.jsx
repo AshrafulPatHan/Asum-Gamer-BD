@@ -15,7 +15,7 @@ const HRated = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://chill-gamer-server-jade.vercel.app/limited-data")
+        fetch("https://chill-gamer-serverjzl0.onrender.com/limited-data")
         .then((res) => res.json())
         .then((data) => {
             setHRate(data);

@@ -13,7 +13,7 @@ const handleExploreDetails = (All) => {
 
 
     useEffect(() => {
-        fetch("https://chill-gamer-server-jade.vercel.app/datas")
+        fetch("https://chill-gamer-serverjzl0.onrender.com/datas")
           .then((res) => res.json())
           .then((data) => {
             setData(data);

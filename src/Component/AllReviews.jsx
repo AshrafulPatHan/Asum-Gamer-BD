@@ -19,7 +19,7 @@ const AllReviews = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://chill-gamer-server-jade.vercel.app/alldata")
+        fetch("https://chill-gamer-serverjzl0.onrender.com/alldata")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);

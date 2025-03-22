@@ -16,7 +16,7 @@ const handleUpdate = (HRate) => {
 };
   
   useEffect(() => {
-    fetch("https://chill-gamer-server-jade.vercel.app/datas")
+    fetch("https://chill-gamer-serverjzl0.onrender.com/datas")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -38,7 +38,7 @@ const handleUpdate = (HRate) => {
     })
     .then((willDelete) => {
       if (willDelete) {
-        fetch(`https://chill-gamer-server-jade.vercel.app/user/${id}`, {
+        fetch(`https://chill-gamer-serverjzl0.onrender.com/user/${id}`, {
           method: 'DELETE',
         })
         .then(res => res.json())
