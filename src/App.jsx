@@ -7,18 +7,18 @@ import { Bounce } from 'react-toastify';
 import Home from './Component/home/Home';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import AllReviews from './Component/AllReviews';
-import AddReview from './Component/AddReview';
-import MyReviews from './Component/MyReviews';
-import GameWatchList from './Component/GameWatchList';
+import AllReviews from './Component/page/AllReviews';
+import AddReview from './Component/page/AddReview';
+import MyReviews from './Component/page/MyReviews';
+import GameWatchList from './Component/page/GameWatchList';
 import Error from './Component/Error';
 import Login from './Component/auth/Login';
 import Registration from './Component/auth/Registration';
-import UpdateReview from './Component/UpdateReview'
+import UpdateReview from './Component/page/UpdateReview'
 import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';
 import Play from './Component/Play';
-import Details from './Component/Details';
+import Details from './Component/page/dynamic-page/Details';
 import { Typewriter } from 'react-simple-typewriter';
 
 

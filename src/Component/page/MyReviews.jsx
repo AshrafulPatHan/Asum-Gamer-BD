@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./navigation/Navbar";
-import Footer from "./navigation/Footer";
+import Navbar from "../navigation/Navbar";
+import Footer from "../navigation/Footer";
+import { FaTrashAlt } from "react-icons/fa";
 import swal from 'sweetalert';
+import { useNavigate } from "react-router-dom";
 
-const GameWatchList = () => {
+const MyReviews = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+// Update Reviews page
+const navigate = useNavigate();
+const handleUpdate = (HRate) => {
+    navigate(`/updateReview/${HRate.id}`, { state: HRate }); 
+};
+  
   useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/watchListsdata")
+    fetch("https://chill-gamer-server-jzl0.onrender.com/datas")
       .then((res) => res.json())
       .then((data) => {
         setData(data);
@@ -20,12 +28,38 @@ const GameWatchList = () => {
       });
   }, []);
 
-
+  const handleDelete = id => {
+    swal({
+      title: "Are you sure?",
+      text: "You will not be able to recover this data!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        fetch(`https://chill-gamer-server-jzl0.onrender.com/user/${id}`, {
+          method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(result => {
+          if (result.deletedCount > 0) {
+            swal("Deleted!", "Your data has been deleted.", "success");
+            const remainingData = data.filter(HRate => HRate._id !== id);
+            setData(remainingData);
+          }
+        })
+        .catch(error => {
+          console.error('Error deleting data:', error);
+        });
+      }
+    });
+  };
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center mt-20">
-        <span className="loading loading-bars loading-lg"></span>
+      <div className="flex flex-col items-center">
+        <span className="loading loading-ring loading-lg"></span>
       </div>
     );
   }
@@ -41,6 +75,7 @@ const GameWatchList = () => {
                 <th>Name</th>
                 <th>Rating</th>
                 <th>Genre</th>
+                <th>Update/Delete</th>
               </tr>
             </thead>
             {data.map((HRate) => (
@@ -72,6 +107,18 @@ const GameWatchList = () => {
                     </span>
                   </td>
                   <td>{HRate.genre || HRate.Genres}</td>
+                  <th>
+                    <button className="btn btn-xs sm:btn-md"
+                    onClick={() => handleUpdate(HRate)}>Update</button>
+                  </th>
+                  <th>
+                    <button 
+                      className="btn btn-xs sm:btn-md"
+                      onClick={() => handleDelete(HRate._id)}
+                    >
+                      Delete
+                    </button>
+                  </th>
                 </tr>
               </tbody>
             ))}
@@ -83,4 +130,5 @@ const GameWatchList = () => {
   );
 };
 
-export default GameWatchList;
+export default MyReviews;
+

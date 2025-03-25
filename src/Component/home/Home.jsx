@@ -6,13 +6,11 @@ import BanerSlider from './BanerSlider';
 import HRated from './HRated';
 import { Link, useLoaderData } from 'react-router-dom';
 import Play from '../Play';
-import New from '../New';
+import New from './New';
 import DonLink from './DonLink';
 import Hero from './Hero';
 
 const Home = () => {
-
-
 
 
     return (

@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Navbar from './navigation/Navbar';
-import Footer from './navigation/Footer';
-import { AuthContext } from './AuthProvider/AuthProvider';
+import Navbar from '../navigation/Navbar';
+import Footer from '../navigation/Footer';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useLocation, useNavigate } from 'react-router-dom';
 

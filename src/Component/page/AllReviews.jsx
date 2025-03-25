@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Navbar from './navigation/Navbar';
-import Footer from './navigation/Footer';
+import Navbar from '../navigation/Navbar';
+import Footer from '../navigation/Footer';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from "./AuthProvider/AuthProvider";
-import ClintReview from './ClintReview';
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import ClintReview from '../ClintReview';
 
 const AllReviews = () => {
     const [all, setAll] = useState([]);

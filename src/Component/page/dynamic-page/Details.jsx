@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import Navbar from "./navigation/Navbar";
-import Footer from "./navigation/Footer";
+import Navbar from "../../navigation/Navbar";
+import Footer from "../../navigation/Footer";
 import { toast } from "react-toastify";
-import { AuthContext } from "./AuthProvider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Details = () => {
     const { state: locationData } = useLocation(); 

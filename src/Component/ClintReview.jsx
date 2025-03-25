@@ -14,18 +14,18 @@ const handleExploreDetails = (All) => {
 
     useEffect(() => {
         fetch("https://chill-gamer-server-jzl0.onrender.com/datas")
-          .then((res) => res.json())
-          .then((data) => {
+            .then((res) => res.json())
+            .then((data) => {
             setData(data);
             setLoading(false);
-          })
-          .catch((error) => {
+            })
+            .catch((error) => {
             console.error("Error fetching data:", error);
             setLoading(false);
-          });
-      }, []);
+            });
+        }, []);
 
-      if (loading) {
+        if (loading) {
         return <div className="flex flex-col items-center my-36">
         <span className="loading loading-ring loading-lg"></span>
         </div>;
