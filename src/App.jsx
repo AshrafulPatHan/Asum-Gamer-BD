@@ -17,7 +17,6 @@ import Registration from './Component/auth/Registration';
 import UpdateReview from './Component/page/UpdateReview'
 import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';
-import Play from './Component/Play';
 import Details from './Component/page/dynamic-page/Details';
 import { Typewriter } from 'react-simple-typewriter';
 
@@ -34,7 +33,6 @@ function App() {
     { path: "/Registration", element: <Registration  /> },
     { path: "/updateReview/:id", element: <Privaterout><UpdateReview /></Privaterout> },
     { path: "/review/:id", element: <Details  /> },
-    { path: "/Play", element: <Play /> },
     { path: "*", element: <Error /> },
 ]);
 

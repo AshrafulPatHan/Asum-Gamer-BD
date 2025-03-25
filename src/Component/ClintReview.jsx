@@ -33,32 +33,32 @@ const handleExploreDetails = (All) => {
 
     return (
         <div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
-                    {
-                        data.map(All => (
-                            <div key={All.id}>
-                                <div className="card bg-base-100 my-4 w-[300px] md:w-96 shadow-xl">
-                                    <figure>
-                                        <img
-                                            className='h-[260px]'
-                                            src={All.Image}
-                                            alt="Shoes" />
-                                    </figure>
-                                    <div className="card-body">
-                                        <h2 className="card-title">{All.name}</h2>
-                                        <p className='font-bold'>{All.Hading}</p>
-                                        <p>{All.Description}</p>
-                                        <p>Rating {All.Rating}⭐</p>
-                                        <div className="card-actions justify-end">
-                                            <button className="btn btn-primary"
-                                            onClick={() => handleExploreDetails(All)}>Explore Details</button>
-                                        </div>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
+                {
+                    data.map(All => (
+                        <div key={All.id}>
+                            <div className="card bg-base-100 my-4 w-[300px] md:w-96 shadow-xl">
+                                <figure>
+                                    <img
+                                        className='h-[260px]'
+                                        src={All.Image}
+                                        alt="Shoes" />
+                                </figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{All.name}</h2>
+                                    <p className='font-bold'>{All.Hading}</p>
+                                    <p>{All.Description}</p>
+                                    <p>Rating {All.Rating}⭐</p>
+                                    <div className="card-actions justify-end">
+                                        <button className="btn btn-primary"
+                                        onClick={() => handleExploreDetails(All)}>Explore Details</button>
                                     </div>
                                 </div>
                             </div>
-                        ))
-                    }
-                </div>
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 };

@@ -5,10 +5,7 @@ import Footer from '../navigation/Footer';
 import BanerSlider from './BanerSlider';
 import HRated from './HRated';
 import { Link, useLoaderData } from 'react-router-dom';
-import Play from '../Play';
-import New from './New';
 import DonLink from './DonLink';
-import Hero from './Hero';
 
 const Home = () => {
 
@@ -19,8 +16,6 @@ const Home = () => {
                 <Navbar />
                 <BanerSlider/>
                 <HRated/>
-                <Hero/>
-                <New/>
                 <DonLink/>
                 <Footer/>
             </div>
