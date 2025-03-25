@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './navigation/Navbar';
+import Footer from './navigation/Footer';
 import { AuthContext } from './AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';

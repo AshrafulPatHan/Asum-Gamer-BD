@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
+import Navbar from "./navigation/Navbar";
+import Footer from "./navigation/Footer";
 import { FaTrashAlt } from "react-icons/fa";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";

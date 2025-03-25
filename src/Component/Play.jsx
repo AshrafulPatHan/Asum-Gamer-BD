@@ -1,7 +1,7 @@
 import React from 'react';
 import Game from './Game';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './navigation/Navbar';
+import Footer from './navigation/Footer';
 
 const Play = () => {
     return (

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Navbar from './Navbar';
-import Footer from './Footer';
+import Navbar from './navigation/Navbar';
+import Footer from './navigation/Footer';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "./AuthProvider/AuthProvider";
 import ClintReview from './ClintReview';

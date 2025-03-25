@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Bounce } from 'react-toastify';
-import Home from './Component/Home';
+import Home from './Component/home/Home';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AllReviews from './Component/AllReviews';
@@ -12,8 +12,8 @@ import AddReview from './Component/AddReview';
 import MyReviews from './Component/MyReviews';
 import GameWatchList from './Component/GameWatchList';
 import Error from './Component/Error';
-import Login from './Component/Login';
-import Registration from './Component/Registration';
+import Login from './Component/auth/Login';
+import Registration from './Component/auth/Registration';
 import UpdateReview from './Component/UpdateReview'
 import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';

@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
-import Logo from '../assets/Game logo.png'
+import Logo from '../../assets/Game logo.png'
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from './AuthProvider/AuthProvider';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 import { signOut } from 'firebase/auth';
-import auth from '../Firebase/Firebase.init';
+import auth from '../../Firebase/Firebase.init';
 import { toast } from 'react-toastify';
 import { Tooltip } from 'react-tooltip'
 import 'react-tooltip/dist/react-tooltip.css'
