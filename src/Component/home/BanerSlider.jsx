@@ -3,13 +3,16 @@ import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "./slider.css"; 
+
 
 const BanerSlider = () => {
     const settings = {
         dots: true,
+        arrows: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 2000,
@@ -17,13 +20,13 @@ const BanerSlider = () => {
             {
                 breakpoint: 1724, 
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                 },
             },
             {
                 breakpoint: 1024, 
                 settings: {
-                    slidesToShow: 2,
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                 },
             },
@@ -36,49 +39,67 @@ const BanerSlider = () => {
         ],
     };
     return (
-        <div className="flex flex-col items-center justify-center my-5 px-4">
-            <div className='w-[80%]  ' >
+        <div className="flex flex-col items-center justify-center mb-5 relative ">
+            <div className='w-[90%] relative ' >
                 <Slider {...settings}>
-                    <div className="p-3">
-                        <div className='flex flex-col items-start bg-sky-300  p-2 sm:p-4 rounded-2xl '>
-                            <img src="https://i.ibb.co.com/L0Zqk7c/2x1-NSwitch-Minecraft-image1600w.jpg" alt="minecraft"
-                            className="w-full h-[250px] md:h-[300px] rounded-xl object-cover " />
-                            <h2 className='text-2xl font-bold'>Minecraft</h2>
-                            <p className='text-base font-bold'>Creativity has no limite</p>
-                            <p>Rating</p>
-                        </div>
-                    </div>
-                    <div className="p-3">
-                        <div className='flex flex-col items-start bg-sky-300  p-2 sm:p-4 rounded-2xl '>
-                            <img
-                                src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg"
-                                className="w-full h-[250px] md:h-[300px] rounded-xl object-cover "
+                    <div >
+                        <div className="card  image-full w-[80vw]  ">
+                            <figure>
+                                <img
+                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
+                                alt="photo"
+                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
                                 />
-                                <h2 className='text-2xl font-bold'>Microsoft Flite Semolater</h2>
-                                <p className='text-base font-bold'>flay and go any ware</p>
-                                <p>Rating</p>
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Copilot</h2>
+                                <p>Copilot is free AI chat bot and toll</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="p-3">
-                        <div className='flex flex-col items-start bg-sky-300  p-2 sm:p-4 rounded-2xl '>
-                            <img
-                            src="https://i.ibb.co.com/4p1NnBY/gsmarena-001.jpg"
-                            className="w-full h-[250px] md:h-[300px] rounded-xl object-cover "
-                            />
-                            <h2 className='text-2xl font-bold'>Asphalt</h2>
-                            <p className='text-base font-bold'>go Race for wine</p>
-                            <p>Rating</p>
+                    <div>
+                        <div className="card  image-full w-[80vw]  ">
+                            <figure>
+                                <img
+                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
+                                alt="photo"
+                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Copilot</h2>
+                                <p>Copilot is free AI chat bot and toll</p>
+                            </div>
                         </div>
                     </div>
-                    <div className="p-3">
-                        <div className='flex flex-col items-start bg-sky-300  p-2 sm:p-4 rounded-2xl '>
-                            <img
-                            src="https://i.ibb.co.com/1816Csg/23-1024x576.webp"
-                            className="w-full h-[250px] md:h-[300px] rounded-xl object-cover "
-                            />
-                            <h2 className='text-2xl font-bold'>GTA-5</h2>
-                            <p className='text-base font-bold'>Do anything you can image</p>
-                            <p>Rating</p>
+                    <div>
+                        <div className="card  image-full w-[80vw]  ">
+                            <figure>
+                                <img
+                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
+                                alt="photo"
+                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Copilot</h2>
+                                <p>Copilot is free AI chat bot and toll</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div className="card  image-full w-[80vw]  ">
+                            <figure>
+                                <img
+                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
+                                alt="photo"
+                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
+                                />
+                            </figure>
+                            <div className="card-body">
+                                <h2 className="card-title">Copilot</h2>
+                                <p>Copilot is free AI chat bot and toll</p>
+                            </div>
                         </div>
                     </div>
                 </Slider>
