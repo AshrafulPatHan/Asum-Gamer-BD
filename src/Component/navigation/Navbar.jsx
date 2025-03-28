@@ -95,28 +95,26 @@ const Navbar = () => {
                     <div className="navbar-center hidden lg:flex">
                         {user ? (
                             <div className=' flex lg:flex-col lg:items-center xl:flex-row items-center'>
-                                <div className='flex flex-row gap-2'>
-                                    <Link to='/' className=' text-xl p-2 text-green-400 rounded-md hover:bg-green-100 font-bold'>
+                                <ul className=' flex flex-row gap-2'>
+                                    <Link to='/' className=' text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     Home
                                     </Link>
-                                    <Link to='/reviews' className=' text-xl p-2 text-green-400 rounded-md hover:bg-green-100 font-bold'>
+                                    <Link to='/reviews' className=' text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     AllReviews 
                                     </Link>
-                                </div>
-                                <div className='flex flex-row gap-2'>
-                                    <Link to='/myReviews' className=' text-xl p-2 text-green-400 rounded-md hover:bg-green-100 font-bold'>
+                                    <Link to='/myReviews' className=' text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My Reviews
                                     </Link>
-                                    <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md hover:bg-green-100 font-bold'>
+                                    <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     Add Review
                                     </Link>
-                                    <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md hover:bg-green-100 font-bold'>
+                                    <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     GameWatchList
                                     </Link>
-                                </div>
+                                </ul>
                             </div>
                         ) : (
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="flex flex-row px-1">
                             <Link to='/' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
                                 Home
                             </Link>
