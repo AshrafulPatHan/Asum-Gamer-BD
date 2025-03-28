@@ -80,15 +80,15 @@ const Navbar = () => {
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                 <li><Link Link to='/'>Home</Link></li>
                                 <li>
-                                <Link to='/addReview'>AddReview</Link>
+                                <Link to='/reviews'>AllReviews</Link>
                                 </li>
                             </ul>
                         )}
                         </div>
                         {/* company name */}
-                        <div className='flex flex-col sm:flex-row items-center'>
-                            <img src={Logo} alt="logo" className='w-[30px] sm:w-[45px] '/>
-                            <p className="text-sm font-bold sm:text-xl hidden md:flex md:font-bold">asum gamer bd</p>
+                        <div className='flex flex-row items-center'>
+                            <img src={Logo} alt="logo" className='w-[45px] '/>
+                            <p className="text-sm font-bold sm:text-xl ml-2 hidden md:flex md:font-bold">Asum Gamer BD</p>
                         </div>
                     </div>
                     {/* navigation */}
@@ -117,12 +117,12 @@ const Navbar = () => {
                             </div>
                         ) : (
                         <ul className="menu menu-horizontal px-1">
-                            <li>
-                                <Link to='/' className='text-2xl text-green-400 font-bold'>Home</Link>
-                            </li>
-                            <li>
-                            <Link to='/reviews' className='text-2xl text-green-400 font-bold'>AllReviews</Link>
-                            </li>
+                            <Link to='/' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
+                                Home
+                            </Link>
+                            <Link to='/reviews' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                AllReviews
+                            </Link>
                         </ul>
                         )}
                     </div>
@@ -166,7 +166,7 @@ const Navbar = () => {
                             {/* moon icon */}
                             <IoMdCloudyNight className="swap-on h-10 w-10 fill-current"/>
                         </label>
-                        {/* user in desktop */}
+                        {/* user in desktop and  */}
                         <div className='hidden lg:flex'>
                             <div className='flex flex-col items-center sm:flex  sm:flex-row sm:items-center '>
                                 {user ? (
@@ -187,9 +187,10 @@ const Navbar = () => {
                                         </div>
                                     </div>
                                     ) : (
+                                        // not login
                                     <div className="flex flex-row items-center gap-1">
-                                        <Link to='/Login' className="btn text-sm sm:text-xl ">Login</Link>
-                                        <Link to='/Registration' className="btn text-sm sm:text-xl ">Register</Link>
+                                        <Link to='/Login' className="btn  text-sky-600 ">Login</Link>
+                                        <Link to='/Registration' className="btn  text-sky-600 ">Register</Link>
                                     </div>
                                 )}
                             </div>
