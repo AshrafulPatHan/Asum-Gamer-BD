@@ -39,66 +39,63 @@ const BanerSlider = () => {
         ],
     };
     return (
-        <div className="flex flex-col items-center justify-center mb-5 relative ">
-            <div className='w-[90%] relative ' >
-                <Slider {...settings}>
-                    <div >
-                        <div className="card  image-full w-[80vw]  ">
-                            <figure>
-                                <img
-                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
-                                alt="photo"
-                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Copilot</h2>
-                                <p>Copilot is free AI chat bot and toll</p>
+        <div className="flex flex-col items-center justify-center mb-5 relative  ">
+            <div className='w-full ' >
+                <Slider {...settings} className='flex flex-row items-center gap-0'>
+                    <div className=' ' >
+                        <div
+                        className="hero min-h-screen"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/L0Zqk7c/2x1-NSwitch-Minecraft-image1600w.jpg)",
+                        }}>
+                        <div className="hero-overlay"></div>
+                            <div className="hero-content text-neutral-content text-center">
+                                <div className="max-w-md">
+                                    <h1 className="mb-5 text-5xl font-bold">Minecraft</h1>
+                                    <p className="mb-5">
+                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                    </p>
+                                    <button className="btn btn-primary">Get Started</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="card  image-full w-[80vw]  ">
-                            <figure>
-                                <img
-                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
-                                alt="photo"
-                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Copilot</h2>
-                                <p>Copilot is free AI chat bot and toll</p>
+                    <div className='  '>
+                        <div
+                        className="hero min-h-screen"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg)",
+                        }}>
+                        <div className="hero-overlay"></div>
+                            <div className="hero-content text-neutral-content text-center">
+                                <div className="max-w-md">
+                                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                                    <p className="mb-5">
+                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                    </p>
+                                    <button className="btn btn-primary">Get Started</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div className="card  image-full w-[80vw]  ">
-                            <figure>
-                                <img
-                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
-                                alt="photo"
-                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Copilot</h2>
-                                <p>Copilot is free AI chat bot and toll</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div className="card  image-full w-[80vw]  ">
-                            <figure>
-                                <img
-                                src="https://i.ibb.co.com/PFr1bSG/Copilot-studio-Obalka.jpg"
-                                alt="photo"
-                                className="w-[80vw] h-[250px] md:h-[300px] rounded-xl object-cover "
-                                />
-                            </figure>
-                            <div className="card-body">
-                                <h2 className="card-title">Copilot</h2>
-                                <p>Copilot is free AI chat bot and toll</p>
+                    <div className='  '>
+                        <div
+                        className="hero min-h-screen"
+                        style={{
+                            backgroundImage: "url(https://i.ibb.co.com/4p1NnBY/gsmarena-001.jpg)",
+                        }}>
+                        <div className="hero-overlay"></div>
+                            <div className="hero-content text-neutral-content text-center">
+                                <div className="max-w-md">
+                                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
+                                    <p className="mb-5">
+                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
+                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                    </p>
+                                    <button className="btn btn-primary">Get Started</button>
+                                </div>
                             </div>
                         </div>
                     </div>
