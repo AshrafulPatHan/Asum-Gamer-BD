@@ -107,6 +107,17 @@ const BanerSlider = () => {
             >
                 All Reviews
             </Link>
+            <div className='mt-24'>
+                <p>video</p>
+                <video
+                className="w-full h-auto object-cover pointer-events-none"
+                src="https://drive.google.com/file/d/1zhDeov780pkfOe9mzOjnvSpBVNyWM956/view?usp=sharing"
+                autoPlay
+                loop
+                muted
+                playsInline
+                />
+            </div>
         </div>
     );
 };
