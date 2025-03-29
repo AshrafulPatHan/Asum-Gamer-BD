@@ -37,7 +37,7 @@ function App() {
 ]);
 
   return (
-    <>
+    <div className='bg-[#000000] dark:bg-white'>
         <AuthProvider>
       <RouterProvider router={router} />
       <ToastContainer
@@ -54,7 +54,7 @@ function App() {
       transition: Bounce
       />
       </AuthProvider>
-    </>
+    </div>
   )
 }
 

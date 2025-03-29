@@ -31,13 +31,21 @@ const Navbar = () => {
         };
         const [showTooltip, setShowTooltip] = useState(false);
 
-        const [theme, setTheme] = useState('light'); 
-
-        const toggleTheme = () => {
-        const newTheme = theme === 'light' ? 'dark' : 'light';
-        setTheme(newTheme);
-        document.documentElement.setAttribute('data-theme', newTheme);
-        };
+    // chang mode
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    useEffect(() => {
+    if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+    } else {
+        document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+    }, [theme]);
+    
+    const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+    };
+    
 
 
 
@@ -86,10 +94,10 @@ const Navbar = () => {
                         )}
                         </div>
                         {/* company name */}
-                        <div className='flex flex-row items-center'>
+                        <Link to='/' className='flex flex-row items-center'>
                             <img src={Logo} alt="logo" className='w-[45px] '/>
                             <p className="text-sm font-bold sm:text-xl ml-2 hidden md:flex md:font-bold">Asum Gamer BD</p>
-                        </div>
+                        </Link>
                     </div>
                     {/* navigation */}
                     <div className="navbar-center hidden lg:flex">
