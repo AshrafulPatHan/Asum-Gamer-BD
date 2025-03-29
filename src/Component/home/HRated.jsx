@@ -41,7 +41,7 @@ const HRated = () => {
                 {
                     hRate.map(HRate => (
                         <div key={HRate._id}>
-                            <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-white p-6 
+                            <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-[#ebe8e8] p-6 text-white dark:text-black
                             md:w-[350px] shadow-xl ">
                                 <img width={400} height={400} className="h-[275px] w-[350px] rounded-lg object-cover" 
                                 src={HRate.Image} alt="card navigate ui" />
@@ -49,14 +49,13 @@ const HRated = () => {
                                     <h1 className="text-xl font-semibold ">{HRate.name}</h1>
                                     <p className=" text-blue-500 text-lg ">{HRate.Hading}</p>
                                     <div className="text-lg font-semibold">
-                                        Rating {HRate.Rating} ⭐
+                                        Rating: {HRate.Rating} ⭐
                                     </div>
                                 </div>
                                 <div className="flex gap-4">
                                     <button 
                                     onClick={() => handleExploreDetails(HRate)}
-                                    className="rounded-md border border-black px-4 dark:border-white dark:hover:text-slate-800 
-                                    dark:hover:bg-white  py-2  duration-300 hover:bg-gray-200">
+                                    className="btn btn-active btn-accent">
                                         View Details
                                     </button>
                                 </div>

@@ -51,7 +51,7 @@ const Navbar = () => {
 
     return (
         <div className='sticky top-0 z-50'>
-            <div   style={{backgroundColor:"#FFFFFF80",}} >
+            <div className=" bg-[#000000] dark:bg-white "  style={{backgroundColor:"#FFFFFF80",}} >
                 <div className="navbar">
                     <div className="navbar-start">
                         {/* mobile dropdown */}
