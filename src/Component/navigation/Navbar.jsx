@@ -75,21 +75,23 @@ const Navbar = () => {
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                     <li><Link to='/'>Home</Link></li>
                                     <li>
-                                    <Link to='/addReview'>AddReview</Link>
+                                    <Link to='/addReview'>Add Review</Link>
                                     <ul className="p-2">
-                                        <li><Link to='/reviews'>AllReviews</Link></li>
-                                        <li><Link to='/myReviews'>MyReviews</Link></li>
+                                        <li><Link to='/reviews'>All Reviews</Link></li>
+                                        <li><Link to='/myReviews'>My Reviews</Link></li>
                                     </ul>
                                     </li>
-                                    <li><Link to='/myWatchlist'>GameWatchList</Link></li>
+                                    <li><Link to='/myWatchlist'>My WatchList</Link></li>
                                 </ul>
                         ) : (
                             <ul tabIndex={0}
                                 className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                                 <li><Link Link to='/'>Home</Link></li>
                                 <li>
-                                <Link to='/reviews'>AllReviews</Link>
+                                <Link to='/reviews'>All Reviews</Link>
                                 </li>
+                                <li><Link to='/addReview'>Add Review</Link></li>
+                                <li><Link to='/myWatchlist'>My WatchList</Link></li>
                             </ul>
                         )}
                         </div>
@@ -108,7 +110,7 @@ const Navbar = () => {
                                     Home
                                     </Link>
                                     <Link to='/reviews' className=' text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
-                                    AllReviews 
+                                    All Reviews 
                                     </Link>
                                     <Link to='/myReviews' className=' text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My Reviews
@@ -117,7 +119,7 @@ const Navbar = () => {
                                     Add Review
                                     </Link>
                                     <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
-                                    GameWatchList
+                                    My WatchList
                                     </Link>
                                 </ul>
                             </div>
@@ -127,7 +129,13 @@ const Navbar = () => {
                                 Home
                             </Link>
                             <Link to='/reviews' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
-                                AllReviews
+                                All Reviews
+                            </Link>
+                            <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                Add Review
+                            </Link>
+                            <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                My WatchList
                             </Link>
                         </ul>
                         )}

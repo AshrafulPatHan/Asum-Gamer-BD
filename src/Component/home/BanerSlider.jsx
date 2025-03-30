@@ -44,11 +44,11 @@ const BanerSlider = () => {
                 <Slider {...settings} className='flex flex-row items-center gap-0'>
                     <div>
                         <div
-                        className="hero min-h-screen relative"
+                        className="hero min-h-screen "
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/L0Zqk7c/2x1-NSwitch-Minecraft-image1600w.jpg)",
                         }}>
-                        <div className="hero-overlay"></div>
+                        <div className="hero-overlay "></div>
                             <div className="hero-content text-neutral-content text-center">
                                 <div className="max-w-md ">
                                     <h1 className=" text-5xl font-bold">Minecraft</h1>
