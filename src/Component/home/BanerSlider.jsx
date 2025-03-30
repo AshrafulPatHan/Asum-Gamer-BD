@@ -39,29 +39,27 @@ const BanerSlider = () => {
         ],
     };
     return (
-        <div className="flex flex-col items-center justify-center mb-5 relative  ">
+        <div className="flex flex-col items-center justify-center mb-5 ">
             <div className='w-full ' >
                 <Slider {...settings} className='flex flex-row items-center gap-0'>
-                    <div className=' ' >
+                    <div>
                         <div
-                        className="hero min-h-screen"
+                        className="hero min-h-screen relative"
                         style={{
                             backgroundImage: "url(https://i.ibb.co.com/L0Zqk7c/2x1-NSwitch-Minecraft-image1600w.jpg)",
                         }}>
                         <div className="hero-overlay"></div>
                             <div className="hero-content text-neutral-content text-center">
-                                <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">Minecraft</h1>
-                                    <p className="mb-5">
-                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                <div className="max-w-md ">
+                                    <h1 className=" text-5xl font-bold">Minecraft</h1>
+                                    <p className="mb-5 text-lg">
+                                    Creativity has no limit you can make anything you want
                                     </p>
-                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div className='  '>
+                    <div>
                         <div
                         className="hero min-h-screen"
                         style={{
@@ -70,12 +68,10 @@ const BanerSlider = () => {
                         <div className="hero-overlay"></div>
                             <div className="hero-content text-neutral-content text-center">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                                    <p className="mb-5">
-                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                    <h1 className=" text-5xl font-bold">Microsoft Flight Simulator</h1>
+                                    <p className="mb-5 text-lg">
+                                        Flay any ware you want ! sky is free and flay lick a bird
                                     </p>
-                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
@@ -89,12 +85,10 @@ const BanerSlider = () => {
                         <div className="hero-overlay"></div>
                             <div className="hero-content text-neutral-content text-center">
                                 <div className="max-w-md">
-                                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                                    <p className="mb-5">
-                                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                                    <h1 className=" text-5xl font-bold">Asphalt 8</h1>
+                                    <p className="mb-5 text-lg">
+                                        Win the race and earn coin in virtually for nothing
                                     </p>
-                                    <button className="btn btn-primary">Get Started</button>
                                 </div>
                             </div>
                         </div>
