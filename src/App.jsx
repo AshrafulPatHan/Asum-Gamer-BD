@@ -19,6 +19,8 @@ import AuthProvider from './Component/AuthProvider/AuthProvider'
 import Privaterout from './Component/Rout/Privaterout';
 import Details from './Component/page/dynamic-page/Details';
 import { Typewriter } from 'react-simple-typewriter';
+import Profile from './Component/page/Profile';
+import Setting from './Component/page/Setting';
 
 
 function App() {
@@ -29,9 +31,11 @@ function App() {
     { path: "/addReview", element: <Privaterout><AddReview /></Privaterout> },
     { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>},
     { path: "/myWatchlist", element: <Privaterout><GameWatchList  /></Privaterout> },
-    { path: "/Login", element: <Login  /> },
-    { path: "/Registration", element: <Registration  /> },
+    { path: "/login", element: <Login  /> },
+    { path: "/registration", element: <Registration  /> },
     { path: "/updateReview/:id", element: <Privaterout><UpdateReview /></Privaterout> },
+    { path: "/profile", element: <Privaterout><Profile /></Privaterout> },
+    { path: "/setting", element: <Privaterout><Setting /></Privaterout> },
     { path: "/review/:id", element: <Details  /> },
     { path: "*", element: <Error /> },
 ]);

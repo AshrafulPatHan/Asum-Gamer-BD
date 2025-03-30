@@ -158,6 +158,10 @@ const Navbar = () => {
                                                     onMouseLeave={() => setShowTooltip(false)} 
                                                 />
                                         </div>
+                                        <Link to='/profile' 
+                                        className='btn-sm bg-[#f0eded] border-2 border-slate-100  
+                                        text-blue-600 rounded-lg mb-2 mt-1 pt-1  '
+                                        >Profile</Link>
                                         <button onClick={handleLogout} className="btn text-sky-600">
                                             Log out
                                         </button>
@@ -165,9 +169,9 @@ const Navbar = () => {
                                 ) : (
                                     <ul tabIndex={0}
                                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-                                        <li><Link Link to='/Login' >Login</Link></li>
+                                        <li><Link Link to='/login' >Login</Link></li>
                                         <li>
-                                        <Link to='/Registration'>Registration</Link>
+                                        <Link to='/registration'>Registration</Link>
                                         </li>
                                     </ul>
                                 )}
@@ -186,14 +190,27 @@ const Navbar = () => {
                                 {user ? (
                                     <div >
                                         <div className='flex flex-row items-center gap-1 md:gap-2 '>
-                                            <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
-                                            <img
-                                                    src={user.photoURL || "default-avatar.png"}
-                                                    alt={user.displayName || "User"}
-                                                    className="w-8 md:w-10 h-8 md:h-10  rounded-full" 
-                                                    onMouseEnter={() => setShowTooltip(true)}
-                                                    onMouseLeave={() => setShowTooltip(false)} 
-                                                />
+                                            <div className=" tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
+                                                <div className='dropdown dropdown-end'>
+                                                    <div tabIndex={0} role="button">
+                                                        <img
+                                                            src={user.photoURL || "default-avatar.png"}
+                                                            alt={user.displayName || "User"}
+                                                            className="w-8 md:w-10 h-8 md:h-10  rounded-full" 
+                                                            onMouseEnter={() => setShowTooltip(true)}
+                                                            onMouseLeave={() => setShowTooltip(false)} 
+                                                        />
+                                                    </div>
+                                                    <div className='dropdown-content menu bg-base-100 border-2 
+                                                    rounded-md z-[1] w-52 p-2 shadow flex flex-col gap-1  '>
+                                                        <Link className='btn-md pt-3 bg-slate-300 rounded-md text-base' to='/profile'
+                                                        >Profile</Link>
+                                                        <Link className='btn-md pt-3 bg-slate-300 rounded-md text-base' to='/setting'
+                                                        >setting</Link>
+                                                    </div>
+                                                    
+                                                </div>
+                                                
                                             </div>
                                             <button onClick={handleLogout} className="btn text-sky-600">
                                                 Log out
@@ -203,8 +220,8 @@ const Navbar = () => {
                                     ) : (
                                         // not login
                                     <div className="flex flex-row items-center gap-1">
-                                        <Link to='/Login' className="btn  text-sky-600 ">Login</Link>
-                                        <Link to='/Registration' className="btn  text-sky-600 ">Register</Link>
+                                        <Link to='/login' className="btn  text-sky-600 ">Login</Link>
+                                        <Link to='/registration' className="btn  text-sky-600 ">Register</Link>
                                     </div>
                                 )}
                             </div>
