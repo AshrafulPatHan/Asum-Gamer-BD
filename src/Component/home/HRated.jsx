@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Typewriter } from 'react-simple-typewriter'
 
 
 const HRated = () => {
@@ -36,7 +35,6 @@ const HRated = () => {
     return (
         <div className='flex flex-col items-center'>
             <h2 className='text-4xl font-bold'>Highest Rated Game</h2>
-            <Typewriter words={['Discover', 'Rate', 'Enjoy!']} loop={5} cursor cursorStyle='_' typeSpeed={70} deleteSpeed={50} delaySpeed={1000} />
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-7'>
                 {
                     hRate.map(HRate => (
@@ -46,13 +44,15 @@ const HRated = () => {
                                 <img width={400} height={400} className="h-[275px] w-[350px] rounded-lg object-cover" 
                                 src={HRate.Image} alt="card navigate ui" />
                                 <div className="grid gap-2">
-                                    <h1 className="text-xl font-semibold ">{HRate.name}</h1>
-                                    <p className=" text-blue-500 text-lg ">{HRate.Hading}</p>
-                                    <div className="text-lg font-semibold">
-                                        Rating: {HRate.Rating} ⭐
+                                    <div className='flex justify-between'>
+                                        <h1 className="text-xl font-semibold ">{HRate.name}</h1> 
+                                        <p className="text-lg font-semibold">
+                                            Rating: {HRate.Rating} ⭐
+                                        </p>
                                     </div>
+                                    <p className=" text-blue-500 text-lg ">{HRate.Hading}</p>
                                 </div>
-                                <div className="flex gap-4">
+                                <div className="flex justify-end gap-4">
                                     <button 
                                     onClick={() => handleExploreDetails(HRate)}
                                     className="btn btn-active btn-accent">

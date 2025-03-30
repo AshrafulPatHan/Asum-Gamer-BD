@@ -45,34 +45,38 @@ const AllReviews = () => {
             <Navbar/>
             <div className='flex flex-col items-center'>
             <h2 className='text-4xl font-bold'>See All Reviews</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-7'>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-7 mb-24'>
                     {
                         all.map(All => (
                             <div key={All.id}>
-                                <div className="card bg-base-100 my-4 w-[300px] md:w-96  shadow-xl">
-                                    <figure>
-                                        <img
-                                            className='h-[260px]'
-                                            src={All.Image}
-                                            alt="Shoes" />
-                                    </figure>
-                                    <div className="card-body">
-                                        <h2 className="card-title">{All.name}</h2>
-                                        <p className='font-bold'>{All.Hading}</p>
-                                        <p>{All.Description}</p>
-                                        <p>Rating {All.Rating}⭐</p>
-                                        <div className="card-actions justify-end">
-                                            <button className="btn btn-primary"
-                                            onClick={() => handleExploreDetails(All)}>Explore Details</button>
+                                <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-[#ebe8e8] p-6 text-white dark:text-black
+                                md:w-[350px] shadow-xl ">
+                                    <img width={400} height={400} className="h-[275px] w-[350px] rounded-lg object-cover" 
+                                    src={All.Image} alt="card navigate ui" />
+                                    <div className="grid gap-2">
+                                        <div className='flex justify-between'>
+                                            <h1 className="text-xl font-semibold ">{All.name}</h1> 
+                                            <p className="text-lg font-semibold">
+                                                Rating: {All.Rating} ⭐
+                                            </p>
                                         </div>
+                                        <p className=" text-blue-500 text-lg ">{All.Hading}</p>
+                                    </div>
+                                    <div className="flex justify-end gap-4">
+                                        <button 
+                                        onClick={() => handleExploreDetails(All)}
+                                        className="btn btn-active btn-accent">
+                                            View Details
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                         ))
                     }
+                    <ClintReview/>
                 </div>
-                <ClintReview/>
             </div>
+            
             <Footer/>
         </div>
     );
