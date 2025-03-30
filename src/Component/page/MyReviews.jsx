@@ -65,9 +65,9 @@ const handleUpdate = (HRate) => {
   }
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      <div>
+      <div className="flex-grow">
         <div className="overflow-x-auto">
           <table className="table">
             <thead>
