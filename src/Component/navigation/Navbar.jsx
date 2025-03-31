@@ -20,23 +20,23 @@ const Navbar = () => {
     const handleLogout = () => {
         Swal.fire({
             title: "Are you sure?",
-            text: "You won't be able to revert this!",
+            text: "Are you won't be Logout!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
+            confirmButtonText: "Yes, Logout!"
           }).then((result) => {
             if (result.isConfirmed) {
               Swal.fire({
-                title: "Deleted!",
-                text: "Your file has been deleted.",
+                title: "Logout!",
+                text: "Your has been Logout!",
                 icon: "success"
               });
                 signOut(auth)
                 .then(() => {
                   console.log('User logged out successfully');
-                  toast('Loge out successfully!');
+                //   toast('Loge out successfully!');
                   navigate('/');
                 })
                 .catch((error) => {
