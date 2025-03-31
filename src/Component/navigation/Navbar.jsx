@@ -33,19 +33,18 @@ const Navbar = () => {
                 text: "Your file has been deleted.",
                 icon: "success"
               });
+                signOut(auth)
+                .then(() => {
+                  console.log('User logged out successfully');
+                  toast('Loge out successfully!');
+                  navigate('/');
+                })
+                .catch((error) => {
+                  console.error('Error during logout:', error.message);
+                  toast('Failed to log out!');
+              });
             }
           });
-        signOut(auth)
-            .then(() => {
-                console.log('User logged out successfully');
-                toast('Loge out successfully!');
-                navigate('/');
-
-            })
-            .catch((error) => {
-                console.error('Error during logout:', error.message);
-                toast('Failed to log out!');
-            });
         };
         const [showTooltip, setShowTooltip] = useState(false);
 
