@@ -127,47 +127,47 @@ const Navbar = () => {
                         {user ? (
                             <div className=' flex lg:flex-col lg:items-center xl:flex-row items-center'>
                                 <ul className=' flex flex-row gap-2'>
-                                    <Link to='/' className=' text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
+                                    <Link to='/' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     Home
                                     </Link>
-                                    <Link to='/reviews' className=' text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
+                                    <Link to='/reviews' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     All Reviews 
                                     </Link>
-                                    <Link to='/myReviews' className=' text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/myReviews' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My Reviews
                                     </Link>
-                                    <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/addReview' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     Add Review
                                     </Link>
-                                    <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/myWatchlist' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My WatchList
                                     </Link>
-                                    <Link to='/news' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                    <Link to='/news' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                         News
                                     </Link>
-                                    <Link to='/store' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                    <Link to='/store' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
                                         Store
                                     </Link>
                                 </ul>
                             </div>
                         ) : (
                         <ul className="flex flex-row px-1">
-                            <Link to='/' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
+                            <Link to='/' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
                                 Home
                             </Link>
-                            <Link to='/reviews' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                            <Link to='/reviews' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
                                 All Reviews
                             </Link>
-                            <Link to='/news' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                            <Link to='/news' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
                                 News
                             </Link>
-                            <Link to='/store' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                            <Link to='/store' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
                                 Store
                             </Link>
-                            <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                            <Link to='/addReview' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                 Add Review
                             </Link>
-                            <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                            <Link to='/myWatchlist' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                 My WatchList
                             </Link>
                         </ul>
