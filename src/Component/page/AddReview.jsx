@@ -55,7 +55,7 @@ const AddReview = () => {
         <div>
             <Navbar />
             {/* new from --------------------------------------------*/}
-            <div className='flex flex-col items-center mt-32 mb-20'>
+            <div className='flex flex-col items-center mt-32 mb-24'>
                  <form onSubmit={handleAddReview} className="card bg-[#272727] dark:bg-base-100 shadow-2xl p-8 w-[95vw] 
                  md:w-[80vw] xl:w-[60vw] ">
                     <h2 className="text-4xl font-bold text-center mb-8">Add Your Review</h2>

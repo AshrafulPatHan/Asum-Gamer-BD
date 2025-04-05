@@ -1,24 +1,24 @@
-import React from 'react';
-import { toast } from 'react-toastify';
 import Navbar from '../navigation/Navbar';
-import Footer from '../navigation/Footer';
+import DonLink from './DonLink';
+// import { toast } from 'react-toastify';
 import BanerSlider from './BanerSlider';
 import HRated from './HRated';
-import { Link, useLoaderData } from 'react-router-dom';
-import DonLink from './DonLink';
+import Footer from '../navigation/Footer';
+import Taller from './Game Video/Taller';
+// import { Link, useLoaderData } from 'react-router-dom';
+// import Fullpage, { FullPageSections, FullpageSection } from "@ap.cx/react-fullpage";
 
 const Home = () => {
 
 
     return (
         <div>
-            <div>
-                <Navbar />
-                <BanerSlider/>
-                <HRated/>
-                <DonLink/>
-                <Footer/>
-            </div>
+            <Navbar />
+            <BanerSlider/>
+            <HRated/>
+            <Taller/>
+            <DonLink/>
+            <Footer/>
         </div>
     );
 };

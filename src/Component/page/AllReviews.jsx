@@ -44,8 +44,8 @@ const AllReviews = () => {
         <div>
             <Navbar/>
             <div className='flex flex-col items-center'>
-            <h2 className='text-4xl font-bold'>See All Reviews</h2>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-7 mb-24'>
+            <h2 className='text-4xl mb-10 mt-16 font-bold'>See All Reviews</h2>
+                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mb-24'>
                     {
                         all.map(All => (
                             <div key={All.id}>

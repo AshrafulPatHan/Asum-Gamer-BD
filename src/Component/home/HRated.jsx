@@ -33,13 +33,13 @@ const HRated = () => {
     }
 
     return (
-        <div className='flex flex-col items-center'>
-            <h2 className='text-4xl font-bold'>Highest Rated Game</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 mt-7'>
+        <div className='flex flex-col items-center mb-24'>
+            <h2 className='text-4xl mb-8 font-bold'>Highest Rated Game</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6 '>
                 {
                     hRate.map(HRate => (
                         <div key={HRate._id}>
-                            <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-[#ebe8e8] p-6 text-white dark:text-black
+                            <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-slate-200 p-6 text-white dark:text-black
                             md:w-[350px] shadow-xl ">
                                 <img width={400} height={400} className="h-[275px] w-[350px] rounded-lg object-cover" 
                                 src={HRate.Image} alt="card navigate ui" />

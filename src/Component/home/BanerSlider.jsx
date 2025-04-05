@@ -39,7 +39,7 @@ const BanerSlider = () => {
         ],
     };
     return (
-        <div className="flex flex-col items-center justify-center mb-5 ">
+        <div className="flex flex-col items-center justify-center mb-28 ">
             <div className='w-full ' >
                 <Slider {...settings} className='flex flex-row items-center gap-0'>
                     <div>
@@ -95,12 +95,6 @@ const BanerSlider = () => {
                     </div>
                 </Slider>
             </div>
-            <Link
-                to="/reviews"
-                className="mt-6 bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-4 rounded-lg font-medium shadow-md"
-            >
-                All Reviews
-            </Link>
         </div>
     );
 };

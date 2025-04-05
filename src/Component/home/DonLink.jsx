@@ -1,10 +1,12 @@
-import React from 'react';
+// import React from 'react';
+// import Footer from '../navigation/Footer';
 
 const DonLink = () => {
     return (
-        <div className='flex flex-col items-center mt-3 '>
-            <h2 className='sm:text-4xl text-3xl mb-3 font-bold'>Game Download link</h2>
-            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 mt-7'>
+    <div>
+        <div className='flex flex-col items-center mb-24 '>
+            <h2 className='sm:text-4xl text-3xl mb-9 font-bold'>Game Download link</h2>
+            <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 '>
                 <div className="card bg-base-100 image-full sm:w-96 w-[320px] shadow-xl">
                     <figure>
                         <img
@@ -63,6 +65,8 @@ const DonLink = () => {
                 </div>
             </div>
         </div>
+        {/* <Footer/> */}
+    </div>
     );
 };
 
