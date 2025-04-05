@@ -119,7 +119,7 @@ const Navbar = () => {
                         {/* company name */}
                         <Link to='/' className='flex flex-row items-center'>
                             <img src={Logo} alt="logo" className='w-[45px] '/>
-                            <p className="text-sm font-bold sm:text-xl ml-2 hidden md:flex md:font-bold">Asum Gamer BD</p>
+                            <p className="text-sm font-bold sm:text-md xl:text-xl ml-2 hidden sm:flex md:font-bold">Asum Gamer BD</p>
                         </Link>
                     </div>
                     {/* navigation */}
@@ -127,25 +127,25 @@ const Navbar = () => {
                         {user ? (
                             <div className=' flex lg:flex-col lg:items-center xl:flex-row items-center'>
                                 <ul className=' flex flex-row gap-2'>
-                                    <Link to='/' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
+                                    <Link to='/' className=' text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     Home
                                     </Link>
-                                    <Link to='/reviews' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
+                                    <Link to='/reviews' className=' text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                     All Reviews 
                                     </Link>
-                                    <Link to='/myReviews' className=' text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/myReviews' className=' text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My Reviews
                                     </Link>
-                                    <Link to='/addReview' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/addReview' className='text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     Add Review
                                     </Link>
-                                    <Link to='/myWatchlist' className='text-lg xl:text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
+                                    <Link to='/myWatchlist' className='text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My WatchList
                                     </Link>
-                                    <Link to='/news' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
+                                    <Link to='/news' className='text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md hover:text-blue-600  font-bold'>
                                         News
                                     </Link>
-                                    <Link to='/store' className='text-lg xl:text-xl p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
+                                    <Link to='/store' className='text-lg xl:text-xl py-2 px-[2px] xl:p-2 text-green-400 rounded-md hover:text-blue-600 font-bold'>
                                         Store
                                     </Link>
                                 </ul>
@@ -210,7 +210,7 @@ const Navbar = () => {
                                 )}
                         </div>
                         {/* light mode /dark mode */}
-                        <label className="swap swap-rotate mr-0 md:mr-2">
+                        <label className="swap swap-rotate mr-0 2xl:mr-2">
                             <input type="checkbox" onClick={toggleTheme} className="theme-controller" value="synthwave" />
                             {/* sun icon */}
                             <IoIosPartlySunny className='swap-off h-10 w-10 fill-current' />
