@@ -96,6 +96,8 @@ const Navbar = () => {
                                     <ul className="p-2">
                                         <li><Link to='/reviews'>All Reviews</Link></li>
                                         <li><Link to='/myReviews'>My Reviews</Link></li>
+                                        <li><Link to='/news'>News</Link></li>
+                                        <li><Link to='/store'>Store</Link></li>
                                     </ul>
                                     </li>
                                     <li><Link to='/myWatchlist'>My WatchList</Link></li>
@@ -107,6 +109,8 @@ const Navbar = () => {
                                 <li>
                                 <Link to='/reviews'>All Reviews</Link>
                                 </li>
+                                <li><Link to='/news'>News</Link></li>
+                                <li><Link to='/store'>Store</Link></li>
                                 <li><Link to='/addReview'>Add Review</Link></li>
                                 <li><Link to='/myWatchlist'>My WatchList</Link></li>
                             </ul>
@@ -138,6 +142,12 @@ const Navbar = () => {
                                     <Link to='/myWatchlist' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                     My WatchList
                                     </Link>
+                                    <Link to='/news' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                        News
+                                    </Link>
+                                    <Link to='/store' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                        Store
+                                    </Link>
                                 </ul>
                             </div>
                         ) : (
@@ -147,6 +157,12 @@ const Navbar = () => {
                             </Link>
                             <Link to='/reviews' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
                                 All Reviews
+                            </Link>
+                            <Link to='/news' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                News
+                            </Link>
+                            <Link to='/store' className='text-xl p-2 text-green-400 rounded-md hover:text-blue-600 hover:bg-none font-bold'>
+                                Store
                             </Link>
                             <Link to='/addReview' className='text-xl p-2 text-green-400 rounded-md  hover:text-blue-600 font-bold'>
                                 Add Review
