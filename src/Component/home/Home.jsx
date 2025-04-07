@@ -7,6 +7,7 @@ import Footer from '../navigation/Footer';
 import Taller from './Game Video/Taller';
 import Latest from './Latest';
 import HighestRated from './HighestRated';
+import News from './News';
 // import { Link, useLoaderData } from 'react-router-dom';
 // import Fullpage, { FullPageSections, FullpageSection } from "@ap.cx/react-fullpage";
 
@@ -21,6 +22,7 @@ const Home = () => {
             <HighestRated/>
             <Latest/>
             <Taller/>
+            <News/>
             <DonLink/>
             <Footer/>
         </div>
