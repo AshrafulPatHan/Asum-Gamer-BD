@@ -5,6 +5,7 @@ import BanerSlider from './BanerSlider';
 import HRated from './HRated';
 import Footer from '../navigation/Footer';
 import Taller from './Game Video/Taller';
+import Latest from './Latest';
 // import { Link, useLoaderData } from 'react-router-dom';
 // import Fullpage, { FullPageSections, FullpageSection } from "@ap.cx/react-fullpage";
 
@@ -16,6 +17,7 @@ const Home = () => {
             <Navbar />
             <BanerSlider/>
             <HRated/>
+            <Latest/>
             <Taller/>
             <DonLink/>
             <Footer/>
