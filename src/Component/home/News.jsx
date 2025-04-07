@@ -6,6 +6,7 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 const News = () => {
    return (
       <div className="flex flex-col items-center mb-24 mt-24">
+         <h4 className="text-xl sm:text-[40px] text-black font-bold mb-5 ">News</h4>
          <div className="flex flex-col xl:flex-row items-start gap-5 xl:gap-7">
             <div className=" flex flex-col items-start gap-6">
                {/* video 1 */}
