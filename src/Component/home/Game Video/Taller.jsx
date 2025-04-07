@@ -26,7 +26,7 @@ const Taller = () => {
                      </button>
                   </div>
                   <div className=" w-[300px]  sm:w-[500px] ">
-                     <h3 className=" text-[16px] sm:text-[30px] leading-3 sm:leading-8 font-bold    "
+                     <h3 className=" text-[16px] sm:text-[30px] leading-3 sm:leading-8 font-extrabold hover:text-green-300 cursor-pointer   "
                      >Minecraft latest version live 1.21 the legend of block game</h3>
                   </div>
                   <div className="flex flex-row items-center gap-2 mt-2 lg:gap-4">
@@ -69,7 +69,7 @@ const Taller = () => {
                   <div className=" relative ">
                      <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
                      width={226} height={162}
-                     className="h-[100px] sm:h-[162px] w-[160px] sm:w-[226px] rounded-lg object-cover"
+                     className="h-[100px] w-[160px] sm:h-[162px]  sm:w-[226px] rounded-lg object-cover"
                      />
                      <button 
                      className="  absolute top-8 left-16 sm:top-16 sm:left-24 text-sm sm:text-lg bg-gray-800 p-1 sm:p-3 rounded-full text-white"
