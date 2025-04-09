@@ -225,10 +225,10 @@ const Navbar = () => {
                                         <div className='flex flex-row items-center gap-1 md:gap-2 '>
                                             <div className=" tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
                                                 <div className='dropdown dropdown-end'>
-                                                    <div tabIndex={0} role="button">
+                                                    <div tabIndex={0} role="button" >
                                                         <img
                                                             src={user.photoURL || "default-avatar.png"}
-                                                            alt={user.displayName || "User"}
+                                                            alt="User"
                                                             className="w-8 md:w-10 h-8 md:h-10  rounded-full" 
                                                             onMouseEnter={() => setShowTooltip(true)}
                                                             onMouseLeave={() => setShowTooltip(false)} 
@@ -241,9 +241,7 @@ const Navbar = () => {
                                                         <Link className='btn-md pt-3 bg-slate-300 rounded-md text-base' to='/setting'
                                                         >setting</Link>
                                                     </div>
-                                                    
                                                 </div>
-                                                
                                             </div>
                                             <button onClick={handleLogout} className="btn text-sky-600">
                                                 Log out

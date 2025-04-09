@@ -1,6 +1,5 @@
 import { BiLike } from "react-icons/bi";
 import { FaFacebook, FaGithub, FaLinkedin, FaRegComment, FaRegCommentAlt } from "react-icons/fa";
-// import { TbPlayerPlayFilled } from "react-icons/tb";
 import { GoArrowRight } from "react-icons/go";
 
 
