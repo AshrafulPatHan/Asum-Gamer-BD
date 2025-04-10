@@ -77,14 +77,13 @@ const Registration = () => {
                     })
                     .catch((error) => {
                         console.error('Error updating profile:', error.message);
-                        toast('somthidg is worang')
+                        toast('something is wrang')
                     });
             } )
             .catch((error) => {
                 console.error('Error creating user:', error.message);
             });
     };
-
 
     return (
         <div>

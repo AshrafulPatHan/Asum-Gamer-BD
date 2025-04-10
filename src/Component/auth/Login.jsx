@@ -50,7 +50,7 @@ const Login = () => {
               
                 const GoogleUser = {name, email, photoURL, password}
                // ----------cake user isExist
-               const sendToDataBase = async() => {
+               const SendToDataBase = async() => {
                 const response = await fetch('http://localhost:5022/google-login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
@@ -59,12 +59,20 @@ const Login = () => {
                     const data = await response.json();
                     console.log(`send data to mongodb ${data}`);
                     if (data.user === true) {
-                        console.log("User does not exist in the database.");
+                        console.log("Adding user in database.");
+
+                        const response = await fetch('http://localhost:5022/register', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(GoogleUser)
+                        });
+                        const data = await response.json();
+                        console.log(`send data to mongodb ${data}`);
                     } else {
                         console.log("User already exists.");
                     }
                 } 
-                await sendToDataBase()
+                await SendToDataBase()
 
                 console.log("Google login successful:", result.user);
                 toast.success('Google login successful');
@@ -109,7 +117,7 @@ const Login = () => {
                                 className='w-[300px]  md:w-[600px] lg:[900px] '
                             />
                             <p className="py-6 text-center">
-                                Login for injoy our all funtion
+                                Login for enjoy our all funtion
                             </p>
                         </div>
                         <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">

@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext);
-    const [genre, setGenre] = useState(''); // Genre state
+    const [type, setType] = useState(''); // type state
     const navigate = useNavigate();
 
 
@@ -16,19 +16,23 @@ const AddReview = () => {
         const form = event.target;
 
         const name = form.Name.value;
+        const Title = form.Title.value;
         const Description = form.Description.value;
         const Image = form.Image.value;
         const Year = form.Year.value;
         const Rating = form.Rating.value;
         const username = user.displayName;
         const userEmail = user.email;
+        const Lick = 0;
+        const View = 0;
+        const date = new Date();
 
-        if (!name || !Description || !Image || !Year || !Rating || !genre) {
+        if (!name || !Description || !Image || !Year || !Rating || !type || !Title) {
             toast.error("All fields are required");
             return;
         }
 
-        const allData = { name, Description, Image, Year, Rating, genre, username, userEmail };
+        const allData = { name,Title, Description, Image, Year, Rating, type, username, userEmail,Lick,View,date };
         console.log(allData);
 
         // send data to the server
@@ -64,12 +68,23 @@ const AddReview = () => {
                     <div>
                     <div className="form-control mb-4">
                         <label className="label">
-                        <span className="label-text">Game Title/Name</span>
+                        <span className="label-text">Game Name</span>
                         </label>
                         <input
                         type="text"
                         name='Name'
-                        placeholder="Game Title/Name"
+                        placeholder="Game Name"
+                        className="input input-bordered input-secondary bg-black dark:bg-white w-full"
+                        />
+                    </div>
+                    <div className="form-control mb-4">
+                        <label className="label">
+                        <span className="label-text">Game Title</span>
+                        </label>
+                        <input
+                        type="text"
+                        name='Title'
+                        placeholder="Game Title"
                         className="input input-bordered input-secondary bg-black dark:bg-white w-full"
                         />
                     </div>
@@ -109,16 +124,19 @@ const AddReview = () => {
                         <span className="label-text">Blog category</span>
                         </label>
                         <details className="dropdown">
-                        <summary className="btn w-full bg-black dark:bg-white">Genres</summary>
+                        <summary className="btn w-full bg-black dark:bg-white">types</summary>
                         <ul className="menu dropdown-content  rounded-box z-[1] w-full p-2 bg-black dark:bg-white shadow">
                             <li>
-                            <a onClick={() => setGenre('Action')}>Action</a>
+                            <a onClick={() => setType('Action')}>Action</a>
                             </li>
                             <li>
-                            <a onClick={() => setGenre('RPG')}>RPG</a>
+                            <a onClick={() => setType('Creative')}>Creative</a>
                             </li>
                             <li>
-                            <a onClick={() => setGenre('Adventure')}>Adventure</a>
+                            <a onClick={() => setType('Adventure')}>Adventure</a>
+                            </li>
+                            <li>
+                            <a onClick={() => setType('RPG')}>RPG</a>
                             </li>
                         </ul>
                         </details>
