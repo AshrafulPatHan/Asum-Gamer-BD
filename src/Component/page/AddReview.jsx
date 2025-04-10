@@ -20,12 +20,12 @@ const AddReview = () => {
         const Description = form.Description.value;
         const Image = form.Image.value;
         const Year = form.Year.value;
-        const Rating = form.Rating.value;
+        const Rating = Number(form.Rating.value);
         const username = user.displayName;
         const userEmail = user.email;
         const Lick = 0;
         const View = 0;
-        const date = new Date();
+        const date = Number(new Date());
 
         if (!name || !Description || !Image || !Year || !Rating || !type || !Title) {
             toast.error("All fields are required");
