@@ -10,8 +10,6 @@ import auth from '../../Firebase/Firebase.init';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 
 
-
-
 const Registration = () => {
     const [showpas,setshowpas] = useState(false)
     const navigate = useNavigate();
@@ -36,11 +34,9 @@ const Registration = () => {
         }
         return true;
         };
-
     
-    const handelRegistra = (event) => {
+    const handelRegister = (event) => {
         
-
         event.preventDefault();
         
         const name = event.target.name.value;
@@ -51,15 +47,26 @@ const Registration = () => {
         if (!validatePassword(password)) {
             return;
         }
-
-        console.log(name, email, photoURL, password);
+        const UserData = {name, email, photoURL, password}
+        console.log(UserData);
 
         // Creating a user with Firebase Authentication
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {
                 console.log('User Created:', result.user);
-                toast('Registration is sussesful')
-                navigate('/Login');
+                toast('Registration is successful')
+                navigate('/');
+                // add login data in to 
+                const sendToDataBase = async() => {
+                    const response = await fetch('http://localhost:5022/register', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(UserData)
+                    });
+                    const data = await response.json();
+                    console.log(`send data to mongodb ${data}`);
+                }
+                sendToDataBase();
                 // Updating user's profile with name and photoURL
                 updateProfile(result.user, {
                     displayName: name,
@@ -101,7 +108,7 @@ const Registration = () => {
                                 </p>
                             </div>
                             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                                <form onSubmit={handelRegistra} className="card-body">
+                                <form onSubmit={handelRegister} className="card-body">
                                     <div className="form-control">
                                         <label className="label">
                                             <span className="label-text">Name</span>

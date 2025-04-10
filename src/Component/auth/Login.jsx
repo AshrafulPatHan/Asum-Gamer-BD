@@ -39,11 +39,37 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, provider)
-            .then((result) => {
+            .then(async(result) => {
+
+                // collect user data
+                const gData = result.user
+                const name = gData.displayName;
+                const email = gData.email;
+                const photoURL = gData.photoURL;
+                const password = btoa(email + '_google_login');
+              
+                const GoogleUser = {name, email, photoURL, password}
+               // ----------cake user isExist
+               const sendToDataBase = async() => {
+                const response = await fetch('http://localhost:5022/google-login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(GoogleUser)
+                    });
+                    const data = await response.json();
+                    console.log(`send data to mongodb ${data}`);
+                    if (data.user === true) {
+                        console.log("User does not exist in the database.");
+                    } else {
+                        console.log("User already exists.");
+                    }
+                } 
+                await sendToDataBase()
+
                 console.log("Google login successful:", result.user);
                 toast.success('Google login successful');
-                navigate('/')
                 setLoading(false)//-----------------
+                navigate('/')
             })
             .catch((error) => {
                 console.error("Error during Google login:", error.message);
@@ -72,7 +98,7 @@ const Login = () => {
         <div>
             <Navbar/>
             <div>
-                <h2 className="text-4xl font-bold text-center mb-2 mt-11">Login now</h2>
+                <h2 className="text-4xl font-bold text-center mb-2 mt-11">Login Now</h2>
                 <div className="hero bg-cyan-200 min-h-screen">
                     <div className="hero-content flex-col lg:flex-row-reverse">
                         <div className="text-center lg:text-left">
