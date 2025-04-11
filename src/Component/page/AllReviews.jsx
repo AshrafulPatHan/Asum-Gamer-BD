@@ -3,7 +3,7 @@ import Navbar from '../navigation/Navbar';
 import Footer from '../navigation/Footer';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import ClintReview from '../ClintReview';
+
 
 const AllReviews = () => {
     const [all, setAll] = useState([]);
@@ -19,7 +19,7 @@ const AllReviews = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://chill-gamer-server-jzl0.onrender.com/alldata")
+        fetch("http://localhost:5022/all-review")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);
@@ -60,7 +60,7 @@ const AllReviews = () => {
                                                 Rating: {All.Rating} ⭐
                                             </p>
                                         </div>
-                                        <p className=" text-blue-500 text-lg ">{All.Hading}</p>
+                                        <p className=" text-blue-500 text-lg ">{All.Title}</p>
                                     </div>
                                     <div className="flex justify-end gap-4">
                                         <button 
@@ -73,7 +73,7 @@ const AllReviews = () => {
                             </div>
                         ))
                     }
-                    <ClintReview/>
+                    {/* <ClintReview/> */}
                 </div>
             </div>
             
