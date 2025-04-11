@@ -1,15 +1,22 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../navigation/Navbar';
 import Footer from '../navigation/Footer';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const AddReview = () => {
     const { user } = useContext(AuthContext);
+    const { state: locationData } = useLocation();
+    const [cardData, setCardData] = useState(locationData || { myReview: [] });
     const [type, setType] = useState(''); // type state
     const navigate = useNavigate();
 
+    useEffect(() => {
+        if (locationData) {
+            setCardData(locationData);
+        }
+    }, [locationData]);
 
     const handleAddReview = event => {
         event.preventDefault();
@@ -53,6 +60,7 @@ const AddReview = () => {
             console.error('Error:', error);
             toast.error("Error adding review");
         });
+        
     };
 
     return (
