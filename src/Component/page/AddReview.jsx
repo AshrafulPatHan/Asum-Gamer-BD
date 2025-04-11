@@ -32,7 +32,7 @@ const AddReview = () => {
         const userEmail = user.email;
         const Lick = 0;
         const View = 0;
-        const date = Number(new Date());
+        const date = new Date();
 
         if (!name || !Description || !Image || !Year || !Rating || !type || !Title) {
             toast.error("All fields are required");
