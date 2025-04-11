@@ -121,7 +121,7 @@ const AddReview = () => {
                         <label className="label">
                             <span className="label-text">Publishing Year</span>
                         </label>
-                        <input type="number" name='Year' placeholder="Publishing Year" 
+                        <input type="text" name='Year' placeholder="Publishing Year" 
                         className="input input-bordered input-secondary bg-black dark:bg-white w-full " />
                     </div>
                     </div>
@@ -144,7 +144,7 @@ const AddReview = () => {
                             <a onClick={() => setType('Adventure')}>Adventure</a>
                             </li>
                             <li>
-                            <a onClick={() => setType('RPG')}>RPG</a>
+                            <a onClick={() => setType('Race')}>Race</a>
                             </li>
                         </ul>
                         </details>

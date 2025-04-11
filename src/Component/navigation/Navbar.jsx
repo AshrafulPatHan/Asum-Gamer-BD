@@ -186,7 +186,7 @@ const Navbar = () => {
                                             <img
                                                     src={user.photoURL || "default-avatar.png"}
                                                     alt={user.displayName || "User"}
-                                                    className="w-8 md:w-10 h-8 md:h-10  rounded-full" 
+                                                    className="w-8 md:w-10 h-8 md:h-10  rounded-full object-contain" 
                                                     onMouseEnter={() => setShowTooltip(true)}
                                                     onMouseLeave={() => setShowTooltip(false)} 
                                                 />
@@ -229,7 +229,7 @@ const Navbar = () => {
                                                         <img
                                                             src={user.photoURL || "default-avatar.png"}
                                                             alt="User"
-                                                            className="w-8 md:w-10 h-8 md:h-10  rounded-full" 
+                                                            className="w-8 md:w-10 h-8 md:h-10  rounded-full object-contain" 
                                                             onMouseEnter={() => setShowTooltip(true)}
                                                             onMouseLeave={() => setShowTooltip(false)} 
                                                         />

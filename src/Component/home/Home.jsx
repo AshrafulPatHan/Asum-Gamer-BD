@@ -2,7 +2,7 @@ import Navbar from '../navigation/Navbar';
 import DonLink from './DonLink';
 // import { toast } from 'react-toastify';
 import BanerSlider from './BanerSlider';
-import HRated from './HRated';
+// import HRated from './HRated';
 import Footer from '../navigation/Footer';
 import Taller from './Game Video/Taller';
 import Latest from './Latest';
@@ -18,7 +18,7 @@ const Home = () => {
         <div>
             <Navbar />
             <BanerSlider/>
-            <HRated/>
+            {/* <HRated/> */}
             <HighestRated/>
             <Latest/>
             <Taller/>
