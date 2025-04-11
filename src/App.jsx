@@ -23,6 +23,7 @@ import Profile from './Component/page/Profile';
 import Setting from './Component/page/Setting';
 import News from './Component/page/news/news';
 import Store from './Component/page/store/store';
+import Video from './Component/home/Game Video/Video';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
     { path: "/store", element: <Store  />,},
     { path: "/reviews", element: <AllReviews  /> },
     { path: "/review/:id", element: <Details  /> },
+    { path: "/video/:id", element: <Video  /> },
     { path: "/login", element: <Login  /> },
     { path: "/registration", element: <Registration  /> },
     { path: "/addReview", element: <Privaterout><AddReview /></Privaterout> },

@@ -1,8 +1,32 @@
 import { FaRegCommentAlt } from "react-icons/fa";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { BiLike } from "react-icons/bi";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Taller = () => {
+         const [video,setVideo] = useState([]);
+         const navigate = useNavigate();
+
+         const handelVideo = (game) => {
+            navigate(`/video/${game.id}`, { state: game });
+         }
+         const handelSecVideo = (game) => {
+            navigate(`/video/${game.id}`, { state: game });
+         }
+      
+         useEffect(()=>{
+            fetch('http://localhost:5022/video')
+            .then(res => res.json())
+            .then(data => setVideo(data))
+            .catch(err => console.error(err));
+         }, []);
+      
+         if (video.length === 0) {
+            return <p>Loading...</p>;
+         }
+      
+         const [first, ...rest] = video;
    return (
       <div className="flex flex-col items-center text-white bg-[#1c192c] py-20 ">
          <h4 
@@ -11,111 +35,59 @@ const Taller = () => {
          <div className="flex flex-col xl:flex-row items-start gap-8 mx-1 sm:mx-0  ">
             {/* minecraft video */}
             <div className=" relative ">
-               <img src="https://i.ibb.co.com/L0Zqk7c/2x1-NSwitch-Minecraft-image1600w.jpg" alt="minecraft"
+               <img src={first.image} alt="minecraft"
                width={600} height={560}
                className="h-[400px] sm:h-[565px] lg:w-[600px] w-[90vw] rounded-lg object-cover"
                />
-               <button 
+               <button onClick={()=> handelVideo(first)}
                   className=" absolute top-3 left-3 text-lg bg-gray-800 p-3 rounded-full text-white"
                   ><TbPlayerPlayFilled className="" />
                </button>
                <div className=" absolute top-[250px] sm:top-[400px] ml-3 ">
-                  <div className="bg-yellow-600 px-2 py-[0.5] rounded-sm w-20 mb-2 ">
-                     <button>
-                        Games
-                     </button>
-                  </div>
+                  <button className="bg-yellow-600 px-2 py-[0.5] rounded-sm mb-2 ">
+                     {first.gameName}
+                  </button>
                   <div className=" w-[300px]  sm:w-[500px] ">
                      <h3 className=" text-[16px] sm:text-[30px] leading-3 sm:leading-8 font-extrabold hover:text-green-300 cursor-pointer   "
-                     >Minecraft latest version live 1.21 the legend of block game</h3>
+                     >{first.titel}</h3>
                   </div>
                   <div className="flex flex-row items-center gap-2 mt-2 lg:gap-4">
-                     <p>1.1.2025</p>
-                     <button><FaRegCommentAlt /></button>
-                     <button><BiLike className="text-xl" /></button>
+                     <p>{new Date(first.date).toLocaleString()}</p>
+                     <button className="flex"><FaRegCommentAlt /></button>
+                     <button className="flex"><BiLike className="text-xl" /><sup>{first.lick}</sup></button>
                   </div>
                </div>
             </div>
             {/* Three video */}
             <div className=" flex flex-col items-start gap-6">
                {/* video 1 */}
-               <div className="flex flex-row items-end gap-4  ">
+               {rest.map((game, idx) => (
+               <div key={idx} className="flex flex-row items-end gap-4  ">
                   <div className=" relative ">
-                     <img src="https://i.ibb.co.com/S2khv9n/1709193013-943.webp" alt="call of duty" 
+                     <img src={game.image} alt="call of duty" 
                      width={226} height={162}
                      className=" h-[100px] sm:h-[162px] w-[160px] sm:w-[226px] rounded-lg object-cover "
                      />
-                     <button 
+                     <button onClick={() => handelSecVideo(game)}
                      className=" absolute top-8 left-16 sm:top-16 sm:left-24 text-sm sm:text-lg bg-gray-800 p-1 sm:p-3 rounded-full text-white"
                      ><TbPlayerPlayFilled className="" /></button>
                   </div>
                   <div className="flex flex-col items-start gap-1 w-[300px] sm:w-[370px] mb-2 ">
                      <div className="bg-yellow-600 px-2 py-[0.5] rounded-sm ">
                         <button>
-                           Games
+                           {game.gameName}
                         </button>
                      </div>
                      <h3 className="text-[16px] sm:text-[20px] leading-3 mt-2 sm:mt-0 sm:leading-8 font-bold   ">
-                        The gun fighting game the game chang game development</h3>
+                     {game.titel}</h3>
                      <div className="flex flex-row items-center gap-2 mt-2 lg:gap-4">
-                        <p>1.1.2025</p>
-                        <button><FaRegCommentAlt /></button>
-                        <button><BiLike className="text-xl" /></button>
+                        <p>{new Date(game.date).toLocaleString()}</p>
+                        <button className="flex"><FaRegCommentAlt /></button>
+                        <button className="flex"><BiLike className="text-xl" /><sup>{game.lick}</sup></button>
                      </div>
                   </div>
                </div>
-               {/* video 2 */}
-               <div className="flex flex-row items-end gap-4  ">
-                  <div className=" relative ">
-                     <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                     width={226} height={162}
-                     className="h-[100px] w-[160px] sm:h-[162px]  sm:w-[226px] rounded-lg object-cover"
-                     />
-                     <button 
-                     className="  absolute top-8 left-16 sm:top-16 sm:left-24 text-sm sm:text-lg bg-gray-800 p-1 sm:p-3 rounded-full text-white"
-                     ><TbPlayerPlayFilled className="" /></button>
-                  </div>
-                  <div className="flex flex-col items-start gap-1 w-[300px] sm:w-[370px] mb-2 ">
-                     <div className="bg-yellow-600 px-2 py-[0.5] rounded-sm ">
-                        <button>
-                           Games
-                        </button>
-                     </div>
-                     <h3 className="text-[16px] sm:text-[20px] leading-3 mt-2 sm:mt-0 sm:leading-8 font-bold   ">
-                        Fling anywhere you want and have a tour of world</h3>
-                     <div className="flex flex-row items-center gap-2 mt-2 lg:gap-4">
-                        <p>1.1.2025</p>
-                        <button><FaRegCommentAlt /></button>
-                        <button><BiLike className="text-xl" /></button>
-                     </div>
-                  </div>
-               </div>
-               {/* video 3 */}
-               <div className="flex flex-row items-end gap-4  ">
-                  <div className=" relative ">
-                     <img src="https://i.ibb.co.com/Brp7g6F/resident-evil-8-village.jpg" alt="resting evil" 
-                     width={226} height={162}
-                     className="h-[100px] sm:h-[162px] w-[160px] sm:w-[226px] rounded-lg object-cover "
-                     />
-                     <button 
-                     className=" absolute top-8 left-16 sm:top-16 sm:left-24 text-sm sm:text-lg bg-gray-800 p-1 sm:p-3 rounded-full text-white"
-                     ><TbPlayerPlayFilled className="" /></button>
-                  </div>
-                  <div className="flex flex-col items-start gap-1 w-[300px] sm:w-[370px] mb-2 ">
-                     <div className="bg-yellow-600 px-2 py-[0.5] rounded-sm ">
-                        <button>
-                           Games
-                        </button>
-                     </div>
-                     <h3 className="text-[16px] sm:text-[20px] mt-2 sm:mt-0 leading-3 sm:leading-8 font-bold  ">
-                        A gun fighting horror game you need strong heart for play this game</h3>
-                     <div className="flex flex-row items-center gap-2 mt-2 lg:gap-4">
-                        <p>1.1.2025</p>
-                        <button><FaRegCommentAlt /></button>
-                        <button><BiLike className="text-xl" /></button>
-                     </div>
-                  </div>
-               </div>
+               ))}
             </div>
          </div>
       </div>
