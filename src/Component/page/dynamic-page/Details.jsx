@@ -56,8 +56,9 @@ const Details = () => {
     return (
         <>
             <Navbar />
-            <div className="flex flex-col items-center mt-8 mb-24">
-                <div className="flex flex-col items-center gap-5 xl:gap-7">
+            <div className="flex flex-col items-center mb-24">
+                <div className="flex flex-col items-center mt-7 gap-5 xl:gap-7">
+                    {/* <h2 className=" text-[16px] sm:text-[30px] leading-3 mt-3 sm:leading-8 font-extrabold ">{cardData.name}</h2> */}
                     <div className=" relative text-white ">
                         <img src={cardData.Image} alt={cardData.name}
                         width={770} height={475}
@@ -69,16 +70,27 @@ const Details = () => {
                             </button>
                         </div>
                         <div className="flex flex-col   ">
-                            <div className=" w-[300px]  sm:w-[500px] ">
-                                <h3 className=" text-[16px] sm:text-[30px] leading-3 mt-3 sm:leading-8 font-extrabold 
-                                text-black  hover:text-green-900 cursor-pointer    "
-                                >{cardData.Title}</h3>
+                            <div className=" text-black flex flex-col lg:flex-row items-start lg:items-center justify-normal lg:justify-between  ">
+                                <div className=" w-[300px]  sm:w-[500px] ">
+                                    <h3 className=" text-[16px] sm:text-[30px] leading-3 mt-3 sm:leading-8 font-extrabold 
+                                    text-black  hover:text-green-900 cursor-pointer    "
+                                    >{cardData.Title}</h3>
+                                </div>
+                                <div className="flex flex-row items-center gap-2">
+                                    <div className="flex items-center gap-1">
+                                        <h4 className="font-bold text-green-700 ">Rating :</h4> <p>{cardData.Rating}</p>
+                                    </div>
+                                    <div className="flex items-center gap-1">
+                                        <h4 className="font-bold text-blue-500">Type :</h4> <p>{cardData.type}</p>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex flex-row items-center justify-end gap-2 mt-2 lg:gap-4">
-                                <p>1.1.2025</p>
-                                <button><FaEye /></button>
-                                <button><FaRegCommentAlt /></button>
-                                <button><BiLike className="text-xl" /></button>
+                            
+                            <div className="flex flex-row items-center text-black  justify-end gap-2 mt-2 lg:gap-4">
+                                <p>{new Date(cardData.date).toLocaleString()}</p>
+                                <button><FaEye className="text-[16px] sm:text-[27px]"/></button>
+                                <button><FaRegCommentAlt className="text-[16px] sm:text-[24px] "/></button>
+                                <button><BiLike className=" text-[16px] sm:text-[27px] " /></button>
                             </div>
                         </div>
                     </div>
@@ -91,9 +103,12 @@ const Details = () => {
                                 </h3>
                                 {cardData.Description}
                             </div>
-                            <div className=" w-[90vw] lg:w-[50vw]  ">
-                                <div className="mockup-window border border-base-300 w-full">
-                                    <div className="grid place-content-center border-t border-base-300 h-80">Hello!</div>
+                            <div className="w-[90vw] lg:w-[50vw]  rounded-xl">
+                                 <div className="    bg-[#7a7373ab] rounded-t-xl h-14 ">
+                                    
+                                </div>
+                                 <div className=" bg-[#c4c1c18e] rounded-b-xl h-14 ">
+                                    
                                 </div>
                             </div>
                         </div>
