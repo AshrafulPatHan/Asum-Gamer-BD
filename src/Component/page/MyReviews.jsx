@@ -1,127 +1,82 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Navbar from "../navigation/Navbar";
 import Footer from "../navigation/Footer";
 import { FaTrashAlt } from "react-icons/fa";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const MyReviews = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+const { user } = useContext(AuthContext);
+const [userReview, setUserReview] = useState([])
 
-// Update Reviews page
-const navigate = useNavigate();
-const handleUpdate = (HRate) => {
-    navigate(`/updateReview/${HRate.id}`, { state: HRate }); 
-};
-  
-  useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/datas")
-      .then((res) => res.json())
-      .then((data) => {
-        setData(data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setLoading(false);
-      });
-  }, []);
+const UserEmail = user.email || "email"
+console.log(UserEmail);
 
-  const handleDelete = id => {
-    swal({
-      title: "Are you sure?",
-      text: "You will not be able to recover this data!",
-      icon: "warning",
-      buttons: true,
-      dangerMode: true,
-    })
-    .then((willDelete) => {
-      if (willDelete) {
-        fetch(`https://chill-gamer-server-jzl0.onrender.com/user/${id}`, {
-          method: 'DELETE',
-        })
-        .then(res => res.json())
-        .then(result => {
-          if (result.deletedCount > 0) {
-            swal("Deleted!", "Your data has been deleted.", "success");
-            const remainingData = data.filter(HRate => HRate._id !== id);
-            setData(remainingData);
-          }
-        })
-        .catch(error => {
-          console.error('Error deleting data:', error);
-        });
-      }
+useEffect(() => {
+  const fetchData = async () => {
+    const response = await fetch('http://localhost:5022/my-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: UserEmail }) // email কে অবজেক্ট হিসেবে পাঠাও
     });
+    const data = await response.json();
+    setUserReview(data)
+    console.log(`send data to mongodb ${data}`);
   };
 
-  if (loading) {
-    return (
-      <div className="flex flex-col items-center ">
-        <span className="loading loading-ring loading-lg"></span>
-      </div>
-    );
-  }
+  fetchData();
+}, []);
+
+
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-green-300">
       <Navbar />
       <div className="flex-grow">
-        <div className="overflow-x-auto">
-          <table className="table">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Rating</th>
-                <th>Genre</th>
-                <th>Update/Delete</th>
-              </tr>
-            </thead>
-            {data.map((HRate) => (
-              <tbody key={HRate._id}>
-                <tr>
-                  <td>
-                    <div className="flex items-center gap-1 sm:gap-3">
-                      <div className="avatar">
-                        <div className="rounded-xl h-10 sm:h-24 w-10 sm:w-24">
-                          <img
-                            src={HRate.Image}
-                            alt={HRate.name}
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <div className="font-semibold sm:font-bold">
-                          {HRate.name}
-                        </div>
-                        <div className="text-end sm:text-sm opacity-50">
-                          {HRate.Description}
-                        </div>
-                      </div>
-                    </div>
-                  </td>
-                  <td>
-                    <span className="sm:badge sm:badge-ghost sm:p-2 badge-xs sm:badge-md">
-                      Rating {HRate.Rating}⭐
-                    </span>
-                  </td>
-                  <td>{HRate.genre || HRate.Genres}</td>
-                  <th>
-                    <button className="btn btn-xs sm:btn-md"
-                    onClick={() => handleUpdate(HRate)}>Update</button>
-                  </th>
-                  <th>
-                    <button 
-                      className="btn btn-xs sm:btn-md"
-                      onClick={() => handleDelete(HRate._id)}
-                    >
-                      Delete
-                    </button>
-                  </th>
-                </tr>
+        <div className="overflow-x-auto mt-10">
+          <table className="min-w-full border border-gray-200 bg-white shadow-lg">
+            {/* Table Header */}
+              <thead>
+                  <tr className="h-[70px] border-b bg-[#141B29] text-[#FFFFFF]">
+                      <th className="w-[50px] px-6 py-4 text-start ">
+                          <div 
+                          className="flex h-6 w-6 items-center rounded-full cursor-pointer border-2 border-red-500 bg-red-500 text-red-500 focus:border-red-400 focus:ring-red-400" />
+                      </th>
+                      <th className="px-6 py-4 text-start">User</th>
+                      <th className="px-6 py-4 text-start">Status</th>
+                      <th className="px-6 py-4 text-start">Details</th>
+                      <th className="px-6 py-4 text-start">Delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+                {/* Table rows */}
+                {userReview.map((data)=>(
+                  <tr key={data._id} className="h-[70px] border-b bg-[#484D58] text-[#FFFFFF]">
+                      <th className="px-6 py-4 text-start">
+                          <input type="checkbox"  id="myCheckbox" className="flex h-6 w-6  items-center rounded-full border-2 border-red-500 bg-red-500 text-red-500 focus:border-red-400 focus:ring-red-400" />
+                      </th>
+                      <th className="px-6 py-4 text-start">
+                          <img className="h-[50px] w-[50px] rounded-sm bg-slate-500 object-cover" 
+                          src={data.Image} />
+                      </th>
+                      <th className="px-6 py-4 text-start ">{data.name}</th>
+                      <th className="px-6 py-4 text-start">
+                          <button className="flex items-center rounded-full bg-blue-600 px-4 py-2 font-bold text-white shadow-md transition-all duration-300 hover:bg-blue-700">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="mr-2 h-6 w-6"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" /> </svg>
+                              Details
+                          </button>
+                      </th>
+                      <th className="px-6 py-4 text-start">
+                          <button className="flex items-center rounded-full bg-red-500 px-4 py-2 font-bold text-white shadow-md transition-all duration-300 hover:bg-red-700">
+                              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="mr-2 h-6 w-6">  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /> </svg>
+                              Delete
+                          </button>
+                      </th>
+                  </tr>
+                ))}
               </tbody>
-            ))}
           </table>
         </div>
       </div>
