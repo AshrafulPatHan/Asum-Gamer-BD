@@ -11,9 +11,60 @@ import { GoArrowRight } from "react-icons/go";
 
 const Details = () => {
     const { state: locationData } = useLocation(); 
-    const [cardData, setCardData] = useState(locationData || {});
+    // const [cardData, setCardData] = useState(locationData || {});
+    const [cardData, setCardData] = useState(locationData || { comments: [] });
     const { user } = useContext(AuthContext);
 
+    // ---- Add Comment ----
+    const handleAddComment = (event) => {
+        event.preventDefault();
+        const form = event.target;
+				
+        const Comment = form.Comment.value;
+        const username = user?.displayName || "Anonymous";
+        const userEmail = user?.email || "No Email Provided";
+        const userPhotoURL = user?.photoURL || "No photoURL Provided";
+        const documentId = cardData?._id; // Target specific document by its ID
+
+        if (!Comment) {
+            toast.error("All fields are required");
+            return;
+        }
+		
+        const detailData = {
+            Comment,
+            username,
+            userEmail,
+            userPhotoURL,
+            date: new Date(),
+            _id: documentId,
+        };
+        console.log("Submitted comment data:", detailData);
+        fetch("http://localhost:5022/comment", {
+
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(detailData),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log("Response from server:", data);
+                toast.success("Comment added successfully!");
+                setCardData((prevState) => ({
+                    ...prevState,
+                    comments: [...(prevState.comments || []), detailData],
+                }));
+                form.reset();
+            })
+            .catch((error) => {
+                console.error("Fetch error:", error);
+                toast.error("Error adding comment");
+            });
+    };
+
+    // -----------------------
     useEffect(() => {
         if (locationData) {
             setCardData(locationData);
@@ -103,12 +154,38 @@ const Details = () => {
                                 </h3>
                                 {cardData.Description}
                             </div>
-                            <div className="w-[90vw] lg:w-[50vw]  rounded-xl">
-                                 <div className="    bg-[#7a7373ab] rounded-t-xl h-14 ">
-                                    
-                                </div>
-                                 <div className=" bg-[#c4c1c18e] rounded-b-xl h-14 ">
-                                    
+                            <div className="w-[97vw] lg:w-[50vw]  rounded-xl">
+                                 <form onSubmit={handleAddComment}
+                                 className=" bg-[#7a7373ab] rounded-t-xl h-20 flex flex-row items-center justify-center gap-2 ">
+                                    <input type="text" placeholder="write comment" name="Comment" className="input input-neutral" />
+                                    <button className="btn btn-primary">Primary</button>
+                                </form>
+                                 <div className=" bg-[#c4c1c18e] rounded-b-xl p-3 ">
+                                 {cardData.comments?.map((comment, index) => (
+                                        <div key={index} className="mb-4">
+                                            <div className="flex items-center gap-3">
+                                                <div className="avatar">
+                                                    <div className="mask mask-squircle h-12 w-12">
+                                                        <img
+                                                            src={comment.userPhotoURL}
+                                                            alt="User Avatar"
+                                                        />
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div className="font-bold">{comment.username}</div>
+                                                    <div className="text-sm opacity-50">
+                                                        {new Date(comment.date).toLocaleString()}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p className="ml-16">
+                                                <span className=" text-lg badge-sm">
+                                                    {comment.Comment}
+                                                </span>
+                                            </p>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         </div>
