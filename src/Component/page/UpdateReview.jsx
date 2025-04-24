@@ -45,7 +45,7 @@ const UpdateReview = () => {
         const { _id: id } = cardData; // Get ID from cardData
 
         // send data to the server
-        fetch(`https://chill-gamer-server-jzl0.onrender.com/up/${id}`, {
+        fetch(`http://localhost:5022/up/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

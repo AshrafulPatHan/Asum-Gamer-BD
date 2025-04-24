@@ -58,7 +58,7 @@ const Registration = () => {
                 navigate('/');
                 // add login data in to 
                 const sendToDataBase = async() => {
-                    const response = await fetch('https://chill-gamer-server-jzl0.onrender.com/register', {
+                    const response = await fetch('http://localhost:5022/register', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(UserData)

@@ -51,7 +51,7 @@ const Login = () => {
                 const GoogleUser = {name, email, photoURL, password}
                // ----------cake user isExist
                const SendToDataBase = async() => {
-                const response = await fetch('https://chill-gamer-server-jzl0.onrender.com/google-login', {
+                const response = await fetch('http://localhost:5022/google-login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(GoogleUser)
@@ -61,7 +61,7 @@ const Login = () => {
                     if (data.user === true) {
                         console.log("Adding user in database.");
 
-                        const response = await fetch('https://chill-gamer-server-jzl0.onrender.com/register', {
+                        const response = await fetch('http://localhost:5022/register', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(GoogleUser)

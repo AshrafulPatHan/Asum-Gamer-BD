@@ -19,7 +19,7 @@ const AllReviews = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://chill-gamer-server-jzl0.onrender.com/all-review")
+        fetch("http://localhost:5022/all-review")
         .then((res) => res.json())
         .then((data) => {
             setAll(data);

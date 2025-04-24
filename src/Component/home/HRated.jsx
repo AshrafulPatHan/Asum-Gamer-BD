@@ -14,7 +14,7 @@ const HRated = () => {
     
 // fetch data
     useEffect(() => {
-        fetch("https://chill-gamer-server-jzl0.onrender.com/limited-data")
+        fetch("http://localhost:5022/limited-data")
         .then((res) => res.json())
         .then((data) => {
             setHRate(data);

@@ -9,7 +9,7 @@ const Latest = () => {
       const [game,setGame] = useState([]);
    
       useEffect(()=>{
-         fetch('https://chill-gamer-server-jzl0.onrender.com/latest-review')
+         fetch('http://localhost:5022/latest-review')
          .then(res => res.json())
          .then(data => setGame(data))
          .catch(err => console.error(err));
