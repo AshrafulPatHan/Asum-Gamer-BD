@@ -70,7 +70,7 @@ const Navbar = () => {
 
     return (
         <div className='sticky top-0 z-50'>
-            <div className="bg-slate-100 dark:bg-[#000000] "  >
+            <div className="bg-slate-100 dark:bg-[#131313] "  >
                 <div className="navbar">
                     <div className="navbar-start">
                         {/* mobile dropdown */}
@@ -217,9 +217,9 @@ const Navbar = () => {
                         <label className="swap swap-rotate mr-0 2xl:mr-2">
                             <input type="checkbox" onClick={toggleTheme} className="theme-controller" value="synthwave" />
                             {/* sun icon */}
-                            <IoIosPartlySunny className='swap-off h-10 w-10 fill-current' />
+                            <IoIosPartlySunny className='swap-off h-10 w-10 fill-current text-black dark:text-white' />
                             {/* moon icon */}
-                            <IoMdCloudyNight className="swap-on h-10 w-10 fill-current text-white"/>
+                            <IoMdCloudyNight className="swap-on h-10 w-10 fill-current text-black dark:text-white"/>
                         </label>
                         {/* user in desktop and  */}
                         <div className='hidden lg:flex'>

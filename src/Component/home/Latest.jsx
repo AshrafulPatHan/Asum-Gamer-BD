@@ -76,9 +76,10 @@ const Latest = () => {
             </div>
             {/* ------------ side card -  */}
             <div className="flex flex-col items-start w-[300px] sm:w-[475px] border-[0.5px] shadow-xl 
-            py-4 pl-4 rounded-lg border-[#0c0c0c11] mt-10 xl:mt-[115px] ">
-               <h4 className="text-[26px] font-bold "
-               >Top 5 Best Games <span className="text-green-500">\</span></h4>
+            py-4 pl-4 rounded-lg border-[#0c0c0c11] mt-10 xl:mt-[115px] bg-white dark:bg-[#1d1c1c] ">
+               <h4 className="text-[26px] font-bold ">
+                  Top 5 Best Games <span className="text-green-500">\</span>
+               </h4>
                <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                <div>
                   {/* side card 1 */}

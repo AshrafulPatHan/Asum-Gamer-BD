@@ -47,7 +47,7 @@ function App() {
 ]);
 
   return (
-    <div className='bg-slate-300  dark:bg-[#000000] text-black dark:text-white '>
+    <div >
         <AuthProvider>
       <RouterProvider router={router} />
       <ToastContainer

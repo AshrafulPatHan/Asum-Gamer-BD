@@ -33,7 +33,7 @@ const AllReviews = () => {
 
 
     if (loading) {
-        return <div className="flex flex-col items-center my-36">
+        return <div className="flex flex-col items-center h-screen">
         <span className="loading loading-ring loading-lg"></span>
         </div>;
     }
@@ -49,7 +49,7 @@ const AllReviews = () => {
                     {
                         all.map(All => (
                             <div key={All.id}>
-                                <div className="max-w-[350px] space-y-4 rounded-lg bg-[#252525] dark:bg-[#ebe8e8] p-6 text-white dark:text-black
+                                <div className="max-w-[350px] space-y-4 rounded-lg dark:bg-[#252525] bg-[#ebe8e8] p-6 text-white dark:text-black
                                 md:w-[350px] shadow-xl ">
                                     <img width={400} height={400} className="h-[275px] w-[350px] rounded-lg object-cover" 
                                     src={All.Image} alt="card navigate ui" />

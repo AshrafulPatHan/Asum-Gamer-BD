@@ -78,8 +78,8 @@ const HighestRated = () => {
             {/* ------------ side card -  */}
             <div className="flex flex-col gap-5 xl:gap-10 mt-[80px] ">
                <div className="  w-[98vw] sm:w-[475px] border-[0.5px] hover:shadow-xl 
-                  py-4 pl-4 rounded-lg border-[#0c0c0c11] dark:border-[#4b4a4a] bg-white dark:bg-[#0c0c0c] 
-                  shadow-[#161616] dark:shadow-slate-200 ">
+                  py-4 pl-4 rounded-lg border-[#0c0c0c11] dark:border-[#4b4a4a] bg-white dark:bg-[#1d1c1c] 
+                  shadow-[#161616] ">
                   <h4 className="text-[26px] font-bold "
                   >Popular Articles <span className="text-green-500">\</span></h4>
                   <hr className="border-[#00000033] w-full mb-7 " />
