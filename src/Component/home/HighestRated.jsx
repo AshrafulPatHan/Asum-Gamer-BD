@@ -8,7 +8,7 @@ const HighestRated = () => {
    const [game,setGame] = useState([]);
 
    useEffect(()=>{
-      fetch('http://localhost:5022/higher-rate-review')
+      fetch('https://chill-gamer-server-jzl0.onrender.com/higher-rate-review')
       .then(res => res.json())
       .then(data => setGame(data))
       .catch(err => console.error(err));

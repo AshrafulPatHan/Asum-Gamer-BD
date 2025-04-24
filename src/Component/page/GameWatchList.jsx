@@ -28,7 +28,7 @@ console.log(UserEmail);
 
 useEffect(() => {
   const fetchData = async () => {
-    const response = await fetch('http://localhost:5022/my-review', {
+    const response = await fetch('https://chill-gamer-server-jzl0.onrender.com/my-review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email: UserEmail }) // email কে অবজেক্ট হিসেবে পাঠাও

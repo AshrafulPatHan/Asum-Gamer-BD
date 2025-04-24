@@ -16,7 +16,7 @@ const Taller = () => {
          }
       
          useEffect(()=>{
-            fetch('http://localhost:5022/video')
+            fetch('https://chill-gamer-server-jzl0.onrender.com/video')
             .then(res => res.json())
             .then(data => setVideo(data))
             .catch(err => console.error(err));
