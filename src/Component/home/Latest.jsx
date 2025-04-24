@@ -24,7 +24,7 @@ const Latest = () => {
       <div className="flex flex-col items-center mb-24">
          <div className="flex flex-col xl:flex-row items-start xl:gap-7">
             <div className="flex flex-col items-center sm:items-start gap-8">
-               <h3 className="text-[40px] text-black font-bold mb-5 "
+               <h3 className="text-[40px] text-black dark:text-white font-bold mb-5 "
                >Latest Reviews <samp className="text-green-500">\</samp> </h3>
                <div className=" relative text-white ">
                   <img src={first.Image}
@@ -79,7 +79,7 @@ const Latest = () => {
             py-4 pl-4 rounded-lg border-[#0c0c0c11] mt-10 xl:mt-[115px] ">
                <h4 className="text-[26px] font-bold "
                >Top 5 Best Games <span className="text-green-500">\</span></h4>
-               <hr className="border-[#00000033] w-full mb-7 " />
+               <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                <div>
                   {/* side card 1 */}
                   <div className="flex flex-row items-end gap-1 mb-2 ">
@@ -165,7 +165,7 @@ const Latest = () => {
                      </div>
                   </div>
                </div>
-               <hr className="border-[#00000033] w-full mb-[10px] "/>
+               <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-[10px] "/>
                <button
                className="font-bold hover:text-green-600 flex items-center gap-2"
                >view more top games <GoArrowRight /> </button>

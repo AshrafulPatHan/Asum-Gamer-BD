@@ -6,7 +6,7 @@ import { TbPlayerPlayFilled } from "react-icons/tb";
 const News = () => {
    return (
       <div className="flex flex-col items-center mb-24 mt-24">
-         <h4 className="text-xl sm:text-[40px] text-black font-bold mb-5 ">News</h4>
+         <h4 className="text-xl sm:text-[40px] text-black dark:text-white font-bold mb-5 ">News</h4>
          <div className="flex flex-col xl:flex-row items-start gap-5 xl:gap-7">
             <div className=" flex flex-col items-start gap-6">
                {/* video 1 */}
@@ -91,10 +91,10 @@ const News = () => {
             {/* ------------ side card -  */}
             <div className="flex flex-col gap-5 xl:gap-10 ">
                <div className="  w-[98vw] sm:w-[475px] border-[0.5px] shadow-xl 
-                  py-4 pl-4 rounded-lg border-[#0c0c0c11] ">
+                  py-4 pl-4 rounded-lg border-[#0c0c0c11] dark:border-[#9b9898] bg-white dark:bg-[#0e0c0c] ">
                   <h4 className="text-[26px] font-bold "
                   >Popular Articles <span className="text-green-500">\</span></h4>
-                  <hr className="border-[#00000033] w-full mb-7 " />
+                  <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                   <div className="flex flex-col items-center">
                      {/* card 3 */}
                      <div className="flex flex-col  items-start gap-1 sm:gap-4  ">
@@ -119,7 +119,7 @@ const News = () => {
                            </div>
                         </div>
                      </div>
-                     <hr className="border-[#00000033] w-full mb-7 " />
+                     <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                      <div className="flex flex-col items-start gap-1 w-[330px] ">
                         <h3 className="text-[16px] leading-4 mt-2 sm:mt-0 sm:leading-5 font-bold   ">
                            The gun fighting game the game chang game development</h3>
@@ -129,7 +129,7 @@ const News = () => {
                            <button><BiLike className="text-xl" /></button>
                         </div>
                      </div>
-                     <hr className="border-[#00000033] w-full mb-7 " />
+                     <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                      <div className="flex flex-col items-start gap-1 w-[330px] ">
                         <h3 className="text-[16px] leading-4 mt-2 sm:mt-0 sm:leading-5 font-bold   ">
                            The gun fighting game the game chang game development</h3>
@@ -140,7 +140,7 @@ const News = () => {
                         </div>
                      </div>
                   </div>
-                  <hr className="border-[#00000033] w-full mb-[10px] "/>
+                  <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-[10px] "/>
                   <button
                   className="font-bold hover:text-green-600 flex items-center gap-2"
                   >view more top games <GoArrowRight /> </button>

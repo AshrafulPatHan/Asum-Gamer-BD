@@ -21,11 +21,12 @@ const HighestRated = () => {
    const [first, ...rest] = game;
 
    return (
-      <div className="flex flex-col items-center mb-24">
-         <div className="flex flex-col xl:flex-row items-start gap-5 xl:gap-7">
+      <div className="flex flex-col  mb-24">
+         <div className="flex flex-col xl:flex-row items-start justify-center gap-5 xl:gap-7">
             <div className="flex flex-col items-center sm:items-start gap-8">
-               <h3 className="text-xl sm:text-[40px] text-black font-bold mb-5 "
-               >Highest Rated Game<samp className="text-green-500">\</samp> </h3>
+               <h3 className="text-xl sm:text-[40px] text-black dark:text-white font-bold mb-5 text-start  ">
+                  Highest Rated Game<samp className="text-green-500">\</samp> 
+               </h3>
                <div className=" relative text-white ">
                   <img src={first.Image}
                   width={770} height={475}
@@ -75,9 +76,10 @@ const HighestRated = () => {
                </div>
             </div>
             {/* ------------ side card -  */}
-            <div className="flex flex-col gap-5 xl:gap-10 ">
-               <div className="  w-[98vw] sm:w-[475px] border-[0.5px] shadow-xl 
-                  py-4 pl-4 rounded-lg border-[#0c0c0c11] ">
+            <div className="flex flex-col gap-5 xl:gap-10 mt-[80px] ">
+               <div className="  w-[98vw] sm:w-[475px] border-[0.5px] hover:shadow-xl 
+                  py-4 pl-4 rounded-lg border-[#0c0c0c11] dark:border-[#4b4a4a] bg-white dark:bg-[#0c0c0c] 
+                  shadow-[#161616] dark:shadow-slate-200 ">
                   <h4 className="text-[26px] font-bold "
                   >Popular Articles <span className="text-green-500">\</span></h4>
                   <hr className="border-[#00000033] w-full mb-7 " />
@@ -105,7 +107,7 @@ const HighestRated = () => {
                            </div>
                         </div>
                      </div>
-                     <hr className="border-[#00000033] w-full mb-7 " />
+                     <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
                      <div className="flex flex-col items-start gap-1 w-[330px] ">
                         <h3 className="text-[16px] leading-4 mt-2 sm:mt-0 sm:leading-5 font-bold   ">
                            The gun fighting game the game chang game development</h3>
@@ -115,7 +117,7 @@ const HighestRated = () => {
                            <button><BiLike className="text-xl" /></button>
                         </div>
                      </div>
-                     <hr className="border-[#00000033] w-full mb-7 " />
+                     <hr className="border-[#00000033] dark:border-[#bdb8b8] w-full mb-7 " />
                      <div className="flex flex-col items-start gap-1 w-[330px] ">
                         <h3 className="text-[16px] leading-4 mt-2 sm:mt-0 sm:leading-5 font-bold   ">
                            The gun fighting game the game chang game development</h3>
@@ -126,55 +128,10 @@ const HighestRated = () => {
                         </div>
                      </div>
                   </div>
-                  <hr className="border-[#00000033] w-full mb-[10px] "/>
+                  <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-[10px] "/>
                   <button
                   className="font-bold hover:text-green-600 flex items-center gap-2"
                   >view more top games <GoArrowRight /> </button>
-               </div>
-               {/* comment section */}
-               <div className="flex flex-col items-center gap-11">
-                  <div className="flex items-center gap-3">
-                     <div className="flex items-center justify-center rounded-md text-white text-lg w-[50px] h-[50px]
-                     sm:w-[150px] sm:h-[40px]  bg-[#1c1a8a] ">
-                        <FaFacebook />
-                     </div>
-                     <div className="flex items-center justify-center rounded-md text-white text-lg w-[50px] h-[50px]
-                     sm:w-[150px] sm:h-[40px]  bg-[#1c1a8a]   ">
-                        <FaLinkedin />
-                     </div>
-                     <div className="flex items-center justify-center rounded-md text-white text-lg w-[50px] h-[50px]
-                     sm:w-[150px] sm:h-[40px]  bg-[#1c1a8a]   ">
-                        <FaGithub />
-                     </div>
-                  </div>
-                  <div className=" relative">
-                     <div>
-                        <img src="https://images.photowall.com/products/74785/black-dragon-at-beach.jpg?h=699&q=85" alt="Dragon"
-                        className=" w-[96vw] sm:w-[370px] h-[296px] object-cover rounded-lg " />
-                     </div>
-                     <div className="flex flex-col items-center gap-2 bg-black/30  w-[96vw] sm:w-[370px] h-[296px]  rounded-lg
-                      absolute top-0 text-white ">
-                        <h3 className="font-bold text-xl">Give Feedback</h3>
-                        <div className="flex items-center gap-1 text-lg">
-                        <FaRegComment className="text-2xl"/>
-                           write your comment without Login
-                        </div>
-                        <div className=" flex flex-col items-start gap-5 mt-3">
-                           <div className="relative w-max">
-                              <input className="peer border-b border-gray-500 focus:border-[#1B8EF8] bg-transparent py-2 text-[#1B8EF8] focus:outline-none" type="text" id='navigate_ui_input_44'/>
-                              <label className="absolute -top-2 left-0 bg-transparent text-xs text-white duration-300 peer-placeholder-shown:left-0 peer-placeholder-shown:top-[50%] peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-blue-400" htmlFor="navigate_ui_input_44">
-                              Name or Fake Name
-                              </label>
-                           </div>
-                           <div className="relative w-max">
-                              <input className="peer border-b border-gray-500 focus:border-[#1B8EF8] bg-transparent py-2 text-[#1B8EF8] focus:outline-none" type="text" id='navigate_ui_input_44'/>
-                              <label className="absolute -top-2 left-0 bg-transparent text-xs text-white duration-300 peer-placeholder-shown:left-0 peer-placeholder-shown:top-[50%] peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2 peer-focus:-translate-y-0 peer-focus:text-xs peer-focus:text-blue-400" htmlFor="navigate_ui_input_44">
-                              Comment
-                              </label>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
                </div>
             </div>
          </div>

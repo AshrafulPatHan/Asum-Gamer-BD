@@ -50,25 +50,27 @@ const Navbar = () => {
 
     // chang mode
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
     useEffect(() => {
-    if (theme === 'dark') {
+      if (theme === 'dark') {
         document.documentElement.classList.add('dark');
-    } else {
+      } else {
         document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('theme', theme);
+      }
+      localStorage.setItem('theme', theme);
     }, [theme]);
     
     const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));
+      setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
     };
+    
     
 
 
 
     return (
         <div className='sticky top-0 z-50'>
-            <div className=" bg-[#000000] dark:bg-slate-100 "  >
+            <div className="bg-slate-100 dark:bg-[#000000] "  >
                 <div className="navbar">
                     <div className="navbar-start">
                         {/* mobile dropdown */}
@@ -119,7 +121,9 @@ const Navbar = () => {
                         {/* company name */}
                         <Link to='/' className='flex flex-row items-center'>
                             <img src={Logo} alt="logo" className='w-[45px] '/>
-                            <p className="text-sm font-bold sm:text-md xl:text-xl ml-2 hidden sm:flex md:font-bold">Asum Gamer BD</p>
+                            <p className="text-sm font-bold sm:text-md xl:text-xl ml-2 hidden sm:flex md:font-bold text-black dark:text-white">
+                                Asum Gamer BD
+                            </p>
                         </Link>
                     </div>
                     {/* navigation */}
@@ -215,7 +219,7 @@ const Navbar = () => {
                             {/* sun icon */}
                             <IoIosPartlySunny className='swap-off h-10 w-10 fill-current' />
                             {/* moon icon */}
-                            <IoMdCloudyNight className="swap-on h-10 w-10 fill-current"/>
+                            <IoMdCloudyNight className="swap-on h-10 w-10 fill-current text-white"/>
                         </label>
                         {/* user in desktop and  */}
                         <div className='hidden lg:flex'>
