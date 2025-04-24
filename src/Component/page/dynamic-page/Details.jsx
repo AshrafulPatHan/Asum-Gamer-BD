@@ -40,7 +40,7 @@ const Details = () => {
             _id: documentId,
         };
         console.log("Submitted comment data:", detailData);
-        fetch("http://localhost:5022/comment", {
+        fetch("https://chill-gamer-server-jzl0.onrender.com/comment", {
 
             method: "PATCH",
             headers: {
@@ -72,7 +72,7 @@ const Details = () => {
     }, [locationData]);
     // Add WatchList
     const handleWatchList = () => {
-        fetch('http://localhost:5022/watchLists', {
+        fetch('https://chill-gamer-server-jzl0.onrender.com/watchLists', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

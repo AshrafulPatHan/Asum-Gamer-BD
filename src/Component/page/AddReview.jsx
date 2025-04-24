@@ -43,7 +43,7 @@ const AddReview = () => {
         console.log(allData);
 
         // send data to the server
-        fetch('http://localhost:5022/add-review', {
+        fetch('https://chill-gamer-server-jzl0.onrender.com/add-review', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
