@@ -33,8 +33,8 @@ const AllReviews = () => {
 
 
     if (loading) {
-        return <div className="flex flex-col items-center h-screen">
-        <span className="loading loading-ring loading-lg"></span>
+        return <div className="flex flex-col justify-center items-center h-screen">
+        <span className="loading loading-bars loading-xl w-11 h-11"></span>
         </div>;
     }
 

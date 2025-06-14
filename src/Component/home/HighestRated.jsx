@@ -15,7 +15,7 @@ const HighestRated = () => {
    }, []);
 
    if (game.length === 0) {
-      return <p>Loading...</p>;
+      return <div className="flex items-center justify-center"><span className="loading loading-ring loading-xl w-10 h-10 "></span></div>;
    }
 
    const [first, ...rest] = game;

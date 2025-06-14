@@ -45,8 +45,8 @@ useEffect(() => {
 
   if (loading) {
     return (
-      <div className="flex flex-col items-center justify-center mt-20">
-        <span className="loading loading-bars loading-lg"></span>
+      <div className="flex flex-col items-center justify-center h-screen">
+       <span className="loading loading-bars loading-xl w-11 h-11"></span>
       </div>
     );
   }

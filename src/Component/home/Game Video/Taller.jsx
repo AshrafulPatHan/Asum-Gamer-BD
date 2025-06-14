@@ -23,7 +23,7 @@ const Taller = () => {
          }, []);
       
          if (video.length === 0) {
-            return <p>Loading...</p>;
+            return <p><div className="flex items-center justify-center"><span className="loading loading-ring loading-xl w-10 h-10 "></span></div></p>;
          }
       
          const [first, ...rest] = video;
