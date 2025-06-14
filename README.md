@@ -1,6 +1,6 @@
-# 🎮 Chill Gamer
+# 🎮 Asum Gamer BD
 
-Welcome to the **Chill Gamer**! This is a platform where users can explore, rate, and review their favorite games. Whether you're a casual gamer or a hardcore enthusiast, this site is your go-to place for honest and comprehensive game reviews.
+Welcome to the **Asum Gamer BD**! This is a platform where users can explore, rate, and review their favorite games. Whether you're a casual gamer or a hardcore enthusiast, this site is your go-to place for honest and comprehensive game reviews.
 
 ---
 
@@ -37,11 +37,11 @@ Make sure you have the following installed:
 
 ## ➤ View the Website
 1.🔭  Visit our wabcite:
-[Visit Live Link](https://chillgamer-10bf2.web.app)
+[Visit Live Link](https://asum-gamer-bd.vercel.app)
 
 ### Installation or View
 
 2.🔧  Clone the repository/Visit our wabcite:
    ```bash
-   git clone https://github.com/your-username/game-rating-website.git
-   Live Link https://chillgamer-10bf2.web.app
+   git clone https://github.com/AshrafulPatHan/Asum-Gamer-BD
+   Live Link https://asum-gamer-bd.vercel.app
