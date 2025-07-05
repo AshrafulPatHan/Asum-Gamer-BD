@@ -39,7 +39,7 @@ const BanerSlider = () => {
         ],
     };
     return (
-        <div className="flex flex-col items-center justify-center mb-28 ">
+        <div className="flex flex-col items-center justify-center mb-28 overflow-x-hidden ">
             <div className='w-full ' >
                 <Slider {...settings} className='flex flex-row items-center gap-0'>
                     <div>

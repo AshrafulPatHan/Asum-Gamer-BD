@@ -46,7 +46,7 @@ const Navbar = () => {
             }
           });
         };
-        const [showTooltip, setShowTooltip] = useState(false);
+const [showTooltip, setShowTooltip] = useState(false);
 
     // chang mode
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');

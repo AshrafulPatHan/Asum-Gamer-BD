@@ -24,6 +24,7 @@ import Setting from './Component/page/Setting';
 import News from './Component/page/news/news';
 import Store from './Component/page/store/store';
 import Video from './Component/home/Game Video/Video';
+import Ui from './Component/ui/Ui';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
     { path: "/review/:id", element: <Details  /> },
     { path: "/video/:id", element: <Video  /> },
     { path: "/login", element: <Login  /> },
+    { path: "/ui", element: <Ui  /> },
     { path: "/registration", element: <Registration  /> },
     { path: "/addReview", element: <Privaterout><AddReview /></Privaterout> },
     { path: "/myReviews", element: <Privaterout ><MyReviews  /></Privaterout>},
@@ -48,21 +50,21 @@ function App() {
 
   return (
     <div >
-        <AuthProvider>
-      <RouterProvider router={router} />
-      <ToastContainer
-      position="top-center"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      transition: Bounce
-      />
+      <AuthProvider>
+        <RouterProvider router={router} />
+        <ToastContainer
+          position="top-center"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+          transition: Bounce
+        />
       </AuthProvider>
     </div>
   )

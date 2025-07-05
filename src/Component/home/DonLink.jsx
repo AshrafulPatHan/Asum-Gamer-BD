@@ -4,7 +4,7 @@
 const DonLink = () => {
     return (
     <div>
-        <div className='flex flex-col items-center mb-24 '>
+        <div className='flex flex-col items-center mb-24 overflow-x-hidden '>
             <h2 className='sm:text-4xl text-3xl mb-9 font-bold'>Game Download link</h2>
             <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 '>
                 <div className="card bg-base-100 image-full sm:w-96 w-[320px] shadow-xl">

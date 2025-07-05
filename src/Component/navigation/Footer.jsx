@@ -7,7 +7,7 @@ import { toast } from 'react-toastify';
 const Footer = () => {
     return (
         <div>
-            <div className='mt-4'>
+            <div className='mt-4 overflow-x-hidden'>
                 <footer className="footer bg-base-200 dark:bg-[#1b1b1b]  text-base-content dark:text-white p-10">
                     <nav>
                         <h6 className="footer-title">Services</h6>
@@ -23,7 +23,7 @@ const Footer = () => {
                     </nav>
                     <nav >
                         <h6 className="footer-title">Send Your Fatback</h6>
-                        <div className='flex items-center gap-2'>
+                        <div className='flex flex-col sm:flex-row items-center gap-2'>
                             <label className="input input-bordered flex items-center gap-2">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"

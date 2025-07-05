@@ -3,6 +3,7 @@ import { FaRegCommentAlt } from "react-icons/fa";
 import { TbPlayerPlayFilled } from "react-icons/tb";
 import { GoArrowRight } from "react-icons/go";
 import { useEffect, useState } from "react";
+import LatestSideCard from "./ui/LatestSideCard";
 
 
 const Latest = () => {
@@ -21,7 +22,7 @@ const Latest = () => {
    
       const [first, ...rest] = game;
    return (
-      <div className="flex flex-col items-center mb-24">
+      <div className="flex flex-col items-center mb-24 overflow-x-hidden">
          <div className="flex flex-col xl:flex-row items-start xl:gap-7">
             <div className="flex flex-col items-center sm:items-start gap-8">
                <h3 className="text-[40px] text-black dark:text-white font-bold mb-5 "
@@ -75,102 +76,7 @@ const Latest = () => {
                </div>
             </div>
             {/* ------------ side card -  */}
-            <div className="flex flex-col items-start w-[300px] sm:w-[475px] border-[0.5px] shadow-xl 
-            py-4 pl-4 rounded-lg border-[#0c0c0c11] mt-10 xl:mt-[115px] bg-white dark:bg-[#1d1c1c] ">
-               <h4 className="text-[26px] font-bold ">
-                  Top 5 Best Games <span className="text-green-500">\</span>
-               </h4>
-               <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-7 " />
-               <div>
-                  {/* side card 1 */}
-                  <div className="flex flex-row items-end gap-1 mb-2 ">
-                     <div className=" relative ">
-                        <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                        className="h-[80px] w-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover"
-                        />
-                     </div>
-                     <div className="flex flex-col items-start gap-1 w-[200px] ">
-                        <h3 className="text-[15px] leading-4 mt-2 sm:mt-0 font-bold   ">
-                        microsoft flit smelter</h3>
-                        <div className="flex flex-row items-center ">
-                           <p>1.1.2025</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div>
-                  {/* side card 1 */}
-                  <div className="flex flex-row items-end gap-1 mb-2 ">
-                     <div className=" relative ">
-                        <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                        className="h-[80px] w-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover"
-                        />
-                     </div>
-                     <div className="flex flex-col items-start gap-1 w-[200px] ">
-                        <h3 className="text-[15px] leading-4 mt-2 sm:mt-0 font-bold   ">
-                        microsoft flit smelter</h3>
-                        <div className="flex flex-row items-center ">
-                           <p>1.1.2025</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div>
-                  {/* side card 1 */}
-                  <div className="flex flex-row items-end gap-1 mb-2 ">
-                     <div className=" relative ">
-                        <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                        className="h-[80px] w-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover"
-                        />
-                     </div>
-                     <div className="flex flex-col items-start gap-1 w-[200px] ">
-                        <h3 className="text-[15px] leading-4 mt-2 sm:mt-0 font-bold   ">
-                        microsoft flit smelter</h3>
-                        <div className="flex flex-row items-center ">
-                           <p>1.1.2025</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div>
-                  {/* side card 1 */}
-                  <div className="flex flex-row items-end gap-1 mb-2 ">
-                     <div className=" relative ">
-                        <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                        className="h-[80px] w-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover"
-                        />
-                     </div>
-                     <div className="flex flex-col items-start gap-1 w-[200px] ">
-                        <h3 className="text-[15px] leading-4 mt-2 sm:mt-0 font-bold   ">
-                        microsoft flit smelter</h3>
-                        <div className="flex flex-row items-center ">
-                           <p>1.1.2025</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div>
-                  {/* side card 1 */}
-                  <div className="flex flex-row items-end gap-1 mb-2 ">
-                     <div className=" relative ">
-                        <img src="https://i.ibb.co.com/6NZyr8T/capsule-616x353.jpg" alt="microsoft flit smelter" 
-                        className="h-[80px] w-[80px] lg:w-[120px] lg:h-[120px] rounded-lg object-cover"
-                        />
-                     </div>
-                     <div className="flex flex-col items-start gap-1 w-[200px] ">
-                        <h3 className="text-[15px] leading-4 mt-2 sm:mt-0 font-bold   ">
-                        microsoft flit smelter</h3>
-                        <div className="flex flex-row items-center ">
-                           <p>1.1.2025</p>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <hr className="border-[#00000033] dark:border-[#bdb8b8]  w-full mb-[10px] "/>
-               <button
-               className="font-bold hover:text-green-600 flex items-center gap-2"
-               >view more top games <GoArrowRight /> </button>
-            </div>
+            <LatestSideCard/>
          </div>
       </div>
    );

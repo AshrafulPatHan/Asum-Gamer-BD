@@ -28,7 +28,7 @@ const Taller = () => {
       
          const [first, ...rest] = video;
    return (
-      <div className="flex flex-col items-center text-white bg-[#1c192c] py-20 ">
+      <div className="flex flex-col items-center text-white bg-[#1c192c] py-20 overflow-x-hidden ">
          <h4 
          className="text-white text-start text-4xl font-bold mb-12  "
          >Game Video</h4>
