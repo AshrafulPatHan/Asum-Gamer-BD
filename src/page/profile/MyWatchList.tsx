@@ -1,6 +1,6 @@
 
 
-const GameWatchList = () => {
+const MyWatchList = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const GameWatchList = () => {
     );
 };
 
-export default GameWatchList;
+export default MyWatchList;
