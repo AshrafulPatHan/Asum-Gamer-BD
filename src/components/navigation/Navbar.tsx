@@ -1,5 +1,5 @@
 import  { useEffect, useState } from 'react';
-import Logo from '/logoAsum.ico'
+import Logo from '../../assets/icons/logoAsum.png'
 // import { Link, useNavigate } from '';
 // import { AuthContext } from '../AuthProvider/AuthProvider';
 // import { signOut } from 'firebase/auth';
