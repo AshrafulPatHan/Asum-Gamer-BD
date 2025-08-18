@@ -1,6 +1,6 @@
 
 
-const LatestNews = () => {
+const Blog = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const LatestNews = () => {
     );
 };
 
-export default LatestNews;
+export default Blog;

@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import './index.css'
 import App from './App.tsx'
 import { Toaster } from "react-hot-toast";
-import News from "./page/news/News.tsx";
 import Shope from "./page/store/Shope.tsx";
 import AllReview from "./page/review/AllReview.tsx";
 import ReviewDetails from "./page/review/ReviewDetails.tsx";
@@ -19,6 +18,7 @@ import UpdateReview from "./page/review/UpdateReview.tsx";
 import Profile from "./page/profile/Profile.tsx";
 import Setting from "./page/setting/Setting.tsx";
 import Error404 from "./components/error/404.tsx";
+import Blog from "./page/blog/blog.tsx";
 
 const root = document.getElementById("root") as HTMLElement;
 
@@ -26,7 +26,7 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/" element={<News />} />
+      <Route path="/" element={<Blog />} />
       <Route path="/" element={<Shope />} />
       <Route path="/" element={<AllReview />} />
       <Route path="/" element={<ReviewDetails />} />
