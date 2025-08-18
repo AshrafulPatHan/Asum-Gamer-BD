@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
   <head>
     <meta charset="UTF-8" />
     <!-- Link favicon -->
@@ -11,6 +11,14 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- javascript -->
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      const html = document.documentElement;
+      document.getElementById("toggleDark").addEventListener("click", () => {
+        html.classList.toggle("dark");
+      });
+    </script>
   </body>
 </html>

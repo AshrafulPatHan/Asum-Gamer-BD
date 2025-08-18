@@ -26,20 +26,20 @@ ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/" element={<Blog />} />
-      <Route path="/" element={<Shope />} />
-      <Route path="/" element={<AllReview />} />
-      <Route path="/" element={<ReviewDetails />} />
-      <Route path="/" element={<GameVideo />} />
-      <Route path="/" element={<Login />} />
-      <Route path="/" element={<Registration />} />
-      <Route path="/" element={<Ui />} />
-      <Route path="/" element={<AddReview />} />
-      <Route path="/" element={<MyReview />} />
-      <Route path="/" element={<MyWatchList />} />
-      <Route path="/" element={<UpdateReview />} />
-      <Route path="/" element={<Profile />} />
-      <Route path="/" element={<Setting />} />
+      <Route path="/blog" element={<Blog />} />
+      <Route path="/shop" element={<Shope />} />
+      <Route path="/all-review" element={<AllReview />} />
+      <Route path="/review/:id" element={<ReviewDetails />} />
+      <Route path="/video" element={<GameVideo />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/registration" element={<Registration />} />
+      <Route path="/ui" element={<Ui />} />
+      <Route path="/add-review" element={<AddReview />} />
+      <Route path="/my-review" element={<MyReview />} />
+      <Route path="/my-watch-list" element={<MyWatchList />} />
+      <Route path="/update-review" element={<UpdateReview />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/setting" element={<Setting />} />
       <Route path="*" element={<Error404 />} />
     </Routes>
     <Toaster/>

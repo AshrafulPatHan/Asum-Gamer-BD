@@ -12,7 +12,7 @@ import Navbar from './components/navigation/Navbar'
 function App() {
 
   return (
-  <div>
+  <div className=' bg-white dark:bg-black text-black dark:text-white '>
     <Navbar/>
     <BanerSlider/>
     <DonLink/>
