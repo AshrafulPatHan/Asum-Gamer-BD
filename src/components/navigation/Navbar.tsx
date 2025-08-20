@@ -65,8 +65,8 @@ const Navbar = () => {
               <Link to="/" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Home</Link>
               <Link to="/reviews" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">All Reviews</Link>
               <Link to="/myReviews" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Reviews</Link>
-              <Link to="/addReview" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Add Review</Link>
-              <Link to="/myWatchlist" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Watchlist</Link>
+              <Link to="/add-review" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Add Review</Link>
+              <Link to="/my-watch-list" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Watchlist</Link>
               <Link to="/news" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">News</Link>
               <Link to="/store" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Store</Link>
             </>
@@ -76,8 +76,8 @@ const Navbar = () => {
               <Link to="/reviews" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">All Reviews</Link>
               <Link to="/news" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">News</Link>
               <Link to="/store" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Store</Link>
-              <Link to="/addReview" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Add Review</Link>
-              <Link to="/myWatchlist" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Watchlist</Link>
+              <Link to="/add-review" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Add Review</Link>
+              <Link to="/my-watch-list" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Watchlist</Link>
             </>
           )}
         </div>
@@ -135,8 +135,8 @@ const Navbar = () => {
               <Link to="/" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Home</Link>
               <Link to="/reviews" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">All Reviews</Link>
               <Link to="/myReviews" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Reviews</Link>
-              <Link to="/addReview" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Add Review</Link>
-              <Link to="/myWatchlist" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
+              <Link to="/add-review" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Add Review</Link>
+              <Link to="/my-watch-list" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
               <Link to="/news" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">News</Link>
               <Link to="/store" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Store</Link>
               <button onClick={handleLogout} className="px-3 py-2 text-left text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Logout</button>
@@ -147,8 +147,8 @@ const Navbar = () => {
               <Link to="/reviews" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">All Reviews</Link>
               <Link to="/news" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">News</Link>
               <Link to="/store" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Store</Link>
-              <Link to="/addReview" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Add Review</Link>
-              <Link to="/myWatchlist" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
+              <Link to="/add-review" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Add Review</Link>
+              <Link to="/my-watch-list" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
               <Link to="/login" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Login</Link>
               <Link to="/registration" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Register</Link>
             </>

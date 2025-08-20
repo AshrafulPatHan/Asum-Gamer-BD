@@ -1,2 +1,11 @@
 
 
+.auth-photo {
+    background-image: url("https://i.ibb.co.com/Ps6Q2k1p/benjamin-voros-ph-IFd-C6l-A4-E-unsplash.jpg");
+    display: inline-flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+

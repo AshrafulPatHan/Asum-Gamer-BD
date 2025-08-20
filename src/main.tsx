@@ -28,7 +28,7 @@ ReactDOM.createRoot(root).render(
       <Route path="/" element={<App />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/shop" element={<Shope />} />
-      <Route path="/all-review" element={<AllReview />} />
+      <Route path="/reviews" element={<AllReview />} />
       <Route path="/review/:id" element={<ReviewDetails />} />
       <Route path="/video" element={<GameVideo />} />
       <Route path="/login" element={<Login />} />
