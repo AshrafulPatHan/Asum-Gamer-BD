@@ -1,9 +1,32 @@
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Navbar from "../../components/navigation/Navbar";
 import Footer from "../../components/navigation/Footer";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router";
+
 
 const Login = () => {
-  return (
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
+    const navigate = useNavigate();
+
+
+    const handelLogin = async (e: React.FormEvent<HTMLFormElement>) => {
+          e.preventDefault();
+        try {
+            const res = await axios.post("http://localhost:5022/login", { email, password });
+            
+            localStorage.setItem("token", res.data.token); // save token
+            console.log("Login Success", res.data.user);
+            navigate("/"); 
+        } catch (error:any) {
+            console.error("Login Failed", error.response.data);
+        }
+    }
+    
+return (
     <div>
         <Navbar />
         <div
@@ -17,15 +40,21 @@ const Login = () => {
             <h2 className="text-2xl font-bold text-center text-white mb-6">
                 Login
             </h2>
-            <form className="flex flex-col space-y-4">
+            <form onSubmit={handelLogin} className="flex flex-col space-y-4">
                 <input
                 type="email"
                 placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
                 className="w-full px-4 py-2 rounded-lg bg-white/70 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <input
-                type="password"
+                type="text"
                 placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
                 className="w-full px-4 py-2 rounded-lg bg-white/70 text-black placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
                 <button
