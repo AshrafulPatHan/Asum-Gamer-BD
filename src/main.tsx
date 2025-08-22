@@ -19,6 +19,7 @@ import Profile from "./page/profile/Profile.tsx";
 import Setting from "./page/setting/Setting.tsx";
 import Error404 from "./components/error/404.tsx";
 import Blog from "./page/blog/blog.tsx";
+import PrivateRoute from "./components/routes/PrivateRoute.tsx";
 
 const root = document.getElementById("root") as HTMLElement;
 
@@ -34,12 +35,12 @@ ReactDOM.createRoot(root).render(
       <Route path="/login" element={<Login />} />
       <Route path="/registration" element={<Registration />} />
       <Route path="/ui" element={<Ui />} />
-      <Route path="/add-review" element={<AddReview />} />
-      <Route path="/my-review" element={<MyReview />} />
-      <Route path="/my-watch-list" element={<MyWatchList />} />
-      <Route path="/update-review" element={<UpdateReview />} />
-      <Route path="/profile" element={<Profile />} />
-      <Route path="/setting" element={<Setting />} />
+      <Route path="/add-review" element={<PrivateRoute><AddReview /></PrivateRoute>} />
+      <Route path="/my-review" element={<PrivateRoute><MyReview /></PrivateRoute>} />
+      <Route path="/my-watch-list" element={<PrivateRoute><MyWatchList /></PrivateRoute>} />
+      <Route path="/update-review" element={<PrivateRoute><UpdateReview /></PrivateRoute>} />
+      <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+      <Route path="/setting" element={<PrivateRoute><Setting /></PrivateRoute>} />
       <Route path="*" element={<Error404 />} />
     </Routes>
     <Toaster/>

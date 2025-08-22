@@ -1,12 +1,15 @@
 import { Navigate } from "react-router";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
+
 
 function PrivateRoute({ children }) {
   const [auth, setAuth] = useState<boolean | null>(null); // null = loading, true = ok, false = not auth
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
+    const token = Cookies.get("token");
     if (!token) {
       setAuth(false);
       return;
@@ -14,7 +17,7 @@ function PrivateRoute({ children }) {
 
     // token verify 
     axios
-      .get("http://localhost:5022/verify", {
+      .get("https://chill-gamer-server-jzl0.onrender.com/verify", {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => setAuth(true))

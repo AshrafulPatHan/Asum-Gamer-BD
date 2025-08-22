@@ -4,6 +4,7 @@ import Footer from "../../components/navigation/Footer";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
+import Cookies from "js-cookie";
 
 
 const Login = () => {
@@ -18,7 +19,12 @@ const Login = () => {
         try {
             const res = await axios.post("https://chill-gamer-server-jzl0.onrender.com/login", { email, password });
             
-            localStorage.setItem("token", res.data.token); // save token
+            // token save in cookie
+            Cookies.set("token", res.data.token, {
+                expires: 7, 
+                secure: true,
+                sameSite: "strict", 
+            });
             console.log("Login Success", res.data.user);
             navigate("/"); 
         } catch (error:any) {
