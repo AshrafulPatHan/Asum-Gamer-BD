@@ -6,12 +6,14 @@ import SideCard from "./ui/SideCard";
 const HighestRated = () => {
   const [game, setGame] = useState<any[]>([]);
 
+  const PublicApi = import.meta.env.VITE_PUBLIC_API;
+
   useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/higher-rate-review")
+    fetch(`${PublicApi}/higher-rate-review`)
       .then((res) => res.json())
       .then((data) => setGame(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [PublicApi]);
 
   if (game.length === 0) {
     return (

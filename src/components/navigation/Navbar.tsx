@@ -1,41 +1,33 @@
-import  { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Logo from '../../assets/icons/logoAsum.png'
-// import { Link, useNavigate } from '';
-// import { AuthContext } from '../AuthProvider/AuthProvider';
-// import { signOut } from 'firebase/auth';
-// import auth from '../../Firebase/Firebase.init';
-// import { toast } from 'react-hot-toast';
 import { IoIosPartlySunny, IoMdCloudyNight } from 'react-icons/io';
-import { Link} from 'react-router';
-// import Swal from 'sweetalert2';
+import { Link } from 'react-router';
+import { useAuth } from '../../providers/AuthProvider';
+
 
 const Navbar = () => {
-    // const navigate = useNavigate();
-    // const { user } = useContext(AuthContext);
-    const { user } = [false,false];
+  const { user, logout } = useAuth();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 
-    const [menuOpen, setMenuOpen] = useState(false);
-    const [userMenuOpen, setUserMenuOpen] = useState(false);
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
-    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
-
-    useEffect(() => {
-        if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        } else {
-        document.documentElement.classList.remove('dark');
-        }
-        localStorage.setItem('theme', theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
-    };
+  const toggleTheme = () => {
+    setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+  };
 
   return (
     <div className="sticky top-0 z-50 bg-slate-100 dark:bg-[#131313] shadow-md">
       <div className="flex items-center justify-between px-4 py-2">
-        
+
         {/* Logo + mobile menu button */}
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
@@ -85,21 +77,13 @@ const Navbar = () => {
         {/* Right side */}
         <div className="flex items-center gap-3">
           {/* theme toggle */}
-          {/* <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+          <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
             {theme === 'light' ? (
               <IoIosPartlySunny className="h-7 w-7 text-black" />
             ) : (
               <IoMdCloudyNight className="h-7 w-7 text-white" />
             )}
-            </button> */}
-            {/* theme toggle */}
-            <button onClick={toggleTheme} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
-                {theme === 'light' ? (
-                    <IoIosPartlySunny className="h-7 w-7 text-black" />
-                ) : (
-                    <IoMdCloudyNight className="h-7 w-7 text-white" />
-                )}
-            </button>
+          </button>
 
           {/* user profile */}
           {user ? (
@@ -114,7 +98,7 @@ const Navbar = () => {
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 shadow-lg rounded-md p-2 flex flex-col">
                   <Link to="/profile" className="px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Profile</Link>
                   <Link to="/setting" className="px-3 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Settings</Link>
-                  <button onClick={handleLogout} className="px-3 py-2 text-left text-red-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Logout</button>
+                  <button onClick={logout} className="px-3 py-2 text-left text-red-500 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Logout</button>
                 </div>
               )}
             </div>
@@ -139,7 +123,7 @@ const Navbar = () => {
               <Link to="/my-watch-list" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
               <Link to="/news" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">News</Link>
               <Link to="/store" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Store</Link>
-              <button onClick={handleLogout} className="px-3 py-2 text-left text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Logout</button>
+              <button onClick={logout} className="px-3 py-2 text-left text-red-500 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Logout</button>
             </>
           ) : (
             <>

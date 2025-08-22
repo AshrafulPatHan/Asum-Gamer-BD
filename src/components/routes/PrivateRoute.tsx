@@ -1,10 +1,14 @@
 import { Navigate } from "react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 
 
-function PrivateRoute({ children }) {
+interface PrivateRouteProps {
+  children: ReactNode;
+}
+
+function PrivateRoute({ children }:PrivateRouteProps) {
   const [auth, setAuth] = useState<boolean | null>(null); // null = loading, true = ok, false = not auth
 
   useEffect(() => {

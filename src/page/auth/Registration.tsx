@@ -11,8 +11,10 @@ const Registration = () => {
     const [loading, setLoading] = useState(false);
 
     const apiKey = import.meta.env.VITE__IMAGEBB_API_KEY;
+    const PublicApi = import.meta.env.VITE_PUBLIC_API;
     const navigate = useNavigate();
-
+   
+    
     // mange file submit
     const handleFileSelect = async (file: File) => {
         const formData = new FormData();
@@ -57,7 +59,7 @@ const Registration = () => {
         }
 
         try {
-            const res = await axios.post("https://chill-gamer-server-jzl0.onrender.com/register", {
+            const res = await axios.post(`${PublicApi}/register`, {
                 name,
                 email,
                 password,
@@ -129,7 +131,7 @@ const Registration = () => {
                                     handleFileSelect(file);
                                 }
                             }}
-                            className="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-pink-50 file:text-pink-700 hover:file:bg-pink-100 mb-4"
+                            className="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-pink-100 file:text-pink-700 hover:file:bg-pink-200 mb-4"
                         />
 
                         {/* Password */}

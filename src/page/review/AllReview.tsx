@@ -15,8 +15,10 @@ const AllReview = () => {
   const [loading, setLoading] = useState(true);
   const [sortOrder, setSortOrder] = useState<"high" | "low">("high");
 
+  const PublicApi = import.meta.env.VITE_PUBLIC_API;
+
   useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/all-review")
+    fetch(`${PublicApi}/all-review`)
       .then((res) => res.json())
       .then((data) => {
         setAll(data);
@@ -26,7 +28,7 @@ const AllReview = () => {
         console.error("Error fetching data:", error);
         setLoading(false);
       });
-  }, []);
+  }, [PublicApi]);
 
   const sortedReviews = [...all].sort((a, b) =>
     sortOrder === "high" ? b.Rating - a.Rating : a.Rating - b.Rating

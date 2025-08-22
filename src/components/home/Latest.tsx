@@ -4,14 +4,16 @@ import { useEffect, useState } from "react";
 import LatestSideCard from "./ui/LatestSideCard";
 
 const Latest = () => {
-  const [game, setGame] = useState([]);
+  const [game, setGame] = useState<any[]>([]);
+
+  const PublicApi = import.meta.env.VITE_PUBLIC_API;
 
   useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/latest-review")
+    fetch(`${PublicApi}/latest-review`)
       .then((res) => res.json())
       .then((data) => setGame(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [PublicApi]);
 
   if (game.length === 0) {
     return (

@@ -5,26 +5,30 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import Cookies from "js-cookie";
+import { useAuth } from "../../providers/AuthProvider";
 
 
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    const { setUser } = useAuth();
     const navigate = useNavigate();
+    const PublicApi = import.meta.env.VITE_PUBLIC_API;
 
 
     const handelLogin = async (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
         try {
-            const res = await axios.post("https://chill-gamer-server-jzl0.onrender.com/login", { email, password });
+            const res = await axios.post(`${PublicApi}/login`, { email, password });
             
             // token save in cookie
             Cookies.set("token", res.data.token, {
-                expires: 7, 
+                expires: 14, 
                 secure: true,
                 sameSite: "strict", 
             });
+            setUser(res.data.user);
             console.log("Login Success", res.data.user);
             navigate("/"); 
         } catch (error:any) {

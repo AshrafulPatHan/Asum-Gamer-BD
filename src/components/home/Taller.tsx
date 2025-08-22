@@ -20,16 +20,18 @@ const Taller = () => {
   const [video, setVideo] = useState<Video[]>([]);
   const navigate = useNavigate();
 
+  const PublicApi = import.meta.env.VITE_PUBLIC_API;
+
   const handleVideo = (game:Video) => {
     navigate(`/video/${game.id}`, { state: game });
   };
 
   useEffect(() => {
-    fetch("https://chill-gamer-server-jzl0.onrender.com/video")
+    fetch(`${PublicApi}/video`)
       .then((res) => res.json())
       .then((data) => setVideo(data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [PublicApi]);
 
   if (video.length === 0) {
     return (
