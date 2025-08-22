@@ -1,4 +1,4 @@
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+// import { FaGoogle, FaFacebook } from "react-icons/fa";
 import Navbar from "../../components/navigation/Navbar";
 import Footer from "../../components/navigation/Footer";
 import { useState } from "react";
@@ -6,6 +6,9 @@ import axios from "axios";
 import { useNavigate } from "react-router";
 import Cookies from "js-cookie";
 import { useAuth } from "../../providers/AuthProvider";
+import { GoogleLogin } from "@react-oauth/google";
+import toast from "react-hot-toast";
+import { jwtDecode } from "jwt-decode";
 
 
 const Login = () => {
@@ -15,6 +18,7 @@ const Login = () => {
     const { setUser } = useAuth();
     const navigate = useNavigate();
     const PublicApi = import.meta.env.VITE_PUBLIC_API;
+    
 
 
     const handelLogin = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -36,6 +40,19 @@ const Login = () => {
         }
     }
     
+const LoginGoogle = (credentialResponse:any)=>{
+    const authData = jwtDecode(credentialResponse.credential);
+
+    console.log(credentialResponse);
+    console.log(authData);
+
+    const UserEmail:string = authData.email
+    const UserName:string = authData.name
+    const UserPhoto:string = authData.picture
+    console.log({UserEmail,UserName,UserPhoto});
+    
+}
+
 return (
     <div>
         <Navbar />
@@ -79,13 +96,10 @@ return (
                 <span className="text-gray-200">Or login with</span>
             </div>
 
-            <div className="flex space-x-4">
-                <button className="flex items-center justify-center w-1/2 py-2 rounded-lg text-white font-semibold transition bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 shadow-md">
-                <FaGoogle className="mr-2" /> Google
-                </button>
-                <button className="flex items-center justify-center w-1/2 py-2 rounded-lg text-white font-semibold transition bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-md">
-                <FaFacebook className="mr-2" /> Facebook
-                </button>
+            <div className="flex flex-col items-center justify-center">
+                <GoogleLogin onSuccess={(credentialResponse)=> LoginGoogle(credentialResponse)}
+                onError={()=> toast("Error is coming on google login")}
+                auto_select={true} />
             </div>
             </div>
         </div>

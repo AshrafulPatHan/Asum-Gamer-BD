@@ -21,12 +21,17 @@ import Error404 from "./components/error/404.tsx";
 import Blog from "./page/blog/blog.tsx";
 import PrivateRoute from "./components/routes/PrivateRoute.tsx";
 import { AuthProvider } from "./providers/AuthProvider.tsx";
+import { GoogleOAuthProvider } from "@react-oauth/google"
+
+
+const GooglePublicApi = import.meta.env.VITE_OAUTH_GOOGLE;
 
 const root = document.getElementById("root") as HTMLElement;
 
 ReactDOM.createRoot(root).render(
   <BrowserRouter>
     <AuthProvider>
+      <GoogleOAuthProvider clientId={GooglePublicApi}>
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/blog" element={<Blog />} />
@@ -45,6 +50,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/setting" element={<PrivateRoute><Setting /></PrivateRoute>} />
         <Route path="*" element={<Error404 />} />
       </Routes>
+      </GoogleOAuthProvider>
       </AuthProvider>
     <Toaster/>
   </BrowserRouter>,
