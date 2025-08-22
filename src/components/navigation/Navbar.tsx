@@ -91,7 +91,7 @@ const Navbar = () => {
               <img
                 src={user.photoURL || "default-avatar.png"}
                 alt="User"
-                className="w-10 h-10 rounded-full cursor-pointer"
+                className="w-10 h-10 rounded-full object-cover cursor-pointer"
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
               />
               {userMenuOpen && (

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Footer from "../../components/navigation/Footer";
 import Navbar from "../../components/navigation/Navbar";
+import { useNavigate } from "react-router";
 
 type Review = {
   id: string;
@@ -8,14 +9,23 @@ type Review = {
   Title: string;
   Rating: number;
   Image: string;
+  date: string; 
 };
 
 const AllReview = () => {
   const [all, setAll] = useState<Review[]>([]);
   const [loading, setLoading] = useState(true);
-  const [sortOrder, setSortOrder] = useState<"high" | "low">("high");
+
+  // 🔹 Default set to "dateNew"
+  const [sortOption, setSortOption] = useState<"ratingHigh" | "ratingLow" | "dateNew" | "dateOld">("dateNew");
 
   const PublicApi = import.meta.env.VITE_PUBLIC_API;
+  const navigate = useNavigate();
+
+  // view details page =>
+  const handleExploreDetails = (All:Review) => {
+      navigate(`/review/${All.id}`, { state: All }); 
+  };
 
   useEffect(() => {
     fetch(`${PublicApi}/all-review`)
@@ -30,9 +40,20 @@ const AllReview = () => {
       });
   }, [PublicApi]);
 
-  const sortedReviews = [...all].sort((a, b) =>
-    sortOrder === "high" ? b.Rating - a.Rating : a.Rating - b.Rating
-  );
+  const sortedReviews = [...all].sort((a, b) => {
+    switch (sortOption) {
+      case "ratingHigh":
+        return b.Rating - a.Rating;
+      case "ratingLow":
+        return a.Rating - b.Rating;
+      case "dateNew":
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      case "dateOld":
+        return new Date(a.date).getTime() - new Date(b.date).getTime();
+      default:
+        return 0;
+    }
+  });
 
   if (loading) {
     return (
@@ -44,7 +65,7 @@ const AllReview = () => {
   }
 
   return (
-    <div className=" bg-white dark:bg-black text-black dark:text-white">
+    <div className="bg-white dark:bg-black text-black dark:text-white">
       <Navbar />
       <div className="flex flex-col items-center">
         <h2 className="text-4xl mb-8 mt-16 font-bold">See All Reviews</h2>
@@ -52,12 +73,14 @@ const AllReview = () => {
         {/* Sorting Section */}
         <div className="flex justify-end w-[90%] md:w-[80%] mb-8 ">
           <select
-            value={sortOrder}
-            onChange={(e) => setSortOrder(e.target.value as "high" | "low")}
-            className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 dark:text-white focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={sortOption}
+            onChange={(e) => setSortOption(e.target.value as any)}
+            className="px-4 py-2 border border-gray-300 rounded-lg shadow-sm text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none"
           >
-            <option value="high" className=" text-gray-700">Sort by Rating: High → Low</option>
-            <option value="low" className=" text-gray-700">Sort by Rating: Low → High</option>
+            <option value="dateNew">Sort by Date: Newest First</option>
+            <option value="dateOld">Sort by Date: Oldest First</option>
+            <option value="ratingHigh">Sort by Rating: High → Low</option>
+            <option value="ratingLow">Sort by Rating: Low → High</option>
           </select>
         </div>
 
@@ -83,12 +106,16 @@ const AllReview = () => {
                   <p className="text-blue-600 dark:text-blue-400 font-medium">
                     {review.Title}
                   </p>
+                  <p className="text-sm text-gray-500">
+                    {new Date(review.date).toLocaleDateString()}
+                  </p>
                 </div>
 
                 {/* Professional Button */}
                 <div className="flex justify-end">
                   <button
                     className="px-5 py-2 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-md hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+                    onClick={() => handleExploreDetails(review)}
                   >
                     View Details
                   </button>

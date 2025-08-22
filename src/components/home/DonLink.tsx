@@ -42,7 +42,7 @@ const DonLink = () => {
               <p className="mb-4">Go this link for download this game</p>
               <a
                 href={game.link}
-                className="inline-block px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-md font-semibold text-white transition"
+                className="btn-under-line underline decoration-blue-500 decoration-2 underline-offset-4"
               >
                 Download link
               </a>

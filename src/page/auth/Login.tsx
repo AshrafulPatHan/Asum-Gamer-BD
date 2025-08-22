@@ -28,7 +28,7 @@ const Login = () => {
             
             // token save in cookie
             Cookies.set("token", res.data.token, {
-                expires: 14, 
+                expires: 15, 
                 secure: true,
                 sameSite: "strict", 
             });
@@ -40,7 +40,7 @@ const Login = () => {
         }
     }
     
-const LoginGoogle = (credentialResponse:any)=>{
+const LoginGoogle = async (credentialResponse:any)=>{
     const authData = jwtDecode(credentialResponse.credential);
 
     console.log(credentialResponse);
@@ -50,6 +50,22 @@ const LoginGoogle = (credentialResponse:any)=>{
     const UserName:string = authData.name
     const UserPhoto:string = authData.picture
     console.log({UserEmail,UserName,UserPhoto});
+
+    try {
+        const res = await axios.post(`${PublicApi}/google-login`, { UserEmail,UserName,UserPhoto });
+        
+        // token save in cookie
+        Cookies.set("token", res.data.token, {
+            expires: 15, 
+            secure: true,
+            sameSite: "strict", 
+        });
+        setUser(res.data.user);
+        console.log("Login Success", res.data.user);
+        navigate("/"); 
+    } catch (error:any) {
+        console.error("Login Failed", error.response.data);
+    }
     
 }
 
@@ -99,7 +115,8 @@ return (
             <div className="flex flex-col items-center justify-center">
                 <GoogleLogin onSuccess={(credentialResponse)=> LoginGoogle(credentialResponse)}
                 onError={()=> toast("Error is coming on google login")}
-                auto_select={true} />
+                // auto_select={true} 
+                />
             </div>
             </div>
         </div>
