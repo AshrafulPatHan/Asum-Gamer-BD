@@ -56,7 +56,7 @@ const Navbar = () => {
             <>
               <Link to="/" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Home</Link>
               <Link to="/reviews" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">All Reviews</Link>
-              <Link to="/myReviews" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Reviews</Link>
+              <Link to="/my-review" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Reviews</Link>
               <Link to="/add-review" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">Add Review</Link>
               <Link to="/my-watch-list" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">My Watchlist</Link>
               <Link to="/news" className="px-3 py-2 text-green-400 font-bold hover:text-blue-600">News</Link>
@@ -118,7 +118,7 @@ const Navbar = () => {
             <>
               <Link to="/" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Home</Link>
               <Link to="/reviews" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">All Reviews</Link>
-              <Link to="/myReviews" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Reviews</Link>
+              <Link to="/my-review" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Reviews</Link>
               <Link to="/add-review" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Add Review</Link>
               <Link to="/my-watch-list" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">My Watchlist</Link>
               <Link to="/news" className="px-3 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">News</Link>
