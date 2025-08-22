@@ -16,7 +16,7 @@ const Login = () => {
     const handelLogin = async (e: React.FormEvent<HTMLFormElement>) => {
           e.preventDefault();
         try {
-            const res = await axios.post("http://localhost:5022/login", { email, password });
+            const res = await axios.post("https://chill-gamer-server-jzl0.onrender.com/login", { email, password });
             
             localStorage.setItem("token", res.data.token); // save token
             console.log("Login Success", res.data.user);

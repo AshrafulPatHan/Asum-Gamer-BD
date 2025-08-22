@@ -57,7 +57,7 @@ const Registration = () => {
         }
 
         try {
-            const res = await axios.post("http://localhost:5022/register", {
+            const res = await axios.post("https://chill-gamer-server-jzl0.onrender.com/register", {
                 name,
                 email,
                 password,
