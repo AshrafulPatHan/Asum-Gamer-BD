@@ -19,9 +19,11 @@ function PrivateRoute({ children }:PrivateRouteProps) {
       return;
     }
 
+    const PublicApi = import.meta.env.VITE_PUBLIC_API;
+
     // token verify 
     axios
-      .get("https://chill-gamer-server-jzl0.onrender.com/verify", {
+      .get(`${PublicApi}/verify`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then(() => setAuth(true))
