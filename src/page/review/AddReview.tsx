@@ -58,9 +58,9 @@ const AddReview = () => {
     const name = (form.Name as HTMLInputElement).value;
     const Title = (form.Title as HTMLInputElement).value;
     const Description = (form.Description as HTMLTextAreaElement).value;
-    const Image = (form.Image as HTMLInputElement).value;
     const Year = (form.Year as HTMLInputElement).value;
     const Rating = Number((form.Rating as HTMLInputElement).value);
+    const Image = photo;
     const username = user?.name;
     const userEmail = user?.email;
     const Lick = 0;
