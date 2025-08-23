@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { Link, useLocation } from "react-router";
 import Navbar from "../../components/navigation/Navbar";
 import Footer from "../../components/navigation/Footer";

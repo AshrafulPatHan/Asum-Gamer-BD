@@ -3,8 +3,24 @@ import { FaRegCommentAlt } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import LatestSideCard from "./ui/LatestSideCard";
 
+type GameTyp = {
+  name: string,
+  Title: string,
+  Image:string,
+  Year:string,
+  Description:string,
+  type:string,
+  username:string,
+  userEmail:string,
+  date:string,
+  comments:[],
+  Lick:number,
+  View:number,
+  Rating:number
+}
+
 const Latest = () => {
-  const [game, setGame] = useState<any[]>([]);
+  const [game, setGame] = useState<GameTyp[]>([]);
 
   const PublicApi = import.meta.env.VITE_PUBLIC_API;
 
