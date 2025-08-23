@@ -1,72 +1,77 @@
-// import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../../components/navigation/Footer";
 import Navbar from "../../components/navigation/Navbar";
+import { toast } from "react-hot-toast";
+import { useLocation, useNavigate } from "react-router";
+import { useAuth } from "../../providers/AuthProvider";
+import Cookies from "js-cookie";
 
-// import { AuthContext } from "../AuthProvider/AuthProvider";
-// import { toast } from "react-hot-toast";
-// import { useLocation, useNavigate } from "react-router";
 
 const AddReview = () => {
-//   const { user } = useContext(AuthContext);
-//   const { state: locationData } = useLocation();
-//   const [cardData, setCardData] = useState(locationData || { myReview: [] });
-//   const [type, setType] = useState("");
-//   const navigate = useNavigate();
+  const { user } = useAuth();
+  const PublicApi = import.meta.env.VITE_PUBLIC_API;
+  const { state: locationData } = useLocation();
+  const [cardData, setCardData] = useState(locationData || { myReview: [] });
+  const [type, setType] = useState("");
+  const navigate = useNavigate();
 
-//   useEffect(() => {
-//     if (locationData) {
-//       setCardData(locationData);
-//     }
-//   }, [locationData]);
+  useEffect(() => {
+    if (locationData) {
+      setCardData(locationData);
+    }
+  }, [locationData]);
 
-//   const handleAddReview = (event: React.FormEvent<HTMLFormElement>) => {
-//     event.preventDefault();
-//     const form = event.target as HTMLFormElement;
+  const handleAddReview = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const form = event.target as HTMLFormElement;
 
-//     const name = (form.Name as HTMLInputElement).value;
-//     const Title = (form.Title as HTMLInputElement).value;
-//     const Description = (form.Description as HTMLTextAreaElement).value;
-//     const Image = (form.Image as HTMLInputElement).value;
-//     const Year = (form.Year as HTMLInputElement).value;
-//     const Rating = Number((form.Rating as HTMLInputElement).value);
-//     const username = user?.displayName;
-//     const userEmail = user?.email;
-//     const Lick = 0;
-//     const View = 0;
-//     const date = new Date();
+    const name = (form.Name as HTMLInputElement).value;
+    const Title = (form.Title as HTMLInputElement).value;
+    const Description = (form.Description as HTMLTextAreaElement).value;
+    const Image = (form.Image as HTMLInputElement).value;
+    const Year = (form.Year as HTMLInputElement).value;
+    const Rating = Number((form.Rating as HTMLInputElement).value);
+    const username = user?.name;
+    const userEmail = user?.email;
+    const Lick = 0;
+    const View = 0;
+    const date = new Date();
 
-//     if (!name || !Description || !Image || !Year || !Rating || !type || !Title) {
-//       toast.error("All fields are required");
-//       return;
-//     }
+    if (!name || !Description || !Image || !Year || !Rating || !type || !Title) {
+      toast.error("All fields are required");
+      return;
+    }
 
-//     const allData = {
-//       name,
-//       Title,
-//       Description,
-//       Image,
-//       Year,
-//       Rating,
-//       type,
-//       username,
-//       userEmail,
-//       Lick,
-//       View,
-//       date,
-//     };
+    const allData = {
+      name,
+      Title,
+      Description,
+      Image,
+      Year,
+      Rating,
+      type,
+      username,
+      userEmail,
+      Lick,
+      View,
+      date,
+    };
 
-//     fetch("https://chill-gamer-server-jzl0.onrender.com/add-review", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(allData),
-//     })
-//       .then((res) => res.json())
-//       .then(() => {
-//         toast.success("Review added successfully!");
-//         navigate("/myReviews");
-//       })
-//       .catch(() => toast.error("Error adding review"));
-//   };
+    const token = Cookies.get("token");
+
+    fetch(`${PublicApi}/add-review`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", authorization: `Bearer ${token}`, },
+
+      body: JSON.stringify(allData),
+    })
+      .then((res) => res.json())
+      .then(() => {
+        toast.success("Review added successfully!");
+        navigate("/myReviews");
+      })
+      .catch(() => toast.error("Error adding review"));
+  };
 
   return (
     <div
@@ -80,7 +85,7 @@ const AddReview = () => {
 
       <div className="flex flex-col items-center justify-center flex-1 px-4 py-12">
         <form
-        //   onSubmit={handleAddReview}
+          onSubmit={handleAddReview}
           className="backdrop-blur-lg bg-white/10 dark:bg-black/40 border border-white/20 shadow-2xl rounded-2xl p-8 w-full max-w-4xl text-white"
         >
           <h2 className="text-4xl font-bold text-center mb-8 text-white">
@@ -147,7 +152,7 @@ const AddReview = () => {
               <div>
                 <label className="block mb-2 font-medium">Category</label>
                 <select
-                //   onChange={(e) => setType(e.target.value)}
+                    onChange={(e) => setType(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 outline-none"
                 >
                   <option value="" className="text-gray-700">
@@ -184,14 +189,14 @@ const AddReview = () => {
               <div>
                 <label className="block mb-2 font-medium">User Name</label>
                 <div className="w-full px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30">
-                  {/* {user?.displayName || "N/A"} */}
+                  {user?.name || "N/A"}
                 </div>
               </div>
 
               <div>
                 <label className="block mb-2 font-medium">User Email</label>
                 <div className="w-full px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30">
-                  {/* {user?.email || "N/A"} */}
+                  {user?.email || "N/A"}
                 </div>
               </div>
             </div>
