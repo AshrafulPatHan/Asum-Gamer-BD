@@ -3,7 +3,7 @@
 const UpdateReview = () => {
     return (
         <div>
-            update review
+            update your review
         </div>
     );
 };
