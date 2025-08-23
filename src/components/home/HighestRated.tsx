@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from "react";
 import { BiLike } from "react-icons/bi";
 import { FaRegCommentAlt } from "react-icons/fa";
