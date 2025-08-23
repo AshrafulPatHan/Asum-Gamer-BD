@@ -14,6 +14,8 @@ const AddReview = () => {
   const [cardData, setCardData] = useState(locationData || { myReview: [] });
   const [type, setType] = useState("");
   const navigate = useNavigate();
+  const apiKey = import.meta.env.VITE__IMAGEBB_API_KEY;
+  const [photo, setPhoto] = useState("");
 
   useEffect(() => {
     if (locationData) {
@@ -21,6 +23,34 @@ const AddReview = () => {
     }
   }, [locationData]);
 
+  // mange file submit
+  const handleFileSelect = async (file: File) => {
+    const formData = new FormData();
+    formData.append("image", file);
+
+    try {
+      const response = await fetch(
+        `https://api.imgbb.com/1/upload?expiration=600&key=${apiKey}`,
+        {
+          method: "POST",
+          body: formData
+        }
+      );
+      const data = await response.json();
+      if (data.success) {
+        const imageUrl = data.data.url;
+        setPhoto(imageUrl);
+        toast.success("Image uploaded successfully!");
+      } else {
+        toast.error("Failed to upload image");
+      }
+    } catch (error) {
+      console.error("Image upload error:", error);
+      toast.error("Image upload error");
+    }
+  };
+
+  // handel from submission
   const handleAddReview = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.target as HTMLFormElement;
@@ -61,14 +91,17 @@ const AddReview = () => {
 
     fetch(`${PublicApi}/add-review`, {
       method: "POST",
-      headers: { "Content-Type": "application/json", authorization: `Bearer ${token}`, },
+      headers: { 
+        "Content-Type": "application/json",
+        authorization: `Bearer ${token}`, 
+      },
 
       body: JSON.stringify(allData),
     })
       .then((res) => res.json())
       .then(() => {
         toast.success("Review added successfully!");
-        navigate("/myReviews");
+        navigate("/my-review");
       })
       .catch(() => toast.error("Error adding review"));
   };
@@ -129,10 +162,16 @@ const AddReview = () => {
                   Game Cover Image/Thumbnail
                 </label>
                 <input
-                  type="text"
-                  name="Image"
-                  placeholder="Image URL"
-                  className="w-full px-4 py-3 rounded-lg bg-white/20 text-white placeholder-gray-300 border border-white/30 focus:ring-2 focus:ring-blue-500 outline-none"
+                  id="picture"
+                  type="file"
+                  accept="image/*"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      handleFileSelect(file);
+                    }
+                  }}
+                  className="w-full text-gray-400 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-pink-100 file:text-pink-700 hover:file:bg-pink-200 mb-4"
                 />
               </div>
 
@@ -152,7 +191,7 @@ const AddReview = () => {
               <div>
                 <label className="block mb-2 font-medium">Category</label>
                 <select
-                    onChange={(e) => setType(e.target.value)}
+                  onChange={(e) => setType(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30 focus:ring-2 focus:ring-blue-500 outline-none"
                 >
                   <option value="" className="text-gray-700">
