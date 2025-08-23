@@ -18,6 +18,7 @@ const ReviewDetails = () => {
     
     const PublicApi = import.meta.env.VITE_PUBLIC_API;
 
+// comment the review 
 const handleAddComment = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -74,6 +75,41 @@ const handleAddComment = async (event: React.FormEvent<HTMLFormElement>) => {
         toast.error("Something went wrong.");
     }
 };
+
+// like the review
+const handleLike = async (gameData:any) => {
+    
+    const token = Cookies.get("token"); 
+
+    const LikeRev = {
+        ReviewId:gameData._id,
+        userEmail: user?.email
+    }
+    console.log(LikeRev);
+    
+
+    try {
+        const res = await fetch(`${PublicApi}/lick`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+                authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify(LikeRev),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+            toast.success("successfully like the review!");
+        } else {
+            toast.error(data.message || "Failed to like the review.");
+        }
+    } catch (error) {
+        console.error("Error adding comment:", error);
+        toast.error("Something went wrong.");
+    }
+}
 
 
     if (!locationData) {
@@ -213,10 +249,10 @@ const handleAddComment = async (event: React.FormEvent<HTMLFormElement>) => {
                                                 {gameData.name}
                                             </h3>
                                             <button
-                                                // onClick={() => handleWatchList()}
+                                                onClick={() => handleLike(gameData)}
                                                 className="px-4 py-2 rounded-lg bg-blue-600 text-white font-semibold shadow-md hover:bg-blue-700 transition-all duration-300"
                                             >
-                                                Add to Watchlist
+                                                Lick the review
                                             </button>
                                         </div>
                                     </div>
