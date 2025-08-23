@@ -2,8 +2,25 @@ import { GoArrowRight } from "react-icons/go";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 
+type GameTyp = {
+  name: string,
+  Title: string,
+  Image:string,
+  Year:string,
+  Description:string,
+  type:string,
+  username:string,
+  userEmail:string,
+  date:string,
+  comments:[],
+  Lick:number,
+  View:number,
+  Rating:number
+}
+
+
 const LatestSideCard = () => {
-  const [game, setGame] = useState([]);
+  const [game, setGame] = useState<GameTyp[]>([]);
 
   useEffect(() => {
     fetch("https://chill-gamer-server-jzl0.onrender.com/higher-rate-review")

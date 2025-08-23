@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 const BanerSlider = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const intervalRef = useRef<number | null>(null);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const slides = [
     {
@@ -44,6 +44,7 @@ const BanerSlider = () => {
   useEffect(() => {
     startAutoPlay();
     return () => stopAutoPlay();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const goToSlide = (index: number) => {

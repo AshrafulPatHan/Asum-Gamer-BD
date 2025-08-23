@@ -1,8 +1,8 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import Footer from "../../components/navigation/Footer";
 import Navbar from "../../components/navigation/Navbar";
 import { toast } from "react-hot-toast";
-import { useLocation, useNavigate } from "react-router";
+import {  useNavigate } from "react-router";
 import { useAuth } from "../../providers/AuthProvider";
 import Cookies from "js-cookie";
 
@@ -10,18 +10,11 @@ import Cookies from "js-cookie";
 const AddReview = () => {
   const { user } = useAuth();
   const PublicApi = import.meta.env.VITE_PUBLIC_API;
-  const { state: locationData } = useLocation();
-  const [cardData, setCardData] = useState(locationData || { myReview: [] });
+
   const [type, setType] = useState("");
   const navigate = useNavigate();
   const apiKey = import.meta.env.VITE__IMAGEBB_API_KEY;
   const [photo, setPhoto] = useState("");
-
-  useEffect(() => {
-    if (locationData) {
-      setCardData(locationData);
-    }
-  }, [locationData]);
 
   // mange file submit
   const handleFileSelect = async (file: File) => {
