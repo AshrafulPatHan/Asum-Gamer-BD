@@ -22,7 +22,7 @@ const Registration = () => {
 
         try {
             const response = await fetch(
-                `https://api.imgbb.com/1/upload?expiration=600&key=${apiKey}`,
+                `https://api.imgbb.com/1/upload?key=${apiKey}`,
                 {
                     method: "POST",
                     body: formData
