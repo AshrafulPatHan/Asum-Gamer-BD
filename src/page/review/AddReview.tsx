@@ -2,7 +2,7 @@ import { useState } from "react";
 import Footer from "../../components/navigation/Footer";
 import Navbar from "../../components/navigation/Navbar";
 import { toast } from "react-hot-toast";
-import {  useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import { useAuth } from "../../providers/AuthProvider";
 import Cookies from "js-cookie";
 
@@ -84,9 +84,9 @@ const AddReview = () => {
 
     fetch(`${PublicApi}/add-review`, {
       method: "POST",
-      headers: { 
+      headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${token}`, 
+        authorization: `Bearer ${token}`,
       },
 
       body: JSON.stringify(allData),

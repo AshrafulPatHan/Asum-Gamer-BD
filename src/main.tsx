@@ -22,6 +22,8 @@ import Blog from "./page/blog/blog.tsx";
 import PrivateRoute from "./components/routes/PrivateRoute.tsx";
 import { AuthProvider } from "./providers/AuthProvider.tsx";
 import { GoogleOAuthProvider } from "@react-oauth/google"
+import Admin from "./admin/components/home/Admin.tsx";
+
 
 
 const GooglePublicApi = import.meta.env.VITE_OAUTH_GOOGLE;
@@ -48,6 +50,7 @@ ReactDOM.createRoot(root).render(
         <Route path="/update-review" element={<PrivateRoute><UpdateReview /></PrivateRoute>} />
         <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
         <Route path="/setting" element={<PrivateRoute><Setting /></PrivateRoute>} />
+        <Route path="/admin" element={<Admin />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
       </GoogleOAuthProvider>
